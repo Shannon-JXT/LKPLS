@@ -9,25 +9,62 @@
     <link rel="stylesheet" href="/static/css/region-trend.css">
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <style>
+        .inv {
+            display: none;
+        }
 
+        .vis {
+            display: block;
+        }
+    </style>
     <div class="page-title" style="background-image: url({% static 'images/page-title.jpg' %})">
         <h1>Migrantion Trends</h1>
     </div>
 
     <div class="trend-container">
-        <div class="">
-            <div class="dropdown select-area">
-                <table><tr>
-                        <td><p class="country-font">Country:&nbsp;&nbsp;</p></td>
-                        <td>
-                            <select class="btn btn-default dropdown-toggle" id="selectButton">
-                                <option value="no">Select a Country</option>
-                            </select>
-                        </td>
-                    </tr></table>
-            </div>
+        <div class="media">
+            <div class="parrent pull-left">
+                <div class="dropdown select-area">
+                    <table><tr>
+                            <td><p class="country-font">Country:&nbsp;&nbsp;</p></td>
+                            <td>
+                                <select class="btn btn-default dropdown-toggle" id="selectButton">
+                                    <option value="no">Select a Country</option>
+                                </select>
+                            </td>
+                        </tr></table>
+                </div>
 
-            <div id="my_dataviz" class="pic-form"></div>
+                <div id="my_dataviz" class="pic-form"></div>
+            </div>
+                <div class="parrent media-body">
+                    <div class="tab-content">
+                        <div class="inv" id="en">
+                            <h2>British Immigrants to Victoria</h2>
+                            <p>Over the past 2 decades, migration of Britishers has burgeoned by around 200% approx. The migration in the previous 20 years has changed the image of Victoria. The migration in this decade will result in Victoria’s next generation. For Britishers, Victoria has been the traditional country of immigration…</p>
+                        </div>
+                        <div class="inv" id="cn">
+                            <h2>Chinese Immigrants to Victoria</h2>
+                            <p>There has been a steep increase in the percentage of population of Chinese people in Victoria over the past two decades. Chinese immigrant is at third rank in terms of dominating migration as compared to other countries of origin. And it is still increasing…</p>
+                        </div>
+                        <div class="inv" id="india">
+                            <h2>Indian Immigrants to Victoria</h2>
+                            <p>There has been a steep increase in the percentage of population of Indian people in Victoria over the past two decades. Indian immigrant is at second rank in terms of dominating migration as compared to other countries of origin. And it is still increasing…</p>
+                        </div>
+                        <div class="inv" id="nz">
+                            <h2>New Zealand Immigrants to Victoria</h2>
+                            <p>There has not been much migration of kiwis but it has still increased over the past two decades and they ranked at no. 4 among top immigrants. Migration is easy for kiwis to migrate to Australia without having the travel documents…</p>
+                        </div>
+                        <div class="inv" id="vn">
+                            <h2>Vietnamese Immigrants to Victoria</h2>
+                            <p>Vietnamese stand at the rank 5 in terms of migration to Victoria. There has been increase in migration by about 40% in Victoria. Australia is considered to be the second preferred destination after United States…</p>
+                        </div>
+                    </div>
+                    <!--/.tab-content-->
+                </div>
+                            <!--/.media-body-->
+            </div>
 
             <script>
                 // set the dimensions and margins of the graph
@@ -142,12 +179,21 @@
                     var selectedOption = d3.select(this).property("value")
                     // run the updateChart function with this selected option
                     update(selectedOption)
+                    var vis = document.querySelector('.vis'),
+                        target = document.getElementById(this.value);
+                    if (vis !== null) {
+                        vis.className = 'inv';
+                    }
+                    if (target !== null) {
+                        target.className = 'vis';
+                    }
                 })
-
 
             </script>
         </div>
     </div>
+
+
 {% endblock %}
 
 {% block drop %}
