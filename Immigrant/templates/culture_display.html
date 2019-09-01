@@ -7,48 +7,87 @@
 
 
 {% block content %}
+    <style>
+        .inv {
+            display: none;
+        }
+
+        .vis {
+            display: block;
+        }
+    </style>
+
     <div class="page-title" style="background-image: url({% static 'images/page-title.jpg' %})">
         <h1>Culture Information</h1>
     </div>
 
     <section id="content">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 fadeInDown">
-                    <div class="tab-wrap">
-                        <div class="media">
-                            <div class="parrent pull-left">
-                                <ul class="nav nav-tabs nav-stacked">
-                                    {% for culture in cultures %}
-                                        <li class=""><a href="#tab{{ culture.id }}" data-toggle="tab" class="tehnical">
+            <div class="center fadeInDown">
+                <h2>Want to know more about culture?</h2>
+                <p class="lead">By selecting a country below, you will get more information about the culture of that country.</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 fadeInDown">
+                <div class="tab-wrap">
+                    <div class="media row">
+                        <div class="col-xs-12 col-sm-4 col-md-3">
+                            <ul class="nav nav-tabs nav-stacked">
+                                {% for culture in cultures %}
+                                    {% if culture.id == 1 %}
+                                        <li class="active"><a href="#tab{{ culture.id }}" data-toggle="tab">
                                             {{ culture.country_name }}
                                         </a></li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-
-                            <div class="parrent media-body">
-                                <div class="tab-content">
-                                    {% for culture in cultures %}
-                                        <div class="tab-pane fade" id="tab{{ culture.id }}">
-                                            <p>{{ culture.country_info }}</p>
-                                            <p>{{ culture.country_info1 }}</p>
-                                            <p>{{ culture.country_info2 }}</p>
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                                <!--/.tab-content-->
-                            </div>
-                            <!--/.media-body-->
+                                    {% else %}
+                                        <li class=""><a href="#tab{{ culture.id }}" data-toggle="tab">
+                                            {{ culture.country_name }}
+                                        </a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
                         </div>
-                        <!--/.media-->
-                    </div>
-                    <!--/.tab-wrap-->
-                </div>
-                <!--/.col-sm-6-->
 
+                        <div class="col-xs-12 col-sm-8 col-md-9">
+                            <div class="tab-content">
+                                {% for culture in cultures %}
+                                    {% if culture.id == 1 %}
+                                        <div class="tab-pane fade active in" id="tab1">
+                                            <p>
+                                                {{ culture.country_info }}<br>
+                                                {{ culture.country_info1 }}
+                                            </p>
+                                         <!--   <p>{{ culture.country_info2 }}</p> -->
+                                        </div>
+                                    {% else %}
+                                        <div class="tab-pane fade" id="tab{{ culture.id }}">
+                                            <p>
+                                                {{ culture.country_info }}<br>
+                                                {{ culture.country_info1 }}
+                                            </p>
+                                          <!--  <p>{{ culture.country_info2 }}</p> -->
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <!--
+                            <div style="padding-left: 40px;">
+                                <ul class="pager">
+                                    <li class="previous disabled">
+                                        <a href="#" id="back-btn"><span class="fa fa-angle-left"></span> Back</a>
+                                    </li>
+                                    <li class="next">
+                                        <button id="next-btn">Next <span class="fa fa-angle-right"></span></button>
+                                    </li>
+                                </ul>
+                            </div> -->
+                            <!--/.tab-content-->
+                        </div>
+                        <!--/.media-body-->
+                    </div>
+                    <!--/.media-->
+                </div>
+                <!--/.tab-wrap-->
             </div>
-            <!--/.row-->
+            <!--/.col-sm-6-->
         </div>
         <!--/.container-->
     </section>
@@ -58,3 +97,15 @@
 {% block drop %}
     active
 {% endblock %}
+
+<script>
+    var nextb = document.getElementById("next-btn");
+    console.log(this);
+    nextb.addEventListener('click',function(){
+        var pre = document.getElementById("pre"),
+            nex = document.getElementById("nex");
+        pre.className = "inv";
+        nex.className = "vis";
+        console.log(this);
+    },false)
+</script>

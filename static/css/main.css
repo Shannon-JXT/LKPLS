@@ -108,11 +108,11 @@ a:focus {
 }
 
 .media>.pull-left {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .media>.pull-right {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 body>section {
@@ -909,7 +909,7 @@ a.accordion-toggle i {
 }
 
 #content .tab-pane{
-    padding-left: 100px;
+    padding-left: 40px;
 }
 
 .video-box{
