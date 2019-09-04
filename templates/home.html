@@ -8,104 +8,28 @@
 {% block content %}
     <section id="main-slider" class="no-margin">
         <div class="carousel slide">
-            <ol class="carousel-indicators">
-                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#main-slider" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active" style="background-image: url({% static 'images/bg1.jpg' %})">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Connecting Communities</h1>
-                                    <div class="animation animated-item-2">
-                                        Hi newcomers! It may be hard moving to a new place. Find out about the multicultural life in Australia!
-                                    </div>
-                                    <a class="btn-slide animation animated-item-3" href="{% url 'culture_display' %}">Culture</a>
-                                    <a class="btn-slide white animation animated-item-3" href="{% url 'region_trend' %}">Migration Trends</a>
-                                </div>
-                            </div>
-
+            <div class="item active" style="background-image: url({% static 'images/bg1.jpg' %})">
+                <div class="container main-content">
+                    <div align="center">
+                        <div class="home-title">
+                            <h1>We are Connecting Communities</h1>
+                            <h2>
+                                New to Australia? It may be hard to move to a new place. Find out about the multicultural life in Australia!
+                            </h2>
+                        </div>
+                        <div class="home-button">
+                            <a class="btn-feature" href="{% url 'region_trend' %}"><b>Migration Trends</b></a><br>
+                            <a class="btn-feature" href="{% url 'culture_display' %}"><b>Culture Characteristics</b></a><br>
+                            <a class="btn-feature" style="margin-bottom: 10px;" href=""><b>Coming Soon...</b></a>
                         </div>
                     </div>
                 </div>
-                <!--/.item-->
-
-                <div class="item" style="background-image: url({% static 'images/bg2.jpg' %})">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Connecting Communities</h1>
-                                    <div class="animation animated-item-2">
-                                        Hi newcomers! It may be hard moving to a new place. Find out the multicultural life in Australia!
-                                    </div>
-                                    <a class="btn-slide white animation animated-item-3" href="{% url 'about' %}">Learn More</a>
-                                    <a class="btn-slide animation animated-item-3" href="{% url 'culture_display' %}">Get Started</a>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-                <!--/.item-->
-
             </div>
-            <!--/.carousel-inner-->
-        </div>
-        <!--/.carousel-->
-        <a class="prev hidden-xs hidden-sm" href="#main-slider" data-slide="prev">
-            <span class="fa fa-chevron-left"></span>
-        </a>
-        <a class="next hidden-xs hidden-sm" href="#main-slider" data-slide="next">
-            <span class="fa fa-chevron-right"></span>
-        </a>
-    </section>
-    <!--/#main-slider-->
-
-    <section id="services" class="service-item">
-        <div class="container">
-            <div class="center fadeInDown">
-                <h2>What We Do</h2>
-                <p class="lead">It may be hard moving to a new place.<br>We are here to help you to adapt faster!</p>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-6 col-md-4">
-                    <div class="media services-wrap fadeInDown">
-                        <div class="media-body">
-                            <a href="{% url 'culture_display' %}"><h3 class="media-heading">Cultural Characteristics</h3></a>
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-                    <div class="media services-wrap fadeInDown">
-                        <div class="media-body">
-                            <a href="{% url 'region_trend' %}"><h3 class="media-heading">Migration Facts</h3></a>
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-                    <div class="media services-wrap fadeInDown">
-                        <div class="media-body">
-                            <h3 class="media-heading">Coming Soon...</h3>
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!--/.row-->
         </div>
         <!--/.container-->
     </section>
-    <!--/#services-->
+
+
 {% endblock %}
 
 {% block home %}
