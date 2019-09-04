@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/region-trend.css' %}">
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
     <style>
         .inv {
             display: none;
@@ -24,24 +25,38 @@
             margin-right: 5%;
         }
     </style>
+
     <div class="page-title" style="background-image: url({% static 'images/page-title.jpg' %})">
         <h1>Migrantion Trends</h1>
     </div>
 
-    <div class="trend-container">
-        <div class="media">
-            <div class="parrent pull-left">
-                <div class="dropdown select-area">
-                    <table><tr>
-                            <td><p class="country-font">Country:&nbsp;&nbsp;</p></td>
-                            <td>
-                                <select class="btn btn-default dropdown-toggle" id="selectButton"></select>
-                            </td>
-                        </tr></table>
-                </div>
+    <div class="container box-area" style="margin-top: 35px;">
+        <div class="no-margin">
+            <table>
+                <tr>
+                    <td vertical-align="center"><a class="indexing" href="{% url 'home' %}">Home&nbsp;</a></td>
+                    <td style="padding-top: 13px;">
+                        <p style="color: #fff;">
+                            <span class="fa fa-angle-right"></span>&nbsp;Our Services&nbsp;<span class="fa fa-angle-right"></span>&nbsp;Migration Trends
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="info-area">
+            <div class="media">
+                <div class="parrent pull-left">
+                    <div class="dropdown select-area">
+                        <table><tr>
+                                <td><p class="country-font">Country:&nbsp;&nbsp;</p></td>
+                                <td>
+                                    <select class="btn btn-default dropdown-toggle" id="selectButton"></select>
+                                </td>
+                            </tr></table>
+                    </div>
 
-                <div id="my_dataviz" class="pic-form"></div>
-            </div>
+                    <div id="my_dataviz" class="pic-form"></div>
+                </div>
                 <div class="parrent media-body">
                     <div class="tab-content">
                         <div class="vis" id="no">
@@ -50,7 +65,7 @@
                         </div>
                         <div class="inv" id="en">
                             <h2>British Immigrants to Victoria</h2>
-                            <p>Over the past 2 decades, migration of British has burgeoned by around 200% approx. The migration in the previous 20 years has changed the image of Victoria. The migration in this decade will result in Victoria’s next generation. For Britishers, Victoria has been the traditional country of immigration…</p>
+                            <p>Over the past 2 decades, migration of British has burgeoned by around 200%. The migration in the previous 20 years has changed the image of Victoria. The migration in this decade will result in Victoria’s next generation. For Britishers, Victoria has been the traditional country of immigration…</p>
                         </div>
                         <div class="inv" id="cn">
                             <h2>Chinese Immigrants to Victoria</h2>
@@ -71,7 +86,7 @@
                     </div>
                     <!--/.tab-content-->
                 </div>
-                            <!--/.media-body-->
+                <!--/.media-body-->
             </div>
 
             <script>
@@ -157,6 +172,31 @@
                     .style("text-anchor", "end")
                     .text("Number of Migrations");
 
+                //tooltip
+                var Tooltip = d3.select("#my_dataviz")
+                    .append("div")
+                    .style("opacity", 0)
+                    .attr("class", "tooltip")
+                    .style("background-color", "white")
+                    .style("border", "solid")
+                    .style("border-width", "2px")
+                    .style("border-radius", "5px")
+                    .style("padding", "5px")
+                    .style("position", "absolute")
+
+                //mouse
+                var mouseover = function(d) {
+                    Tooltip.style("opacity", 1)
+                }
+                var mousemove = function(d) {
+                    Tooltip.html(d.time + " : " + d.value)
+                        .style("top", (event.pageY)+"px")
+                        .style("left",(event.pageX)+"px")
+                }
+                var mouseleave = function(d) {
+                    Tooltip.style("opacity", 0)
+                }
+
                 // Initialize line with group a
                 var line = svg
                     .append('g')
@@ -180,6 +220,9 @@
                     //.attr("cy", function(d) { return y(+d.en) })
                     .attr("r", 7)
                     .style("fill", "#69b3a2")
+                    .on("mouseover", mouseover)
+                    .on("mousemove", mousemove)
+                    .on("mouseleave", mouseleave)
 
 
                 // A function that update the chart
@@ -224,6 +267,7 @@
 
             </script>
         </div>
+
     </div>
 
 {% endblock %}

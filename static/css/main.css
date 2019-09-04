@@ -5,7 +5,7 @@
 **************************/
 
 body {
-    background: #fff;
+    background: #000000;
     font-family: 'Open Sans', sans-serif;
     color: #4e4e4e;
     line-height: 22px;
@@ -167,7 +167,7 @@ body>section {
 }
 
 .page-title{
-    padding: 60px 0;
+    padding: 30px 0;
 }
 
 .page-title h1{
@@ -304,7 +304,7 @@ input.search-form:hover {
 }
 
 .navbar-inverse .navbar-brand {
-    font-size: 36px;
+    font-size: 36px!important;
     line-height: 50px;
     color: #fff;
 }
@@ -367,6 +367,27 @@ input.search-form:hover {
 *******Home Page******
 **************************/
 
+.main-content {
+    background-color:rgba(255,255,255 ,0.6);
+    border-radius: 2px;
+    box-shadow: 0 0 12px 20px rgba(255,255,255 ,0.6);
+    margin-top: 12%;
+}
+
+.home-title h1 {
+    font-size: 64px;
+    font-weight: 700;
+    color: #cf4a30 !important;
+}
+
+.home-title h2 {
+    color: #cf4a30 !important;
+}
+
+.home-button {
+    width: 25%;
+}
+
 #main-slider {
     position: relative;
 }
@@ -376,46 +397,30 @@ input.search-form:hover {
     padding: 0;
 }
 
-#main-slider .carousel .carousel-content {
+#main-slider .carousel {
     font-size: 18px;
     font-weight: 400;
     color: #fff;
     line-height: 28px;
 }
 
-#main-slider .carousel .slide-margin {
-    margin-top: 140px;
-}
-
-#main-slider .carousel h1 {
-    font-size: 64px;
-    font-weight: 700;
-    margin: 0 0 20px;
-    color: #fff;
-}
-
-#main-slider .carousel .btn-slide {
+.btn-feature {
     padding: 0 30px;
     line-height: 42px;
     background: #EC5538;
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.7);
     color: #fff;
     border-radius: 4px;
     margin-top: 40px;
     display: inline-block;
-    font-size: 14px;
-    margin-right: 10px;
+    font-size: 18px;
     border: 1px solid #EC5538;
+    width: 100%;
 }
 
-#main-slider .carousel .btn-slide.white {
-    border: 1px solid rgba(255, 255, 255, 0.44);
-    background: rgba(255, 255, 255, 0.26);
-    color: #fff;
-}
-
-#main-slider .carousel .slider-img {
-    text-align: right;
-    position: absolute;
+.btn-feature:hover {
+    background: #000;
+    color: #EC5538;
 }
 
 #main-slider .carousel .item {
@@ -453,77 +458,6 @@ input.search-form:hover {
     -webkit-transition: opacity ease-in-out 500ms;
     transition: opacity ease-in-out 500ms;
     z-index: 1;
-}
-
-#main-slider .prev,
-#main-slider .next {
-    position: absolute;
-    top: 50%;
-    background-color: #EC5538;
-    color: #fff;
-    display: inline-block;
-    margin-top: -25px;
-    height: 40px;
-    line-height: 40px;
-    width: 40px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 4px;
-    z-index: 5;
-}
-
-#main-slider .prev:hover,
-#main-slider .next:hover {
-    background-color: #000;
-}
-
-#main-slider .prev {
-    left: 10px;
-}
-
-#main-slider .next {
-    right: 10px;
-}
-
-#main-slider .carousel-indicators {
-    margin: 0;
-    left: 0;
-    width: 100%;
-    bottom: 80px;
-}
-
-#main-slider .carousel-indicators li {
-    width: 10px;
-    height: 10px;
-    background-color: transparent;
-    margin: 0 5px;
-    position: relative;
-    border: 1px solid #fff;
-}
-
-#main-slider .carousel-indicators li.active {
-    background-color: #EC5538;
-    border: 1px solid #EC5538
-}
-
-#main-slider .active .animation.animated-item-1 {
-    -webkit-animation: fadeInUp 300ms linear 300ms both;
-    animation: fadeInUp 300ms linear 300ms both;
-}
-
-#main-slider .active .animation.animated-item-2 {
-    -webkit-animation: fadeInUp 300ms linear 600ms both;
-    animation: fadeInUp 300ms linear 600ms both;
-}
-
-#main-slider .active .animation.animated-item-3 {
-    -webkit-animation: fadeInUp 300ms linear 900ms both;
-    animation: fadeInUp 300ms linear 900ms both;
-}
-
-#main-slider .active .animation.animated-item-4 {
-    -webkit-animation: fadeInUp 300ms linear 1200ms both;
-    animation: fadeInUp 300ms linear 1200ms both;
 }
 
 #feature {
@@ -896,6 +830,29 @@ a.accordion-toggle i {
     border: 1px solid transparent;
 }
 
+/****************************/
+/**** Culture Information ***/
+/****************************/
+
+.info-area {
+    width: 100% !important;
+    background-color: #fff;
+    padding: 30px 60px;
+}
+
+.box-area {
+    width: 85% !important;
+}
+
+.indexing {
+    color: #fff;
+    font-size: 20px;
+}
+
+.indexing:hover {
+    color: #EC5538;
+}
+
 #content .nav-tabs>li.active>a,
 #content .nav-tabs>li.active>a:hover,
 #content .nav-tabs>li.active>a:focus {
@@ -916,23 +873,6 @@ a.accordion-toggle i {
     position: relative;
 }
 
-.video-box a.video-icon{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    background-color: #EC5538;
-    top: 50%;
-    left: 50%;
-    color: #fff;
-    text-align: center;
-    line-height: 76px;
-    border-radius: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 20px;
-    border: 2px solid #fff;
-}
-
 .nav-tabs {
     border: none;
 }
@@ -941,7 +881,7 @@ a.accordion-toggle i {
     color: #666;
     border-radius: 0;
     border: 1px solid transparent;
-    line-height: 24px;
+    line-height: 18px;
     margin-right: 0;
     padding: 13px 30px;
 }
@@ -1033,31 +973,6 @@ a.accordion-toggle i {
     width: 20%;
 }
 
-#contact-info {
-    background: #fff;
-    padding: 30px 0;
-}
-
-.contact-info i {
-    width: 60px;
-    height: 60px;
-    font-size: 40px;
-    line-height: 60px;
-    color: #fff;
-    background: #000;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.contact-info h2 {
-    margin-top: 0;
-    color: #000;
-}
-
-.contact-info {
-    color: #000;
-}
-
 /*testimonial slider*/
 
 #testimonial{
@@ -1113,7 +1028,8 @@ a.accordion-toggle i {
 **************************/
 
 .about-img{
-    padding-right: 70px;
+    padding-right: 40px;
+    margin-top: 30px;
 }
 
 .about-content{
@@ -1129,6 +1045,15 @@ a.accordion-toggle i {
     font-weight: 700;
     margin: 0 0 25px;
 }
+
+.about-content h3{
+    font-size: 24px;
+    color: #333333;
+    font-weight: 600;
+    margin: 0 0 25px;
+    line-height: 1.5;
+}
+
 
 #team-area{
     background-color: #FAFAFA;

@@ -1,5 +1,5 @@
-
-<!DOCTYPE html>
+{% load staticfiles %}
+<!--<!DOCTYPE html>-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,10 +42,10 @@
                     <ul class="nav navbar-nav">
                         <li {% block home %}{% endblock %}><a href="{% url 'home' %}">Home</a></li>
                         <li class="dropdown {% block drop %}{% endblock %}">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <span class="fa fa-angle-down"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Services <span class="fa fa-angle-down"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{% url 'culture_display' %}">Cultures</a></li>
-                                <li><a href="{% url 'region_trend' %}">Immigrant Distribution</a></li>
+                                <li><a href="{% url 'region_trend' %}">Migration Trends</a></li>
+                                <li><a href="{% url 'culture_display' %}">Culture Characteristics</a></li>
                             </ul>
                         </li>
                         <li {% block about %}{% endblock %}><a href="{% url 'about' %}">About Us</a></li>

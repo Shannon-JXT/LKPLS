@@ -2,18 +2,29 @@
 {% load staticfiles %}
 
 {% block title %}
-    Country Information
+    Culture Characteristics
 {% endblock %}
-
 
 {% block content %}
     <style>
         .inv {
             display: none;
+            margin-top: 15%;
+            margin-left: 5%;
+            margin-right: 5%;
         }
 
         .vis {
             display: block;
+            margin-top: 15%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        .dropdown-menu>li:hover>a,
+        .dropdown-menu>li:focus>a,
+        .dropdown-menu>li.active>a {
+            background-color: #EC5538;
+            color: #fff;
         }
     </style>
 
@@ -22,90 +33,119 @@
     </div>
 
     <section id="content">
-        <div class="container">
-            <div class="center fadeInDown">
-                <h2>Want to know more about culture?</h2>
-                <p class="lead">By selecting a country below, you will get more information about the culture of that country.</p>
-            </div>
-            <div class="col-xs-12 col-sm-12 fadeInDown">
-                <div class="tab-wrap">
-                    <div class="media row">
-                        <div class="col-xs-12 col-sm-4 col-md-3">
-                            <ul class="nav nav-tabs nav-stacked">
-                                {% for culture in cultures %}
-                                    {% if culture.id == 1 %}
-                                        <li class="active"><a href="#tab{{ culture.id }}" data-toggle="tab">
-                                            {{ culture.country_name }}
-                                        </a></li>
-                                    {% else %}
-                                        <li class=""><a href="#tab{{ culture.id }}" data-toggle="tab">
-                                            {{ culture.country_name }}
-                                        </a></li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-8 col-md-9">
-                            <div class="tab-content">
-                                {% for culture in cultures %}
-                                    {% if culture.id == 1 %}
-                                        <div class="tab-pane fade active in" id="tab1">
-                                            <p>
-                                                {{ culture.country_info }}<br>
-                                                {{ culture.country_info1 }}
-                                            </p>
-                                         <!--   <p>{{ culture.country_info2 }}</p> -->
-                                        </div>
-                                    {% else %}
-                                        <div class="tab-pane fade" id="tab{{ culture.id }}">
-                                            <p>
-                                                {{ culture.country_info }}<br>
-                                                {{ culture.country_info1 }}
-                                            </p>
-                                          <!--  <p>{{ culture.country_info2 }}</p> -->
-                                        </div>
-                                    {% endif %}
-                                {% endfor %}
+        <div class="container box-area" style="margin-top: -40px;">
+            <div class="no-margin">
+                <table>
+                    <tr>
+                        <td vertical-align="center"><a class="indexing" href="{% url 'home' %}">Home&nbsp;</a></td>
+                        <td style="padding-top: 13px;">
+                            <p style="color: #fff;">
+                                <span class="fa fa-angle-right"></span>&nbsp;Our Services&nbsp;<span class="fa fa-angle-right"></span>&nbsp;Culture Characteristics
+                            </p>
+                        </td>
+                        <td class="col-md-7"></td>
+                        <td>
+                            <div class="dropdown">
+                                <select class="btn btn-default dropdown-toggle" id="selectButton">
+                                    {% for culture in cultures %}
+                                        <option value="tab{{ culture.id }}">{{ culture.country_name }}</option>
+                                    {% endfor %}
+                                </select>
                             </div>
-                            <!--
-                            <div style="padding-left: 40px;">
-                                <ul class="pager">
-                                    <li class="previous disabled">
-                                        <a href="#" id="back-btn"><span class="fa fa-angle-left"></span> Back</a>
-                                    </li>
-                                    <li class="next">
-                                        <button id="next-btn">Next <span class="fa fa-angle-right"></span></button>
-                                    </li>
-                                </ul>
-                            </div> -->
-                            <!--/.tab-content-->
-                        </div>
-                        <!--/.media-body-->
-                    </div>
-                    <!--/.media-->
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="info-area" style="margin-top: 12px;">
+                <div class="center fadeInDown">
+                    <h2>Want to know more about culture?</h2>
+                    <p class="lead">By selecting a country above, you will get more information about the culture of that country.</p>
                 </div>
-                <!--/.tab-wrap-->
+
+                <div class="tab-content" style="margin-top: -15%;">
+                    <div class="vis" id="tab1">
+                        <table><tr>
+                            <td style="margin: 20px;" align="center">
+                                <img src="{% static 'images/content-1.jpg' %}">
+                                <p style="color: #808080;"><b>Summer in Melbourne</b><br>Picture by Yugo Ananda</p>
+                            </td>
+                            <td>
+                                <p>Australia is the largest country in Oceania, comprising the mainland Australia continent, Tasmania Island, and numerous small islands. Australia is considered as country with rich of diversity. Based on census 2016, Australians have various ancestry backgrounds, 36% of survey participants identified themselves as British descents, 33% as Australians, 11% as Irish, 9.3% as Scottish, 5.6% as Chinese, and many other ethnicities. Departing from this fact, we can understand that Australia is a multicultural country.</p>
+                            </td>
+                        </tr></table>
+                        <p><a href="https://www.abc.net.au/news/2017-04-28/these-are-our-core-australian-values/8476902">ABC news</a> reports that Australian have unique characteristics that make them valuable. Here some interesting points from the list:</p>
+                        <ol type="1">
+                            <li>Australians love taking nature strips as gifts. When they think they have something which are not used anymore, they just chuck it on the grass in front of their houses. If someone who happens to be passing by and finds it interesting, those dumped things are free to grab. However, the government might not like it.</li>
+                            <li>Australians take the front seat. Considering themselves as egalitarians, every time they pick a taxi, it is highly likely they will sit next to the driver. You might find it unusual in your country or in the US movies.</li>
+                            <li>Being an Australian	and sports are two unseparated things. The obsession of sports, especially for Australian Football, is well-known. It is like a religion celebration.</li>
+                            <li>Australians have their own reasons to take days-off. It is like taking days-off is a right that has been wired to their bone for any literally reason. They take days-off not only for religious or public holidays, but also feeling a bit sick, having a weekday before/after weekend and there is a religious/public holiday on the other side of it, the fake birthday of a Queen, missing the train, needing a haircut, or a football game being on tomorrow.</li>
+                            <li>Australians are Larrikins. There are many definitions of Larrikins of Australia in the internet. There is no standard or convention about the definition, but Australians definitely are.</li>
+                        </ol>
+                        <p>Meanwhile. regarding to <a href="https://www.hofstede-insights.com/country-comparison/australia/">Hofstede</a>, Australia has characteristic dimension scores as per below:</p>
+                        <ol type="1">
+                            <li><b>Power distance: 36. </b>Power distance is defined as the extent of less powerful member of an organization in particular country expect and accept that the power is distributed unequally. Australia has low score at this dimension which means within a team or organization, Australians expect to have fair share of information, be consulted in decision making, and at the same time communication is conducted in informal ways, direct and participative.</li>
+                            <li><b>Individualism: 90. </b>Individualism here describes how a society treats the degree of interdependence among its member. It has to do with the attitude of a member to define the self-image as “I” or “We”. Unlike a collectivist society, Australia has high score in this dimension. Individualists look after themselves and immediate family. In the business world, promotion is given to those who successfully prove their significant achievements. The employees must self-reliance and have initiative.</li>
+                            <li><b>Masculinity: 61.  </b>Australia is somewhat masculine. The masculinity here has nothing to do with gender issues. It indicates that the society is driven by competition, achievement, and success. Success itself is defined by those who standing out from the crowd. Australia has shared value that people should strive to be the best. Conflicts are resolved in the individual level and winning becomes the goal.</li>
+                            <li><b>Uncertainty Avoidance: 51. </b>This dimension portrays the attitude of a society in dealing with threat of unknown or ambiguous situation in the future.  High score, like Japan, means the society are discipline in doing procedures and codes of conduct to minimize risks and unwanted occurrences in the future. Changes may be hard to realize in the society. Low score means the society does not treat risks as dangerous threats. Australia is somewhere in between.</li>
+                            <li><b>Long Term Orientation: 21. </b>Long term orientation is a dimension to describe how a society maintains links with its past while dealing with a situation in the present or future. Australia has low index in this dimension, which means Australia is a normative society where its people respect their tradition, do not have much propensity to save their future, and focusing on quick results.</li>
+                            <li><b>Indulgence: 71. </b>Australia is quite indulgent. Unlike restraint culture, Australians value their leisure time, love having fun, act as they please, and spend money as they wish.</li>
+                        </ol>
+                        <p>Hopefully, this information can help you to understand the Australian culture and make the adaptation process faster so you can work with Australians as a team in your work place.</p>
+                    </div>
+                    <div class="inv" id="tab2">
+                        <table><tr>
+                            <td style="margin: 20px;" align="center">
+                                <img src="{% static 'images/content-1.jpg' %}">
+                                <p style="color: #808080;"><b>Summer in Melbourne</b><br>Picture by Yugo Ananda</p>
+                            </td>
+                            <td>
+                                <p>Who doesn’t know a giant panda? That animal may be one of the things crossing in someone’s mind every time he/she hears about China. By having the largest population in the world, its people spread to every corner of the planet. As a great nation, China is rich of cultural and historical heritage; China’s Great Wall, the Forbidden City, Dragon Boats Festival, you name it!</p>
+                            </td>
+                        </tr></table>
+                        <p><a href="http://factsanddetails.com/china/cat4/sub18/item116.html">factsanddetails.com</a> reports that Chinese have unique characteristics that make them valuable. Here some interesting points from the list:</p>
+                        <ol type="1">
+                            <li>Never lose your face! The Chinese are very conscious of their faces which represent respect and dignity. Losing face means your relationship with people in your circle may be threatened. Once you lose it, it is hard to get it back. To maintain dignity, they keep behaving by being polite and accommodating. Having conflict may result in embarrassment and losing face. So, losing face must be prevented at any cost.</li>
+                            <li>The Chinese are shy. They can be very shy to foreigners or in a situation that they don’t use to. If someone happens to be asking a Chinese a question that sounds personal and makes him/her uncomfortable they might just laugh and look away.</li>
+                            <li>Indirectness can also be used to describe the Chinese when they deal with a conversation that bothers or makes them uncomfortable. It can be considered rude to ask them a direct question, such as question with yes/no answer, that may position them in a situation that make them to give an answer they don’t want to give or an answer that may hurt someone’s feeling. Even in some cases, asking directions can be impolite if the one who is asked doesn’t know the answer. Not knowing the answer can be an embarrassment for them.</li>
+                            <li>The Chinese are famous for their diligence and endurance. They are hard workers and do not complain. Complaining, for them, doesn’t bring you anywhere.</li>
+                            <li>The Chinese are considered as pragmatists. When they think something doesn’t work, they will change it, so practical. Some people believe that this pragmatism is rooted in Confucianism.</li>
+                        </ol>
+                        <p>Meanwhile. regarding to <a href="https://www.hofstede-insights.com/country-comparison/china/">Hofstede</a>, China has characteristic dimension scores as per below:</p>
+                        <ol type="1">
+                            <li><b>Power distance: 80. </b>Power distance is defined as the extent of less powerful members of an organization in a particular country expect and accept that the power is distributed unequally. China has high score at this dimension which means within a team or organization, Chinese consider it is fine to have inequalities in power. They are optimistic in someone who happens to have leadership and dominance. They are not supposed to raise aspiration beyond their ranks.</li>
+                            <li><b>Individualism: 20. </b>Individualism here describes how a society treats the degree of interdependence among its member. It has to do with the attitude of a member to define the self-image as “I” or “We”. Unlike an individualist society, China has low score in this dimension which make their society is categorized as a collectivist. Collectivists belong to a group that takes care of them in exchange for loyalty. It may affect the way an organization promotes a member because the closeness will matter. Relationship prevails over tasks and company.</li>
+                            <li><b>Masculinity: 66.  </b>China is somewhat masculine. The masculinity here has nothing to do with gender issues. It indicates that the society is driven by competition, achievement, and success. Success itself is defined by those who standing out from the crowd. The Chinese argue that people should strive to be the best. They may neglect their leisure time if they can have more income. Money talks louder.</li>
+                            <li><b>Uncertainty Avoidance: 30. </b>This dimension portrays the attitude of a society in dealing with threat of unknown or ambiguous situation in the future. High score, like Japan, means the society are discipline in doing procedures and codes of conduct to minimize risks and unwanted occurrences in the future. Changes may be hard to realize in the society. Low score means the society does not treat risks as dangerous threats. The Chinese have a high tolerance of ambiguity and it makes them more entrepreneurial. Their language also contains many ambiguities that can be difficult for Westerners to follow.</li>
+                            <li><b>Long Term Orientation: 87. </b>Long term orientation is a dimension to describe how a society maintains links with its past while dealing with a situation in the present or future. China has high index in this dimension, which means China is a pragmatic society where its people believe the truth values are relative, depends on time, situation, and context. They exhibit an ability to adapt traditions easily to changed conditions, a strong propensity to save and invest, thriftiness, and perseverance in achieving results.</li>
+                            <li><b>Indulgence: 24. </b>China is not indulgent, but more to restraint culture. The Chinese are perceived to be cynic and pessimistic. They seem do not value the leisure time or personal gratification for desires.</li>
+                        </ol>
+                        <p>If you happen to meet a Chinese from China and need to work with him/her as a team, hopefully this information can help you adapt faster.</p>
+                    </div>
+                </div>
             </div>
             <!--/.col-sm-6-->
         </div>
         <!--/.container-->
     </section>
     <!--/#content-->
+    <script>
+        document.getElementById('selectButton')
+            .addEventListener('change', function() {
+                var vis = document.querySelector('.vis'),
+                    target = document.getElementById(this.value);
+                if (vis !== null) {
+                    vis.className = 'inv';
+                }
+                if (target !== null) {
+                    target.className = 'vis';
+                }
+            })
+    </script>
 {% endblock %}
 
 {% block drop %}
     active
 {% endblock %}
 
-<script>
-    var nextb = document.getElementById("next-btn");
-    console.log(this);
-    nextb.addEventListener('click',function(){
-        var pre = document.getElementById("pre"),
-            nex = document.getElementById("nex");
-        pre.className = "inv";
-        nex.className = "vis";
-        console.log(this);
-    },false)
-</script>
+
