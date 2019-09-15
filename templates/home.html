@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'test_layout.html' %}
 {% load staticfiles %}
 
 {% block title %}
@@ -6,32 +6,163 @@
 {% endblock %}
 
 {% block content %}
-    <section id="main-slider" class="no-margin">
-        <div class="carousel slide">
-            <div class="item active" style="background-image: url({% static 'images/bg1.jpg' %})">
-                <div class="container main-content">
-                    <div align="center">
-                        <div class="home-title">
-                            <h1>We are Connecting Communities</h1>
-                            <h2>
-                                New to Australia? It may be hard to move to a new place. Find out about the multicultural life in Australia!
-                            </h2>
+<!--/ Intro Skew Start /-->
+    <div id="home" class="intro route bg-image" style="background-image: url({% static 'test1/img/test2.jpg' %})">
+        <div class="overlay-itro"></div>
+        <div class="intro-content display-table">
+            <div class="table-cell">
+                <div class="container">
+                    <h1 class="intro-title mb-4">We are Connecting Communities</h1>
+                    <p class="intro-subtitle">
+                        <span class="text-slider-items">New to Australia? It may be hard to move to a new place. Find out about the multicultural life in Australia!</span>
+                        <strong class="text-slider"></strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!--/ Intro Skew End /-->
+
+<!--/ Section Society Start /-->
+    <section id="society" class="society-mf sect-pt4 route">
+        <div class="container">
+            <div class="title-box text-center">
+                <h3 class="title-a">
+                    Get to Know the Society
+                </h3>
+                <div align="center">
+                    <p class="subtitle-a">
+                        Based on the nationalities, there are top 6 cultural groups in Australia. Select one of these cards below to know more about them.
+                    </p>
+                </div>
+                <div class="line-mf"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-society card-box">
+                        <div class="card-img">
+                            <a href="blog-single.html"><img src="/static/images/society/australia.jpg" alt="" class="img-fluid"></a>
                         </div>
-                        <div class="home-button">
-                            <a class="btn-feature" href="{% url 'region_trend' %}"><b>Migration Trends</b></a><br>
-                            <a class="btn-feature" href="{% url 'culture_display' %}"><b>Culture Characteristics</b></a><br>
-                            <a class="btn-feature" style="margin-bottom: 10px;" href=""><b>Coming Soon...</b></a>
+                        <div class="card-body">
+                            <div class="card-category-box">
+                                <div class="card-category">
+                                    <h6 class="category">Culture</h6>
+                                </div>
+                            </div>
+                            <h3 class="card-title"><a href="{% url 'au_display' %}">Australia</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-society card-box">
+                        <div class="card-img">
+                            <a href="{% url 'au_display' %}"><img src="/static/images/society/uk.jpg" alt="" class="img-fluid"></a>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category-box">
+                                <div class="card-category">
+                                    <h6 class="category">Culture</h6>
+                                </div>
+                            </div>
+                            <h3 class="card-title"><a href="blog-single.html">United Kingdom</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-society card-box">
+                        <div class="card-img">
+                            <a href="blog-single.html"><img src="/static/images/society/new_zealand.jpg" alt="" class="img-fluid"></a>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category-box">
+                                <div class="card-category">
+                                    <h6 class="category">Culture</h6>
+                                </div>
+                            </div>
+                            <h3 class="card-title"><a href="blog-single.html">New Zealand</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-society card-box">
+                        <div class="card-img">
+                            <a href="society-single.html"><img src="/static/images/society/china.jpg" alt="" class="img-fluid"></a>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category-box">
+                                <div class="card-category">
+                                    <h6 class="category">Culture</h6>
+                                </div>
+                            </div>
+                            <h3 class="card-title"><a href="blog-single.html">China</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-society card-box">
+                        <div class="card-img">
+                            <a href="society-single.html"><img src="/static/images/society/india.jpg" alt="" class="img-fluid"></a>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category-box">
+                                <div class="card-category">
+                                    <h6 class="category">Culture</h6>
+                                </div>
+                            </div>
+                            <h3 class="card-title"><a href="blog-single.html">India</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-society card-box">
+                        <div class="card-img">
+                            <a href="blog-single.html"><img src="/static/images/society/vietnam.jpg" alt="" style="width: 100%; height: 100%;" class="img-fluid"></a>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category-box">
+                                <div class="card-category">
+                                    <h6 class="category">Culture</h6>
+                                </div>
+                            </div>
+                            <h3 class="card-title"><a href="society-single.html">Vietnam</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--/.container-->
     </section>
+    <!--/ Section Society End /-->
 
+    <div class="section-counter paralax-mf bg-image" style="background-image: url(/static/images/counters-bg.jpg)">
+        <div class="overlay-mf"></div>
+    </div>
+
+    <!--/ Section Event Start /-->
+    <section id="event" class="event-mf sect-pt4 route">
+        <div class="container">
+            <div class="box-shadow-full">
+                <div class="title-box text-center">
+                    <h3 class="title-a">
+                        Join an Event
+                    </h3>
+                    <div align="center">
+                        <p class="subtitle-a">
+                            Participating an event makes you meet many people and help you to get the sense of belonging. Feel the atmosphere of Melbourne.
+                        </p>
+                    </div>
+                    <div class="line-mf"></div>
+                </div>
+                <div align="center">
+                    <a class="button button-a button-big button-rouded" href="{% url 'event_display' %}">Get More Events</a>
+                </div>
+            </div>
+        </div>
+  </section>
 
 {% endblock %}
 
 {% block home %}
-    class="active"
+    active
 {% endblock %}

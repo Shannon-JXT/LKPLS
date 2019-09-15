@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Community Events
+{% endblock %}
+
+{% block content %}
+
+    <section id="event">
+        <div class="section-counter paralax-mf bg-image" style="background-image: url(/static/images/event.jpg)">
+            <div class="overlay-mf-event"></div>
+            <div class="intro-content display-table">
+                <div class="table-cell">
+                    <div class="container">
+                        <h2 style="font-weight: 600; color: white; position: relative;">Community Events</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container info-area">
+            <!--
+                <div class="row">
+                    <div class="col-md-4">
+                        <select class="btn btn-default dropdown-toggle" style="width: 60%;">
+
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select class="btn btn-default dropdown-toggle">
+                            <option value="all_cat">Category</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select class="btn btn-default dropdown-toggle">
+                            <option value="all_key">Keyword</option>
+                        </select>
+                    </div>
+                </div>
+                -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="find-area" align="center">
+                        <h2>Refine Results</h2>
+                        <form action="{% url 'search' %}">
+                            <table class="find-table">
+                                <tr class="find-row">
+                                    <td align="right"><p>Keyword&nbsp;</p></td>
+                                    <td><input type="text" name="keyword" value="Enter Keywords" class="find-input"></td>
+                                </tr>
+                                <!--
+                                <tr class="find-row">
+                                    <td align="right"><p>Location&nbsp;</p></td>
+                                    <td>
+                                        <select class="btn btn-default dropdown-toggle">
+                                            <option>All Locations</option>
+                                        </select>
+                                    </td>
+                                </tr>-->
+                                <tr class="find-row">
+                                    <td align="right"><p>Start&nbsp;Date&nbsp;</p></td>
+                                    <td><input type="text" name="startdate" value="" class="find-input"></td>
+                                </tr>
+
+                            </table>
+                            <button class="button button-a button-rouded" type="submit" style="width: 30%; margin-bottom: 10px;">Find</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    {% for event in page_of_events %}
+                        <div class="event-unit">
+                            <h3><a href="{{ event.link }}">{{ event.title }}</a></h3>
+                            <p>{{ event.start_date }}</p>
+                            <p class="event-desc">{{ event.description }}</p>
+                        </div>
+                    {% endfor %}
+
+                    <div class="row">
+                        {% if page_of_events.has_previous %}
+                        <a class="btn btn-primary" href="{% url 'search' %}?keyword={{ search_keyword }}&page={{ page_of_events.previous_page_number }}">
+                            back</a>
+                        {% endif %}
+                        {% if page_of_events.has_next %}
+                        <a class="btn btn-primary" href="{% url 'search' %}?keyword={{ search_keyword }}&page={{ page_of_events.next_page_number }}">next</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

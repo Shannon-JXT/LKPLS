@@ -20,3 +20,16 @@ class Region(models.Model):
 
     def __str__(self):
         return "<Region: %s  Migrant: %s>" % (self.region_name, self.migrant_num)
+
+class Event(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    link = models.CharField(max_length=300)
+   # location = models.CharField(max_length=100)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+    #owner = models.CharField(max_length=50)
+
+
+    def __str__(self):
+        return "<Event: %s>" % self.title

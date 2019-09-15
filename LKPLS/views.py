@@ -7,3 +7,7 @@ def home(request):
 def about(request):
     context = {}
     return render_to_response('about.html', context)
+
+def test(request):
+    context = {}
+    return render_to_response('test.html', context)

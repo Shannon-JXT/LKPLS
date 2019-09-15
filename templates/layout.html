@@ -1,88 +1,113 @@
 {% load staticfiles %}
-<!--<!DOCTYPE html>-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title%}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
 
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/static/css/prettyPhoto.css">
-    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/static/css/icomoon.css">
-    <link rel="stylesheet" href="/static/css/main.css">
-    <link rel="stylesheet" href="/static/css/responsive.css">
+
+
+    <!-- Bootstrap CSS File -->
+    <link href="/static/test1/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="/static/test1/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/test1/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/static/test1/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/static/test1/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/static/test1/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link rel="stylesheet" href="/static/test1/css/style.css">
 
     <link rel="shortcut icon" href="/static/images/icon/icon-16.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/images/icon/icon-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/icon/icon-114.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/images/icon/icon-72.png">
     <link rel="apple-touch-icon-precomposed" href="/static/images/icon/icon-57.png">
-
 </head>
 <body>
-    <header id="header">
-        <!--navigation bar-->
-        <div class="navbar navbar-inverse" role="banner" style="background: #151515; border-radius: 0;">
-            <!--container-->
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="{% url 'home' %}"><img src="/static/images/logo.png"></a>
-                </div>
-
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li {% block home %}{% endblock %}><a href="{% url 'home' %}">Home</a></li>
-                        <li class="dropdown {% block drop %}{% endblock %}">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Services <span class="fa fa-angle-down"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{% url 'region_trend' %}">Migration Trends</a></li>
-                                <li><a href="{% url 'culture_display' %}">Culture Characteristics</a></li>
-                            </ul>
-                        </li>
-                        <li {% block about %}{% endblock %}><a href="{% url 'about' %}">About Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--/.container-->
-        </div>
-        <!--/navigation bar-->
-    </header>
-
-    {% block content %}{% endblock %}
-
-    <footer id="footer" class="midnight-blue">
+<!--/ Nav Star /-->
+    <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2019 <a target="_blank" href="{% url 'about' %}" title="Linkin Plus">Linkin Plus</a>. All Rights Reserved.
-                </div>
+            <a class="navbar-brand js-scroll" href="#page-top">
+                Linkin+
+                <!--<br><i><font size="3px">Connecting Communities Across Melbourne</font></i>-->
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+                aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll {% block home %}{% endblock %}" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll {% block events %}{% endblock %}" href="#event">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll {% block demography %}{% endblock %}" href="{% url 'map_display' %}">Demography</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll {% block about %}{% endblock %}" href="{% url 'about' %}">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--/ Nav End /-->
+    {% block content %}{% endblock %}
+<style>
+    .fixed-bottom {position: fixed;bottom: 0;width:100%;}
+</style>
+    <footer>
+        <div class="container">
+            <div style="color: #2b5745;">
+                &copy; 2019 <a target="_blank" href="{% url 'about' %}" title="Linkin Plus">Linkin Plus</a>. All Rights Reserved.
+            </div>
+                <!--
                 <div class="col-sm-6">
                     <ul class="pull-right">
                         <li><a href="{% url 'home' %}">Home</a></li>
                         <li><a href="{% url 'about' %}">About Us</a></li>
                     </ul>
-                </div>
-            </div>
+                </div> -->
         </div>
     </footer>
     <!--/#footer-->
+<script>
+    $(function(){
+    function footerPosition(){
+        $("footer").removeClass("fixed-bottom");
+        var contentHeight = document.body.scrollHeight,//网页正文全文高度
+            winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+        if(!(contentHeight > winHeight)){
+            //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+            $("footer").addClass("fixed-bottom");
+        }
+    }
+    footerPosition();
+    $(window).resize(footerPosition);
+});
+</script>
+    <!-- JavaScript Libraries -->
+    <script src="/static/test1/lib/jquery/jquery.min.js"></script>
+    <script src="/static/test1/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/static/test1/lib/popper/popper.min.js"></script>
+    <script src="/static/test1/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/test1/lib/easing/easing.min.js"></script>
+    <script src="/static/test1/lib/counterup/jquery.waypoints.min.js"></script>
+    <script src="/static/test1/lib/counterup/jquery.counterup.js"></script>
+    <script src="/static/test1/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/static/test1/lib/lightbox/js/lightbox.min.js"></script>
+    <script src="/static/test1/lib/typed/typed.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="/static/test1/contactform/contactform.js"></script>
 
-    <script type="text/javascript" src="/static/js/jquery.js"></script>
-    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="/static/js/main.js"></script>
-    <script type="text/javascript" src="/static/js/respond.min.js"></script>
+    <!-- Template Main Javascript File -->
+    <script src="/static/test1/js/main.js"></script>
 
 </body>
 </html>

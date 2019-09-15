@@ -1,12 +1,24 @@
-from django.shortcuts import render_to_response
-from .models import Culture, Region
+from django.shortcuts import render, render_to_response
+from django.core.paginator import Paginator
+from .models import Culture, Region, Event
 import json
 
 # Create your views here.
-def culture_display(request):
+def au_display(request):
     context = {}
-    context['cultures'] = Culture.objects.all()
-    return render_to_response("culture_display.html", context)
+    return render_to_response("au_info.html", context)
+
+def cn_display(request):
+    context = {}
+    return render_to_response("cn_info.html", context)
+
+def nz_display(request):
+    context = {}
+    return render_to_response("nz_info.html", context)
+
+def uk_display(request):
+    context = {}
+    return render_to_response("uk_info.html", context)
 
 def region_trend(request):
     data = Region.objects.all()
@@ -42,3 +54,48 @@ def change_country_name(name):
         return 'en'
     if name == 'Vietnam':
         return 'vn'
+
+def event_display(request):
+    events = Event.objects.all()
+    paginator = Paginator(events, 10)
+    page_num = request.GET.get('page', 1)
+    page_of_events = paginator.get_page(page_num)
+
+    context = {}
+    context['page_of_events'] = page_of_events
+    return render(request, "event_display.html", context)
+
+def search(request):
+    keyword = request.GET.get('keyword', '')
+    startdate = request.GET.get('startdate', '')
+    if startdate == '' and keyword == '':
+        search_events = Event.objects.all()
+    elif startdate == '' and keyword != '':
+        search_events = Event.objects.filter(title__icontains=keyword)
+    else:
+        search_events = Event.objects.filter(title__icontains=keyword, start_date=startdate)
+
+    paginator = Paginator(search_events, 10)
+    page_num = request.GET.get('page', 1)
+    page_of_events = paginator.get_page(page_num)
+
+    context = {}
+    context['search_keyword'] = keyword
+    context['search_startdate'] = startdate
+    context['page_of_events'] = page_of_events
+    context['search_events_count'] = search_events.count()
+    return render(request, 'event_search.html', context)
+
+
+def map_display(request):
+    context = {}
+    return render_to_response('mel_map.html', context)
+
+'''
+def searchTest(request):
+    search_word = request.GET.get('keyword','')
+    search_events = Event.objects.filter(title__icontains=search_word)
+    context = {}
+    context['events'] = search_events
+    return render(request, 'event_search.html',context)
+'''
