@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'j74q&k@b=xcg8ivb7+#8lf%z9t!jy1kk9yoz@$4(7g5yai3594'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'linkinplus.azurewebsites.net', 'linkinplus.tk']
 
@@ -124,4 +124,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    'D:/home/site/wwwroot/static',
 ]
