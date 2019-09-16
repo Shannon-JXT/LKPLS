@@ -1,65 +1,117 @@
-jQuery(function ($) {
-    'use strict';
+(function ($) {
+	"use strict";
+	var nav = $('nav');
+  var navHeight = nav.outerHeight();
+  
+  $('.navbar-toggler').on('click', function() {
+    if( ! $('#mainNav').hasClass('navbar-reduce')) {
+      $('#mainNav').addClass('navbar-reduce');
+    }
+  })
 
-    //#main-slider
-    $(function () {
-        $('#main-slider.carousel').carousel({
-            interval: 8000
-        });
-    });
+  // Preloader
+  $(window).on('load', function () {
+    if ($('#preloader').length) {
+      $('#preloader').delay(100).fadeOut('slow', function () {
+        $(this).remove();
+      });
+    }
+  });
 
-    $('.window-height').height($(window).height());
+  // Back to top button
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('.back-to-top').fadeIn('slow');
+    } else {
+      $('.back-to-top').fadeOut('slow');
+    }
+  });
+  $('.back-to-top').click(function(){
+    $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
+    return false;
+  });
 
-    // accordian
-    $('.accordion-toggle').on('click', function () {
-        $(this).closest('.panel-group').children().each(function () {
-            $(this).find('>.panel-heading').removeClass('active');
-        });
+	/*--/ Star ScrollTop /--*/
+	$('.scrolltop-mf').on("click", function () {
+		$('html, body').animate({
+			scrollTop: 0
+		}, 1000);
+	});
 
-        $(this).closest('.panel-heading').toggleClass('active');
-    });
+	/*--/ Star Counter /--*/
+	$('.counter').counterUp({
+		delay: 15,
+		time: 2000
+	});
 
-    // Contact form
-    var form = $('#main-contact-form');
-    form.submit(function (event) {
-        event.preventDefault();
-        var form_status = $('<div class="form_status"></div>');
-        $.ajax({
-            url: $(this).attr('action'),
+	/*--/ Star Scrolling nav /--*/
+	$('a.js-scroll[href*="#"]:not([href="#"])').on("click", function () {
+		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if (target.length) {
+				$('html, body').animate({
+					scrollTop: (target.offset().top - navHeight + 5)
+				}, 1000, "easeInOutExpo");
+				return false;
+			}
+		}
+	});
 
-            beforeSend: function () {
-                form.prepend(form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn());
-            }
-        }).done(function (data) {
-            form_status.html('<p class="text-success">' + data.message + '</p>').delay(3000).fadeOut();
-        });
-    });
+	// Closes responsive menu when a scroll trigger link is clicked
+	$('.js-scroll').on("click", function () {
+		$('.navbar-collapse').collapse('hide');
+	});
 
-    $('.testimonial-slider').owlCarousel({
-        margin: 30,
-        responsive: {
-            0: {
-                items: 1
-            },
-            768: {
-                items: 2
-            },
-            992: {
-                items: 3
-            }
-        }
-    });
+	// Activate scrollspy to add active class to navbar items on scroll
+	$('body').scrollspy({
+		target: '#mainNav',
+		offset: navHeight
+	});
+	/*--/ End Scrolling nav /--*/
 
-    //goto top
-    $('.gototop').click(function (event) {
-        event.preventDefault();
-        $('html, body').animate({
-            scrollTop: $("body").offset().top
-        }, 500);
-    });
+	/*--/ Navbar Menu Reduce /--*/
+	$(window).trigger('scroll');
+	$(window).on('scroll', function () {
+		var pixels = 50; 
+		var top = 1200;
+		if ($(window).scrollTop() > pixels) {
+			$('.navbar-expand-md').addClass('navbar-reduce');
+			$('.navbar-expand-md').removeClass('navbar-trans');
+		} else {
+			$('.navbar-expand-md').addClass('navbar-trans');
+			$('.navbar-expand-md').removeClass('navbar-reduce');
+		}
+		if ($(window).scrollTop() > top) {
+			$('.scrolltop-mf').fadeIn(1000, "easeInOutExpo");
+		} else {
+			$('.scrolltop-mf').fadeOut(1000, "easeInOutExpo");
+		}
+	});
 
-    //Pretty Photo
-    $("a[rel^='prettyPhoto']").prettyPhoto({
-        social_tools: false
-    });
-});
+	/*--/ Star Typed /--*/
+	if ($('.text-slider').length == 1) {
+    var typed_strings = $('.text-slider-items').text();
+		var typed = new Typed('.text-slider', {
+			strings: typed_strings.split(','),
+			typeSpeed: 80,
+			loop: true,
+			backDelay: 1100,
+			backSpeed: 30
+		});
+	}
+
+	/*--/ Testimonials owl /--*/
+	$('#testimonial-mf').owlCarousel({
+		margin: 20,
+		autoplay: true,
+		autoplayTimeout: 4000,
+		autoplayHoverPause: true,
+		responsive: {
+			0: {
+				items: 1,
+			}
+		}
+	});
+
+})(jQuery);
