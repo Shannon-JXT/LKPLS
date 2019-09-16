@@ -19,16 +19,16 @@
                     <a {% block cn-status %}{% endblock %} href="{% url 'cn_display' %}">China</a>
                 </li>
                 <li class="culture-navbar-item">
-                    <a {% block in-status %}{% endblock %} href="#">India</a>
+                    <a {% block in-status %}{% endblock %} href="{% url 'india_display' %}">India</a>
                 </li>
                 <li class="culture-navbar-item">
-                    <a {% block nz-status %}{% endblock %} href="#">New Zealand</a>
+                    <a {% block nz-status %}{% endblock %} href="{% url 'nz_display' %}">New Zealand</a>
                 </li>
                 <li class="culture-navbar-item {% block uk-status %}{% endblock %}">
-                    <a href="#">United Kingdom</a>
+                    <a href="{% url 'uk_display' %}">United Kingdom</a>
                 </li>
                 <li class="culture-navbar-item {% block vn-status %}{% endblock %}">
-                    <a href="#">Vietnam</a>
+                    <a href="{% url 'vn_display' %}">Vietnam</a>
                 </li>
             </ul>
             {% block information %}{% endblock %}

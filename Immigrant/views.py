@@ -20,6 +20,15 @@ def uk_display(request):
     context = {}
     return render_to_response("uk_info.html", context)
 
+def india_display(request):
+    context = {}
+    return render_to_response("india_info.html", context)
+
+def vn_display(request):
+    context = {}
+    return render_to_response("vn_info.html", context)
+
+
 def region_trend(request):
     data = Region.objects.all()
     year1996 = {'time': 1996}
