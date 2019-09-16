@@ -124,7 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    'https://linkinplus.azurewebsites.net/static',
+    os.path.join('https://linkinplus.azurewebsites.net/static', 'static'),
 ]
 
 STATICFILES_FINDERS = [
