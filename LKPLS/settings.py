@@ -26,7 +26,7 @@ SECRET_KEY = 'j74q&k@b=xcg8ivb7+#8lf%z9t!jy1kk9yoz@$4(7g5yai3594'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'linkinplus.azurewebsites.net', 'linkinplus.tk']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -123,9 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-'''
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-'''
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
