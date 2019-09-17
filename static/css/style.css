@@ -920,6 +920,19 @@ a:hover {
 /*======================================
 //--//-->   SOCIETY-CULTURE
 ======================================*/
+.select-navbar {
+    background-color: rgba(255, 255, 255, 0.6);
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+}
+
+.select-navbar-item {
+    margin-bottom: -1px;
+    float: left;
+    width: 200px;
+}
+
 .culture-navbar {
     list-style-type: none;
     overflow: hidden;

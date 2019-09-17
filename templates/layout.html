@@ -44,7 +44,7 @@
                         <a class="nav-link js-scroll {% block home %}{% endblock %}" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll {% block events %}{% endblock %}" href="#event">Events</a>
+                        <a class="nav-link js-scroll {% block events %}{% endblock %}" href="{% url 'event_display' %}">Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll {% block demography %}{% endblock %}" href="{% url 'map_display' %}">Demography</a>
