@@ -5,7 +5,7 @@ import json
 
 # Create your views here.
 def au_display(request):
-    data = Region.objects.filter(country_name='China')
+    data = Region.objects.all()
     year1996 = {'time': 1996}
     year2001 = {'time': 2001}
     year2006 = {'time': 2006}
@@ -13,16 +13,17 @@ def au_display(request):
     year2016 = {'time': 2016}
     for item in data:
         name = change_country_name(str(item.country_name))
-        if int(item.year) == 1996:
-            year1996[name] = item.migrant_num
-        if int(item.year) == 2001:
-            year2001[name] = item.migrant_num
-        if int(item.year) == 2006:
-            year2006[name] = item.migrant_num
-        if int(item.year) == 2011:
-            year2011[name] = item.migrant_num
-        if int(item.year) == 2016:
-            year2016[name] = item.migrant_num
+        if name == 'cn':
+            if int(item.year) == 1996:
+                year1996[name] = item.migrant_num
+            if int(item.year) == 2001:
+                year2001[name] = item.migrant_num
+            if int(item.year) == 2006:
+                year2006[name] = item.migrant_num
+            if int(item.year) == 2011:
+                year2011[name] = item.migrant_num
+            if int(item.year) == 2016:
+                year2016[name] = item.migrant_num
 
     dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
     return render_to_response("au_info.html", {'trends': json.dumps(dic)})
