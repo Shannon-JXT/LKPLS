@@ -921,10 +921,12 @@ a:hover {
 //--//-->   SOCIETY-CULTURE
 ======================================*/
 .select-navbar {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.9);
     list-style-type: none;
     overflow: hidden;
     padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .select-navbar-item {
@@ -933,16 +935,36 @@ a:hover {
     width: 200px;
 }
 
+.select-navbar-item a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #24b67e;
+}
+
+.select-navbar-item a:hover,
+.select-navbar-item a:focus,
+.select-navbar-item.active a {
+    padding-bottom: 5px;
+    border-bottom: 5px solid #24b67e;
+}
+
 .culture-navbar {
     list-style-type: none;
     overflow: hidden;
     padding: 0;
+    margin-top: 20%;
+    margin-bottom: 0;
+    border-radius: 8px 0;
 }
 
 .culture-navbar-item {
     margin-bottom: -1px;
     float: left;
     width: 140px;
+    border-right: 1px solid #daf0e7;
 }
 
 .culture-navbar-item a {
@@ -952,21 +974,14 @@ a:hover {
   padding-top: 10px;
   padding-bottom: 10px;
   color: #ffffff;
-  background-color: #24b67e;
+  background-color: rgba(36, 182, 126, 0.9);
 }
 
-.culture-navbar-item a:hover {
+.culture-navbar-item a:hover,
+.culture-navbar-item a:focus,
+ .culture-navbar-item.active a {
     color: #24b67e;
-    background-color: #ffffff;
-}
-.culture-navbar-item a:active {
-    color: #24b67e;
-    background-color: #ffffff;
-}
-
-.culture-navbar-item a:visited {
-    color: #24b67e;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 /*======================================
 //--//-->   EVENT
