@@ -147,17 +147,17 @@
                     .style("border-width", "2px")
                     .style("border-radius", "5px")
                     .style("padding", "5px")
-                    .style("position", "absolute")
+                    //.style("position", "absolute")
 
                 //mouse
                 var mouseover = function(d) {
                     Tooltip.style("opacity", 1)
                 }
-                var mousemove = function(d) {
-                    Tooltip.html(d.time + " : " + d.Vietnam)
-                        .style("top", (d3.event.pageY - 80)+"px")
-                        .style("left",(d3.event.pageX -30)+"px")
-                }
+                //var mousemove = function(d) {
+                    //Tooltip.html(d.time + " : " + d.Vietnam)
+                        //.style("top", (d3.event.pageY))
+                        //.style("left",(d3.event.pageX)/2+"px")
+                //}
                 var mouseleave = function(d) {
                     Tooltip.style("opacity", 0)
                 }
@@ -186,8 +186,15 @@
                     .attr("r", 7)
                     .style("fill", "#69b3a2")
                     .on("mouseover", mouseover)
-                    .on("mousemove", mousemove)
+                    //.on("mousemove", mousemove)
                     .on("mouseleave", mouseleave)
+                    .on("mousemove", function(d) {
+                        var matrix = this.getScreenCTM()
+                            .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
+                        Tooltip.html("Until "+d.time +"<br/>" +"Total number from Vietnam is " + d.Vietnam)
+                            .style("left", (window.pageXOffset + matrix.e -120) + "px")
+                            .style("top", (window.pageYOffset + matrix.f - 70) + "px");
+                        })
             </script>
             </div>
 

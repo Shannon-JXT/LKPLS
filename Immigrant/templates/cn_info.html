@@ -122,11 +122,11 @@
                 var mouseover = function(d) {
                     Tooltip.style("opacity", 1)
                 }
-                var mousemove = function(d) {
-                    Tooltip.html(d.time + " : " + d.China)
-                        .style("top", (d3.event.pageY - 80 )+"px")
-                        .style("left",(d3.event.pageX - 30)+"px")
-                }
+                //var mousemove = function(d) {
+                  //  Tooltip.html(d.time + " : " + d.China)
+                    //    .style("top", (d3.event.pageY-80)+"px")
+                      //  .style("left",(d3.event.pageX -120))
+                //}
                 var mouseleave = function(d) {
                     Tooltip.style("opacity", 0)
                 }
@@ -155,8 +155,15 @@
                     .attr("r", 7)
                     .style("fill", "#69b3a2")
                     .on("mouseover", mouseover)
-                    .on("mousemove", mousemove)
+                    //.on("mousemove", mousemove)
                     .on("mouseleave", mouseleave)
+                    .on("mousemove", function(d) {
+                        var matrix = this.getScreenCTM()
+                            .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
+                        Tooltip.html("Until "+d.time +"<br/>" +"Total number from China is " + d.China)
+                            .style("left", (window.pageXOffset + matrix.e -120) + "px")
+                            .style("top", (window.pageYOffset + matrix.f - 70) + "px");
+                        })
             </script>
             </div>
             <div id="right" style="background-color: white;margin-left: 50%;height: 400px;">
