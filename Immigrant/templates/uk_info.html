@@ -72,7 +72,7 @@
                     <p>The United Kingdom is still number one of the countries, which has the highest number of migrations to Melbounre in each census year. The trend of migrations remains steady, but the UK group is still one of the largest in Greater Melbourne.</p>
                     <p align="center"><i>If you are planning for moving to Australia, then Melbourne can be the superb place for you.</i></p>
                 </div>
-                <div id="my_dataviz" class="col-lg-7 pic-box">
+                <div id="my_dataviz" style="float: right;width: 50%;height: 400px;background-color: white;">
                     <script>
                         var data_temp = {{ uk_trends|safe }};
                         var data = new Array();
@@ -145,9 +145,9 @@
                             Tooltip.style("opacity", 1)
                         }
                         //var mousemove = function(d) {
-                          //  Tooltip.html(d.time + " : " + d['United Kingdom'])
-                            //    .style("top", (d3.event.pageY - 80)+"px")
-                              //  .style("left",(d3.event.pageX -30)+"px")
+                         //   Tooltip.html(d.time + " : " + d['United Kingdom'])
+                           //     .style("top", (d3.event.pageY - 80)+"px")
+                             //   .style("left",(d3.event.pageX -30)+"px")
                         //}
                         var mouseleave = function(d) {
                             Tooltip.style("opacity", 0)
@@ -183,7 +183,7 @@
                                 var matrix = this.getScreenCTM()
                                     .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
                                 Tooltip.html("Until "+d.time +"<br/>" +"Total number from the United Kingdom is " + d["United Kingdom"])
-                                    .style("left", (window.pageXOffset + matrix.e -120) + "px")
+                                    .style("left", (window.pageXOffset + matrix.e) + "px")
                                     .style("top", (window.pageYOffset + matrix.f - 70) + "px");
                             })
                     </script>
