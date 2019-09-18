@@ -2,19 +2,92 @@
 {% load staticfiles %}
 
 {% block title %}
-    Australia
+    India
 {% endblock %}
 
 {% block image1 %}
-    {% static 'images/cultures/au-1.jpg' %}
-{% endblock %}
-
-{% block image2 %}
-    {% static 'images/cultures/au-2.jpg' %}
+    {% static 'images/cultures/Indian_CL_img.jpg'%}
 {% endblock %}
 
 {% block information %}
-<!-- ui here -->
+    <div class="tab-wrap">
+        <ul class="select-navbar nav nav-tabs nav-stacked" style="margin-top: 0;">
+            <li class="select-navbar-item">
+                <a href="#tab1" data-toggle="tab">General Information</a>
+            </li>
+            <li class="select-navbar-item">
+                <a href="#tab2" data-toggle="tab">Easy Phrases</a>
+            </li>
+            <li class="select-navbar-item">
+                <a href="#tab3" data-toggle="tab">Do's and Don'ts</a>
+            </li>
+            <li class="select-navbar-item">
+                <a href="#tab4" data-toggle="tab">Immigration Trend</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- culture body -->
+    <div class="tab-content" style="background-color: white; margin-top: 0; padding: 10px;">
+        <div class="tab-pane fade" id="tab1">
+            <br>
+            <p>India is culturally diverse country having different traditions and trends. Religion and Language in Indian change with geographical regions of their country. Indian culture is basically the amalgamation of different cultures and is highly influenced by their ancestral history. India is considered to be the origin of Hinduism and Buddhism India is quite famous from earlier times for its architecture, medicine i.e. Ayurveda.
+                In addition, India is quite famous for its cuisines which is also highly influenced by their cultural diversity. Herbs and the spices that they use, make their cooking style different and special.
+                Indian clothing, customs and celebrations is also highly influential by their different cultures.</p>
+             <p align="center"><i>" India is considered to be the land of diversity because of the its diverse cultures!!! "</i></p>
 
 
+        </div>
+
+        <div class="tab-pane fade" id="tab3">
+            <br>
+            <p><strong><i>Do's : </i></strong></p>
+                <ul>
+                    <li>Elder are ought to be treated with noticeable respect.</li>
+                    <li>In many Hindu region places, individual needs to walk barefoot.</li>
+                    <li>Questions like “what’s your salary?” or “Are you married or not” are considered very common in their conversation.</li>
+                    <li>While having interaction with Indians, conversation is based on the gender and relationships. Women are generally expected to be given more respect.</li>
+                    <li>Indians do accept light-hearted humour and light-teasing.</li>
+                </ul>
+            <p><strong><i>Don'ts : </i></strong></p>
+                <ul>
+                    <li>Do not criticize the ability or appearance of the individual by using negative comments. This form of negative comments are considered offensive.</li>
+                    <li> Indians, generally take time to make important decisions so don’t consider their work culture as casual or informal, instead Indians are very diligent individuals.</li>
+                    <li>From traditional time,eating food with left hand is considered to be immoral.But with the modernisation, this is quite acceptable among Indians.</li>
+                    <li>Indians are generally not so affectionate publicly like ‘kiss in public’.</li>
+                    <li>In India, most of the states have its own culture as well as norms, hence be little bit careful and don’t judge whole country based on the experience with a particular individual.</li>
+                    <li>Don’t point finger to a particular individual as it is considered to be rude behaviour.</li>
+                </ul>
+
+
+        </div>
+
+
+        <div class="tab-pane fade" id="tab2">
+            <br>
+            <p><strong> There are many different ways of greetings in India depending on the religion of the individual : </strong> </p>
+                <ul>
+                    <li>Hindus greet each other by saying ‘Namaste’. In a more traditional way, Hindus folds their hands by holding their palms together having the fingertips pointing towards the chin level. It reflects the gesture of respect.</li>
+                    <li>Sikh or Panjabis greet each other by saying ‘Sat Sri Akaal’. Here Sat means Satya (Truth), Sri is a word to give respect and Akaal means ‘the timeless being, God’.</li>
+                    <li>Muslims greet each other by shaking hands and saying ‘Salaam al-eikum.’</li>
+                    <li>Gujarati greet by saying ‘Kem Cho’ which means ‘How are you’.</li>
+                    <li>However, new generation generally prefers to shake hands with each other.</li>
+                </ul>
+
+        </div>
+
+        <div class="tab-pane fade" id="tab4">
+            <br>
+            <p align="center"><strong> <font color="Green"> <font size="4"> <u>  Indians in Melbourne: Expatriate Trend </u> </font></font> </strong></p>
+            <p>Greater Melbourne has a vibrant Indian expat community.There has been a steep increase in the percentage of population of Indian migrants to Melbourne over the past two decades.
+                Indian immigrant is at second rank in terms of dominating migration as compared to other countries of origin.</p>
+            <p align="center"><i>If you are planning for moving to Australia, then Melbourne can be the superbplace for you.</i></p>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block in-status %}
+    active
 {% endblock %}

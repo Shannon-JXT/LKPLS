@@ -2,19 +2,70 @@
 {% load staticfiles %}
 
 {% block title %}
-    Australia
+    New Zealand
 {% endblock %}
 
 {% block image1 %}
-    {% static 'images/cultures/au-1.jpg' %}
-{% endblock %}
-
-{% block image2 %}
-    {% static 'images/cultures/au-2.jpg' %}
+    {% static 'images/cultures/new-zealand.jpg'%}
 {% endblock %}
 
 {% block information %}
-<!-- ui here -->
+    <div class="tab-wrap">
+        <ul class="select-navbar nav nav-tabs nav-stacked" style="margin-top: 0;">
+            <li class="select-navbar-item">
+                <a href="#tab1" data-toggle="tab">General Information</a>
+            </li>
+            <li class="select-navbar-item">
+                <a href="#tab2" data-toggle="tab">Easy Phrases</a>
+            </li>
+            <li class="select-navbar-item">
+                <a href="#tab3" data-toggle="tab">Do's and Don'ts</a>
+            </li>
+            <li class="select-navbar-item">
+                <a href="#tab4" data-toggle="tab">Immigration Trend</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- culture body -->
+    <div class="tab-content" style="background-color: white; margin-top: 0; padding: 10px;">
+        <div class="tab-pane fade" id="tab1">
 
 
+
+        </div>
+
+        <div class="tab-pane fade" id="tab3">
+            <br>
+            <p><strong><i>Do's : </i></strong></p>
+                <ul>
+
+                </ul>
+            <p><strong><i>Don'ts : </i></strong></p>
+                <ul>
+
+                </ul>
+
+
+        </div>
+
+
+        <div class="tab-pane fade" id="tab2">
+            <p></p>
+                <ul>
+
+                </ul>
+
+        </div>
+
+        <div class="tab-pane fade" id="tab4">
+
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block nz-status %}
+    active
 {% endblock %}

@@ -2,19 +2,82 @@
 {% load staticfiles %}
 
 {% block title %}
-    Australia
+    Vietnam
 {% endblock %}
 
 {% block image1 %}
-    {% static 'images/cultures/au-1.jpg' %}
-{% endblock %}
-
-{% block image2 %}
-    {% static 'images/cultures/au-2.jpg' %}
+    {% static 'images/cultures/Vietnam.jpg'%}
 {% endblock %}
 
 {% block information %}
-<!-- ui here -->
+    <div class="tab-wrap">
+        <ul class="select-navbar nav nav-tabs nav-stacked" style="margin-top: 0;">
+            <li class="select-navbar-item">
+                <a href="#tab1" data-toggle="tab">General Information</a>
+            </li>
+            <li class="select-navbar-item">
+                <a href="#tab2" data-toggle="tab">Easy Phrases</a>
+            </li>
+            <li class="select-navbar-item">
+                <a href="#tab3" data-toggle="tab">Do's and Don'ts</a>
+            </li>
+            <li class="select-navbar-item">
+                <a href="#tab4" data-toggle="tab">Immigration Trend</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- culture body -->
+    <div class="tab-content" style="background-color: white; margin-top: 0; padding: 10px;">
+        <div class="tab-pane fade" id="tab1">
+            <br>
+            <p>Vietnamese culture is considered to be one of the oldest and is highly influenced by Chinese culture. Vietnamese values family and clan over individualism. Vietnamese cuisines is quite famous around the world and their cuisines can be classified according to the north, south and central regions of their country.
+                Vietnam has rich tradition of dance and music which Vietnamese enjoys a lot.
+                Vietnamese art is highly influenced by Buddhism and Taoism. The traditional clothing of Vietnamese has changed from time to time
+            </p>
 
 
+        </div>
+
+        <div class="tab-pane fade" id="tab3">
+            <br>
+            <p><strong><i>Do's : </i></strong></p>
+                <ul>
+                    <li>Always greet them by saying Xin chào. In addition, handshakes is also considered as the common form of greeting and goodbye.</li>
+                    <li>Remove shoes whenever you enter a Vietnamese house.</li>
+                    <li>Bow your head in order to pay respect to the Vietnamese temple.</li>
+                    <li>Try to keep the discussion with them in harmonious way.</li>
+                </ul>
+            <p><strong><i>Don'ts : </i></strong></p>
+                <ul>
+                    <li>Don’t talk about Vietnam war and other political conflicts of their country.</li>
+                    <li>Don’t criticise them by pointing out their mistakes.</li>
+                    <li>Questions like “what’s your salary?” or “Are you married or not” are considered very common in their conversation.</li>
+                    <li>Avoid raising the controversial topic of North and South Vietnam.</li>
+                    <li>Don’t flaunt wealth in front of them, they consider it as a very impolite behaviour.</li>
+                    <li>Avoid leaving the food on your plate while eating them as it is considered vey rude among Vietnamese.</li>
+                </ul>
+
+
+        </div>
+
+
+        <div class="tab-pane fade" id="tab2">
+
+
+        </div>
+
+        <div class="tab-pane fade" id="tab4">
+<br>
+            <p align="center"><strong> <font color="Green"> <font size="4"> <u> Vietnamese Community in Melbourne: Expatriate Trend </u> </font></font> </strong></p>
+            <p>Vietnamese stand at the rank 5 in terms of migration to Victoria. There has been increase in migration by about 40% in Victoria. Australia is considered to be the second preferred destination after United States.</p>
+            <p align="center"><i>If you are planning for moving to Australia, then Melbourne can be the superb place for you.</i></p>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block vn-status %}
+    active
 {% endblock %}
