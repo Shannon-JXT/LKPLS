@@ -46,15 +46,126 @@
         </div>
 
         <div class="tab-pane fade" id="tab2">
+            <br>
+            <p align="center"><strong> <font color="Green"> <font size="4"> <u> Chinese Community in Melbourne: Expatriate Trend </u> </font></font> </strong></p>
+            <script src="https://d3js.org/d3.v4.js"></script>
+            <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+            <div id="my_dataviz" style="float: left;width: 50%;height: 400px;background-color: white;">
             <script>
-                var data_temp = {{ cn_trends|safe }};
-                var data = new Array();
-                for (var i in data_temp) {
-                    data.push(data_temp[i]);
-                }
-                console.log(data);
-            </script>
+                    var data_temp = {{ cn_trends|safe }};
+                    var data = new Array();
+                    for (var i in data_temp) {
+                        data.push(data_temp[i]);
+                 }
+                    console.log(data);
 
+
+                    var margin = {top: 20, right: 10, bottom: 30, left: 45},
+                        width = 500 - margin.left - margin.right,
+                        height = 400 - margin.top - margin.bottom;
+
+                    var svg = d3.select("#my_dataviz")
+                        .append("svg")
+                        .attr("width", width + 100)
+                        .attr("height", height + margin.top + margin.bottom)
+                        .append("g")
+                        .attr("transform",
+                            "translate(" + margin.left + "," + margin.top + ")");
+                // Title
+                    svg.append("text")
+                        .attr("x", (width/2))
+                        .attr("y", 0 - (margin.top/2))
+                        .attr("text-anchor", "middle")
+                        .style("font-size", "16px")
+                        //.text("Migration Trends of Victoria")
+
+                // Add X axis --> it is a date format
+                    var x = d3.scaleLinear()
+                        .domain(d3.extent(data, function(d) { return d.time; }))
+                        .range([ 0, width ]);
+                    svg.append("g")
+                        .attr("transform", "translate(0," + height + ")")
+                        .call(d3.axisBottom(x));
+
+                    svg.append("text")
+                        .attr("transform", "translate(" + width/2 + "," + (height + margin.bottom) + ")")
+                        .style("text-anchor", "middle")
+                        .text("Census Year");
+
+                // Add Y axis
+                    var y = d3.scaleLinear()
+                        .domain( [0, d3.max(data, function(d) { return d['China']; }) + 20000])
+                        .range([ height, 0 ]);
+                svg.append("g")
+                    .call(d3.axisLeft(y))
+                    .append("text")
+                    .attr("fill", "#000")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 6)
+                    .attr("dy", "0.9em")
+                    .style("text-anchor", "end")
+                    .text("Number of Migrations");
+
+                //tooltip
+                var Tooltip = d3.select("#my_dataviz")
+                    .append("div")
+                    .style("opacity", 0)
+                    .attr("class", "tooltip")
+                    .style("background-color", "white")
+                    .style("border", "solid")
+                    .style("border-width", "2px")
+                    .style("border-radius", "5px")
+                    .style("padding", "5px")
+                    .style("position", "absolute")
+
+                //mouse
+                var mouseover = function(d) {
+                    Tooltip.style("opacity", 1)
+                }
+                var mousemove = function(d) {
+                    Tooltip.html(d.time + " : " + d.China)
+                        .style("top", (d3.event.pageY - 80 )+"px")
+                        .style("left",(d3.event.pageX - 30)+"px")
+                }
+                var mouseleave = function(d) {
+                    Tooltip.style("opacity", 0)
+                }
+
+                // Initialize line with group a
+                var line = svg
+                    .append('g')
+                    .append("path")
+                    .datum(data)
+                    .attr("d", d3.line()
+                        .x(function(d) { return x(+d.time) })
+                        .y(function(d) { return y(+d.China) })
+                    )
+                    .attr("stroke", "black")
+                    .style("stroke-width", 4)
+                    .style("fill", "none")
+
+                // Initialize dots with group a
+                var dot = svg
+                    .selectAll('circle')
+                    .data(data)
+                    .enter()
+                    .append('circle')
+                    .attr("cx", function(d) { return x(+d.time) })
+                    .attr("cy", function(d) { return y(+d.China) })
+                    .attr("r", 7)
+                    .style("fill", "#69b3a2")
+                    .on("mouseover", mouseover)
+                    .on("mousemove", mousemove)
+                    .on("mouseleave", mouseleave)
+            </script>
+            </div>
+            <div id="right" style="background-color: white;margin-left: 50%;height: 400px;">
+
+
+            <p></p>
+            <p>Vietnamese stand at the rank 5 in terms of migration to Victoria. There has been increase in migration by about 40% in Victoria. Australia is considered to be the second preferred destination after United States.</p>
+            <p align="center"><i>If you are planning for moving to Australia, then Melbourne can be the superb place for you.</i></p>
+            </div>
         </div>
     </div>
 {% endblock %}
