@@ -32,3 +32,12 @@ path {
     shape-rendering: crispEdges;
 }
 
+
+.pic{
+    float:left;
+    width:20%;
+}
+.info{
+    float:right;
+    width:80%;
+}
