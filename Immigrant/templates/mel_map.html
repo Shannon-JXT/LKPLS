@@ -18,57 +18,63 @@ Demography
 <section>
     <div class="container">
         <div class="box-shadow-2">
-            <div class="info-area" style="">
-            <div class='tableauPlaceholder' id='viz1567951141156' style='position: relative'>
-                <noscript>
-                    <a href='#'><img alt='Population of Regions in Greater Melbourne '
-                                     src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Tr&#47;Trend_15679474525300&#47;Sheet1&#47;1_rss.png'
-                                     style='border: none'/>
-                    </a>
-                </noscript>
-                <object class='tableauViz' style='display:none;'>
-                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
-                    <param name='embed_code_version' value='3'/>
-                    <param name='site_root' value=''/>
-                    <param name='name' value='Trend_15679474525300&#47;Sheet1'/>
-                    <param name='tabs' value='no'/>
-                    <param name='toolbar' value='yes'/>
-                    <param name='static_image'
-                           value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Tr&#47;Trend_15679474525300&#47;Sheet1&#47;1.png'/>
-                    <param name='animate_transition' value='yes'/>
-                    <param name='display_static_image' value='yes'/>
-                    <param name='display_spinner' value='yes'/>
-                    <param name='display_overlay' value='yes'/>
-                    <param name='display_count' value='yes'/>
-                    <param name='filter' value='publish=yes'/>
-                </object>
+            <div class="no-margin">
+                <table>
+                    <tr>
+                        <td vertical-align="center" class="home_text"><a href="{% url 'home' %}">Home</a></td>
+                        <td vertical-align="center"><img src="/static/images/icon/double_arrow.png"></td>
+                        <td vertical-align="center" class="child_nav_text">Demography</td>
+                    </tr>
+                    <!--<tr>
+                        <td vertical-align="center"><a href="{% url 'home' %}">Home&nbsp;</a></td>
+                        <td vertical-align="center">>></td>
+                        <td vertical-align="center"><p style="color: #000;">&nbsp;Great Melbourne Map</p></td>
+                    </tr>-->
+                </table>
             </div>
-            <script type='text/javascript'>
-            var divElement = document.getElementById('viz1567951141156');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            vizElement.style.width='80%';vizElement.style.height=(divElement.offsetWidth*0.55)+'px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            <hr>
+            <center>
+                <div class="info-area" style="">
+                    <div class='tableauPlaceholder' id='viz1567951141156' style='position: relative'>
+                        <noscript>
+                            <a href='#'><img alt='Population of Regions in Greater Melbourne '
+                                             src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Tr&#47;Trend_15679474525300&#47;Sheet1&#47;1_rss.png'
+                                             style='border: none'/>
+                            </a>
+                        </noscript>
+                        <object class='tableauViz' style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
+                            <param name='embed_code_version' value='3'/>
+                            <param name='site_root' value=''/>
+                            <param name='name' value='Trend_15679474525300&#47;Sheet1'/>
+                            <param name='tabs' value='no'/>
+                            <param name='toolbar' value='yes'/>
+                            <param name='static_image'
+                                   value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Tr&#47;Trend_15679474525300&#47;Sheet1&#47;1.png'/>
+                            <param name='animate_transition' value='yes'/>
+                            <param name='display_static_image' value='yes'/>
+                            <param name='display_spinner' value='yes'/>
+                            <param name='display_overlay' value='yes'/>
+                            <param name='display_count' value='yes'/>
+                            <param name='filter' value='publish=yes'/>
+                        </object>
+                    </div>
+                    <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1567951141156');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width='80%';vizElement.style.height=(divElement.offsetWidth*0.55)+'px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
 
 
+                    </script>
+                </div>
+            </center>
 
-            </script>
         </div>
-        </div>
-        <div class="no-margin">
-            <table>
-                <tr>
-                    <td vertical-align="center"><a class="indexing" href="{% url 'home' %}">Home&nbsp;</a></td>
-                    <td style="padding-top: 13px;"><p style="color: #fff;"><span class="fa fa-angle-right"></span>&nbsp;Great
-                        Melbourne Map</p></td>
-                </tr>
-            </table>
-        </div>
-
     </div>
 </section>
-
 {% endblock %}
 
 {% block demography %}
