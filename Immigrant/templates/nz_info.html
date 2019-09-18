@@ -11,31 +11,40 @@
 
 {% block information %}
     <div class="tab-wrap">
-        <ul class="select-navbar nav nav-tabs nav-stacked" style="margin-top: 0;">
+        <ul class="select-navbar nav nav-tabs nav-stacked">
             <li class="select-navbar-item">
-                <a href="#tab1" data-toggle="tab">General Information</a>
+                <a class="active show" href="#tab1" data-toggle="tab">General Information</a>
             </li>
             <li class="select-navbar-item">
-                <a href="#tab2" data-toggle="tab">Easy Phrases</a>
+                <a class="" href="#tab2" data-toggle="tab">Easy Phrases</a>
             </li>
             <li class="select-navbar-item">
-                <a href="#tab3" data-toggle="tab">Do's and Don'ts</a>
+                <a class="" href="#tab3" data-toggle="tab">Do's and Don'ts</a>
             </li>
             <li class="select-navbar-item">
-                <a href="#tab4" data-toggle="tab">Immigration Trend</a>
+                <a class="" href="#tab4" data-toggle="tab">Immigration Trend</a>
             </li>
         </ul>
     </div>
 
     <!-- culture body -->
     <div class="tab-content" style="background-color: white; margin-top: 0; padding: 10px;">
-        <div class="tab-pane fade" id="tab1">
+        <div class="tab-pane fade active" id="tab1">
             <br>
             <p><Strong>New Zealand</Strong> culture is very unique and dynamic. Its indigenous Māori people influence the language, the arts and also the accents of the new Zealanders. Their adoration for the outdoor sports and also the arts make New Zealanders and their culture distinctive with respect to other countries. Some of the other attributes which make kiwis unique in the world includes friendliness, singularity, independence and innovation. New Zealand has three official dialects: Māori, English and New Zealand Sign Language.
             <p align="center"><i>"New Zealand is consider to be the land of the long white cloud."</i></p>
             </p>
         </div>
-
+        <div class="tab-pane fade" id="tab2">
+            <br>
+            <p><strong>There are many different ways of greetings in New Zealand:</strong></p>
+            <ul>
+                <li>One of the common words used by kiwis is ‘Kia ora’ (pronounced as key-or-rah) which mean Hello. It is a warm and inviting welcome that is used throughout New Zealand.</li>
+                <li>Whenever they greet to group of people, they use ‘Kia ora tatou’ which means Hello everyone.</li>
+                <li>Handshake is also considered the common form of greeting accompanied by eye contact.</li>
+                <li>They also hug someone they know while greeting them.</li>
+            </ul>
+        </div>
         <div class="tab-pane fade" id="tab3">
             <br>
             <p><strong><i>Do's : </i></strong></p>
@@ -53,137 +62,123 @@
                 <li>Don’t confuse kiwis with Australians.</li>
             </ul>
         </div>
-
-
-        <div class="tab-pane fade" id="tab2">
-            <br>
-            <p><strong>There are many different ways of greetings in New Zealand:</strong></p>
-            <ul>
-                <li>One of the common words used by kiwis is ‘Kia ora’ (pronounced as key-or-rah) which mean Hello. It is a warm and inviting welcome that is used throughout New Zealand.</li>
-                <li>Whenever they greet to group of people, they use ‘Kia ora tatou’ which means Hello everyone.</li>
-                <li>Handshake is also considered the common form of greeting accompanied by eye contact.</li>
-                <li>They also hug someone they know while greeting them.</li>
-            </ul>
-        </div>
-
         <div class="tab-pane fade" id="tab4">
-            <br>
-            <p align="center"><strong> <font color="Green"> <font size="4"> <u> New Zealanders Community in Melbourne: Expatriate Trend </u> </font></font> </strong></p>
-            <script src="https://d3js.org/d3.v4.js"></script>
-            <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-            <div id="my_dataviz" style="float: left;width: 50%;height: 400px;background-color: white;">
-            <script>
-                    var data_temp = {{ nz_trends|safe }};
-                    var data = new Array();
-                    for (var i in data_temp) {
-                        data.push(data_temp[i]);
-                 }
-                    console.log(data);
+            <p align="center" class="trend-text-title">New Zealanders Community in Melbourne: Expatriate Trend</p>
+            <div class="row">
+                <br>
+                <div class="col-lg-5 trend-text-box">
+                    <br>
+                    <p align="center"><i>If you are planning for moving to Australia, then Melbourne can be the superbplace for you.</i></p>
 
+                </div>
+                <div id="my_dataviz" class="col-lg-7 pic-box">
+                    <script>
+                        var data_temp = {{ nz_trends|safe }};
+                        var data = new Array();
+                        for (var i in data_temp) {
+                            data.push(data_temp[i]);
+                        }
 
-                    var margin = {top: 20, right: 10, bottom: 30, left: 45},
-                        width = 500 - margin.left - margin.right,
-                        height = 400 - margin.top - margin.bottom;
+                        var margin = {top: 20, right: 10, bottom: 30, left: 45},
+                            width = 500 - margin.left - margin.right,
+                            height = 400 - margin.top - margin.bottom;
 
-                    var svg = d3.select("#my_dataviz")
-                        .append("svg")
-                        .attr("width", width + 100)
-                        .attr("height", height + margin.top + margin.bottom)
-                        .append("g")
-                        .attr("transform",
-                            "translate(" + margin.left + "," + margin.top + ")");
-                // Title
-                    svg.append("text")
-                        .attr("x", (width/2))
-                        .attr("y", 0 - (margin.top/2))
-                        .attr("text-anchor", "middle")
-                        .style("font-size", "16px")
-                        //.text("Migration Trends of Victoria")
+                        var svg = d3.select("#my_dataviz")
+                            .append("svg")
+                            .attr("width", width + 100)
+                            .attr("height", height + margin.top + margin.bottom)
+                            .append("g")
+                            .attr("transform",
+                                "translate(" + margin.left + "," + margin.top + ")");
+                    // Title
+                        svg.append("text")
+                            .attr("x", (width/2))
+                            .attr("y", 0 - (margin.top/2))
+                            .attr("text-anchor", "middle")
+                            .style("font-size", "16px")
+                            //.text("Migration Trends of Victoria")
 
-                // Add X axis --> it is a date format
-                    var x = d3.scaleLinear()
-                        .domain(d3.extent(data, function(d) { return d.time; }))
-                        .range([ 0, width ]);
-                    svg.append("g")
-                        .attr("transform", "translate(0," + height + ")")
-                        .call(d3.axisBottom(x));
+                        // Add X axis --> it is a date format
+                            var x = d3.scaleLinear()
+                                .domain(d3.extent(data, function(d) { return d.time; }))
+                                .range([ 0, width ]);
+                            svg.append("g")
+                                .attr("transform", "translate(0," + height + ")")
+                                .call(d3.axisBottom(x));
 
-                    svg.append("text")
-                        .attr("transform", "translate(" + width/2 + "," + (height + margin.bottom) + ")")
-                        .style("text-anchor", "middle")
-                        .text("Census Year");
+                            svg.append("text")
+                                .attr("transform", "translate(" + width/2 + "," + (height + margin.bottom) + ")")
+                                .style("text-anchor", "middle")
+                                .text("Census Year");
 
-                // Add Y axis
-                    var y = d3.scaleLinear()
-                        .domain( [0, d3.max(data, function(d) { return d['New Zealand']; }) + 20000])
-                        .range([ height, 0 ]);
-                svg.append("g")
-                    .call(d3.axisLeft(y))
-                    .append("text")
-                    .attr("fill", "#000")
-                    .attr("transform", "rotate(-90)")
-                    .attr("y", 6)
-                    .attr("dy", "0.9em")
-                    .style("text-anchor", "end")
-                    .text("Number of Migrations");
+                        // Add Y axis
+                            var y = d3.scaleLinear()
+                                .domain( [0, d3.max(data, function(d) { return d['New Zealand']; }) + 20000])
+                                .range([ height, 0 ]);
+                        svg.append("g")
+                            .call(d3.axisLeft(y))
+                            .append("text")
+                            .attr("fill", "#000")
+                            .attr("transform", "rotate(-90)")
+                            .attr("y", 6)
+                            .attr("dy", "0.9em")
+                            .style("text-anchor", "end")
+                            .text("Number of Migrations");
 
-                //tooltip
-                var Tooltip = d3.select("#my_dataviz")
-                    .append("div")
-                    .style("opacity", 0)
-                    .attr("class", "tooltip")
-                    .style("background-color", "white")
-                    .style("border", "solid")
-                    .style("border-width", "2px")
-                    .style("border-radius", "5px")
-                    .style("padding", "5px")
-                    .style("position", "absolute")
+                        //tooltip
+                        var Tooltip = d3.select("#my_dataviz")
+                            .append("div")
+                            .style("opacity", 0)
+                            .attr("class", "tooltip")
+                            .style("background-color", "white")
+                            .style("border", "solid")
+                            .style("border-width", "2px")
+                            .style("border-radius", "5px")
+                            .style("padding", "5px")
+                            .style("position", "absolute")
 
-                //mouse
-                var mouseover = function(d) {
-                    Tooltip.style("opacity", 1)
-                }
-                var mousemove = function(d) {
-                    Tooltip.html(d.time + " : " + d['New Zealand'])
-                        .style("top", (d3.event.pageY - 80)+"px")
-                        .style("left",(d3.event.pageX -30)+"px")
-                }
-                var mouseleave = function(d) {
-                    Tooltip.style("opacity", 0)
-                }
+                        //mouse
+                        var mouseover = function(d) {
+                            Tooltip.style("opacity", 1)
+                        }
+                        var mousemove = function(d) {
+                            Tooltip.html(d.time + " : " + d['New Zealand'])
+                                .style("top", (d3.event.pageY - 80)+"px")
+                                .style("left",(d3.event.pageX -30)+"px")
+                        }
+                        var mouseleave = function(d) {
+                            Tooltip.style("opacity", 0)
+                        }
 
-                // Initialize line with group a
-                var line = svg
-                    .append('g')
-                    .append("path")
-                    .datum(data)
-                    .attr("d", d3.line()
-                        .x(function(d) { return x(+d.time) })
-                        .y(function(d) { return y(+d['New Zealand']) })
-                    )
-                    .attr("stroke", "black")
-                    .style("stroke-width", 4)
-                    .style("fill", "none")
+                        // Initialize line with group a
+                        var line = svg
+                            .append('g')
+                            .append("path")
+                            .datum(data)
+                            .attr("d", d3.line()
+                                .x(function(d) { return x(+d.time) })
+                                .y(function(d) { return y(+d['New Zealand']) })
+                            )
+                            .attr("stroke", "black")
+                            .style("stroke-width", 4)
+                            .style("fill", "none")
 
-                // Initialize dots with group a
-                var dot = svg
-                    .selectAll('circle')
-                    .data(data)
-                    .enter()
-                    .append('circle')
-                    .attr("cx", function(d) { return x(+d.time) })
-                    .attr("cy", function(d) { return y(+d['New Zealand']) })
-                    .attr("r", 7)
-                    .style("fill", "#69b3a2")
-                    .on("mouseover", mouseover)
-                    .on("mousemove", mousemove)
-                    .on("mouseleave", mouseleave)
-            </script>
-            </div>
-            <div id="right" style="background-color: white;margin-left: 50%;height: 400px;">
-            <br>
-                <p></p>
-            <p align="center"><i>If you are planning for moving to Australia, then Melbourne can be the superb place for you.</i></p>
+                        // Initialize dots with group a
+                        var dot = svg
+                            .selectAll('circle')
+                            .data(data)
+                            .enter()
+                            .append('circle')
+                            .attr("cx", function(d) { return x(+d.time) })
+                            .attr("cy", function(d) { return y(+d['New Zealand']) })
+                            .attr("r", 7)
+                            .style("fill", "#69b3a2")
+                            .on("mouseover", mouseover)
+                            .on("mousemove", mousemove)
+                            .on("mouseleave", mouseleave)
+                    </script>
+                </div>
+
             </div>
         </div>
     </div>

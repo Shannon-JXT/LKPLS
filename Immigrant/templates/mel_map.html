@@ -2,21 +2,19 @@
 {% load staticfiles %}
 
 {% block title %}
-Demography
+    Demography
 {% endblock %}
 
 {% block content %}
-    <div style="background-color: #24b67e; padding: 3%;"></div>
-    <section class="container box-area">
+    <div style="background-color: #24b67e; height: 90px;"></div>
+    <section class="container">
         <div class="box-banner">
             <br/><br/>
             <div class="box-wh-op">
                 Demographic Information
             </div>
         </div>
-    </section>
 
-    <section>
         <div class="container">
             <div class="box-shadow-2">
                 <div class="no-margin">
@@ -26,16 +24,13 @@ Demography
                             <td vertical-align="center"><img src="/static/images/icon/double_arrow.png"></td>
                             <td vertical-align="center" class="child_nav_text">Demography</td>
                         </tr>
-                        <!--<tr>
-                            <td vertical-align="center"><a href="{% url 'home' %}">Home&nbsp;</a></td>
-                            <td vertical-align="center">>></td>
-                            <td vertical-align="center"><p style="color: #000;">&nbsp;Great Melbourne Map</p></td>
-                        </tr>-->
+
                     </table>
                 </div>
                 <hr>
+
                 <center>
-                    <div class="info-area" style="">
+                    <div class="info-area" style="height: 600px;">
                         <div class='tableauPlaceholder' id='viz1567951141156' style='position: relative'>
                             <noscript>
                                 <a href='#'><img alt='Population of Regions in Greater Melbourne '
@@ -61,23 +56,27 @@ Demography
                             </object>
                         </div>
                         <script type='text/javascript'>
-                        var divElement = document.getElementById('viz1567951141156');
-                        var vizElement = divElement.getElementsByTagName('object')[0];
-                        vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.55)+'px';
-                        var scriptElement = document.createElement('script');
-                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                            var divElement = document.getElementById('viz1567951141156');
+                            var vizElement = divElement.getElementsByTagName('object')[0];
+                                vizElement.style.width='100%';
+                                vizElement.style.height=(divElement.offsetWidth*0.55)+'px';
+                            var scriptElement = document.createElement('script');
+                                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                vizElement.parentNode.insertBefore(scriptElement, vizElement);
 
 
                         </script>
                     </div>
                 </center>
 
+
+
             </div>
         </div>
     </section>
+
 {% endblock %}
 
-{% block demography %}
-active
+{% block maps %}
+    active
 {% endblock %}

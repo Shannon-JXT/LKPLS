@@ -47,20 +47,19 @@
                         <a class="nav-link js-scroll {% block events %}{% endblock %}" href="{% url 'event_display' %}">Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll {% block demography %}{% endblock %}" href="{% url 'map_display' %}">Demography</a>
+                        <a class="nav-link js-scroll {% block maps %}{% endblock %}" href="{% url 'map_display' %}">Demography</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll {% block about %}{% endblock %}" href="{% url 'about' %}">About Us</a>
                     </li>
+
                 </ul>
             </div>
         </div>
     </nav>
     <!--/ Nav End /-->
     {% block content %}{% endblock %}
-<style>
-    .fixed-bottom {position: fixed;bottom: 0;width:100%;}
-</style>
+
     <footer>
         <div class="container">
             <div style="color: #2b5745;">

@@ -190,7 +190,7 @@ def search(request):
     elif startdate == '' and keyword != '':
         search_events = Event.objects.filter(title__icontains=keyword)
     else:
-        search_events = Event.objects.filter(title__icontains=keyword, start_date=startdate)
+        search_events = Event.objects.filter(title__icontains=keyword, start_date__contains=startdate)
 
     paginator = Paginator(search_events, 10)
     page_num = request.GET.get('page', 1)

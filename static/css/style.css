@@ -1001,7 +1001,7 @@ a:hover {
 
 .select-navbar-item a:hover,
 .select-navbar-item a:focus,
-.select-navbar-item.active a {
+.select-navbar-item a:active {
     padding-bottom: 5px;
     border-bottom: 5px solid #24b67e;
 }
@@ -1063,6 +1063,23 @@ path {
     stroke: grey;
     stroke-width: 1;
     shape-rendering: crispEdges;
+}
+
+.trend-text-title {
+    margin-top: 20px;
+    font-size: 23;
+    font-weight: 500;
+    color: #24b67e;
+}
+
+.trend-text-box {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.pic-box {
+    height: 400px;
+    background-color: #fff;
 }
 /*======================================
 //--//-->   EVENT
@@ -1255,7 +1272,7 @@ path {
 
 /*======================================
 //--//-->   CONTACT
-======================================*/
+======================================
 
 .footer-paralax {
   padding: 4rem 0 0 0;
@@ -1264,7 +1281,7 @@ path {
 .contact-mf {
   margin-top: 4rem;
 }
-
+*/
 /*======================================
 //--//-->   FOOTER
 ======================================*/
