@@ -137,18 +137,18 @@
                             .style("padding", "5px")
                             .style("position", "absolute")
 
-                        //mouse
-                        var mouseover = function(d) {
-                            Tooltip.style("opacity", 1)
-                        }
-                        var mousemove = function(d) {
-                            Tooltip.html(d.time + " : " + d['New Zealand'])
-                                .style("top", (d3.event.pageY - 80)+"px")
-                                .style("left",(d3.event.pageX -30)+"px")
-                        }
-                        var mouseleave = function(d) {
-                            Tooltip.style("opacity", 0)
-                        }
+                //mouse
+                var mouseover = function(d) {
+                    Tooltip.style("opacity", 1)
+                }
+                //var mousemove = function(d) {
+                  //  Tooltip.html(d.time + " : " + d['New Zealand'])
+                    //    .style("top", (d3.event.pageY - 80)+"px")
+                      //  .style("left",(d3.event.pageX -30)+"px")
+               // }
+                var mouseleave = function(d) {
+                    Tooltip.style("opacity", 0)
+                }
 
                         // Initialize line with group a
                         var line = svg
@@ -163,22 +163,32 @@
                             .style("stroke-width", 4)
                             .style("fill", "none")
 
-                        // Initialize dots with group a
-                        var dot = svg
-                            .selectAll('circle')
-                            .data(data)
-                            .enter()
-                            .append('circle')
-                            .attr("cx", function(d) { return x(+d.time) })
-                            .attr("cy", function(d) { return y(+d['New Zealand']) })
-                            .attr("r", 7)
-                            .style("fill", "#69b3a2")
-                            .on("mouseover", mouseover)
-                            .on("mousemove", mousemove)
-                            .on("mouseleave", mouseleave)
-                    </script>
-                </div>
-
+                // Initialize dots with group a
+                var dot = svg
+                    .selectAll('circle')
+                    .data(data)
+                    .enter()
+                    .append('circle')
+                    .attr("cx", function(d) { return x(+d.time) })
+                    .attr("cy", function(d) { return y(+d['New Zealand']) })
+                    .attr("r", 7)
+                    .style("fill", "#69b3a2")
+                    .on("mouseover", mouseover)
+                   // .on("mousemove", mousemove)
+                    .on("mouseleave", mouseleave)
+                    .on("mousemove", function(d) {
+                        var matrix = this.getScreenCTM()
+                            .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
+                        Tooltip.html("Until "+d.time +"<br/>" +"Total number from New Zealand is " + d["New Zealand"])
+                            .style("left", (window.pageXOffset + matrix.e -120) + "px")
+                            .style("top", (window.pageYOffset + matrix.f - 70) + "px");
+                        })
+            </script>
+            </div>
+            <div id="right" style="background-color: white;margin-left: 50%;height: 400px;">
+            <br>
+                <p>New Zealand is another Oceanian country. Migrations from New Zealand to Melbourne almost maintain a constant growth in the previous 20 years. </p>
+            <p align="center"><i>If you are planning for moving to Australia, then Melbourne can be the superb place for you.</i></p>
             </div>
         </div>
     </div>
