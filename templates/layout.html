@@ -1,27 +1,28 @@
-<!DOCTYPE html>
+{% load staticfiles %}
+<!--<!DOCTYPE html>-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
 
     <!-- Bootstrap CSS File -->
-    <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.min.css">
 
     <!-- Libraries CSS Files -->
-    <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/lib/animate/animate.min.css">
+    <link rel="stylesheet" href="/static/lib/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/static/lib/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/lib/lightbox/css/lightbox.min.css">
 
     <!-- Main Stylesheet File -->
     <link rel="stylesheet" href="/static/css/style.css">
 
-    <link rel="shortcut icon" href="/static/images/icon/icon-16.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/images/icon/icon-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/icon/icon-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/images/icon/icon-72.png">
-    <link rel="apple-touch-icon-precomposed" href="/static/images/icon/icon-57.png">
+    <link rel="icon" href="/static/images/icon/icon-16.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/icon/icon-144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/images/icon/icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/icon/icon-72.png">
+    <link rel="apple-touch-icon" href="/static/images/icon/icon-57.png">
 </head>
 <body>
 <!--/ Nav Star /-->
@@ -43,7 +44,7 @@
                         <a class="nav-link js-scroll {% block home %}{% endblock %}" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll {% block events %}{% endblock %}" href="#event">Events</a>
+                        <a class="nav-link js-scroll {% block events %}{% endblock %}" href="{% url 'event_display' %}">Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll {% block demography %}{% endblock %}" href="{% url 'map_display' %}">Demography</a>
@@ -65,45 +66,24 @@
             <div style="color: #2b5745;">
                 &copy; 2019 <a target="_blank" href="{% url 'about' %}" title="Linkin Plus">Linkin Plus</a>. All Rights Reserved.
             </div>
-                <!--
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'about' %}">About Us</a></li>
-                    </ul>
-                </div> -->
         </div>
     </footer>
     <!--/#footer-->
-<script>
-    $(function(){
-    function footerPosition(){
-        $("footer").removeClass("fixed-bottom");
-        var contentHeight = document.body.scrollHeight,//网页正文全文高度
-            winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
-        if(!(contentHeight > winHeight)){
-            //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
-            $("footer").addClass("fixed-bottom");
-        }
-    }
-    footerPosition();
-    $(window).resize(footerPosition);
-});
-</script>
+
     <!-- JavaScript Libraries -->
-    <script src="/static/lib/jquery/jquery.min.js"></script>
-    <script src="/static/lib/jquery/jquery-migrate.min.js"></script>
-    <script src="/static/lib/popper/popper.min.js"></script>
-    <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/static/lib/easing/easing.min.js"></script>
-    <script src="/static/lib/counterup/jquery.waypoints.min.js"></script>
-    <script src="/static/lib/counterup/jquery.counterup.js"></script>
-    <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="/static/lib/lightbox/js/lightbox.min.js"></script>
-    <script src="/static/lib/typed/typed.min.js"></script>
+    <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+    <script src="{% static 'lib/popper/popper.min.js' %}"></script>
+    <script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/jquery.counterup.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'lib/typed/typed.min.js' %}"></script>
 
     <!-- Template Main Javascript File -->
-    <script src="/static/js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
 </body>
 </html>

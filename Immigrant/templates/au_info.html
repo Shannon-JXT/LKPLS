@@ -9,13 +9,22 @@
     {% static 'images/cultures/au-1.jpg' %}
 {% endblock %}
 
-{% block image2 %}
-    {% static 'images/cultures/au-2.jpg' %}
-{% endblock %}
-
 {% block information %}
-    <div style="background-color: white; margin-top: 0;">
-        <div class="vis" id="tab1">
+
+    <div class="tab-wrap">
+        <ul class="select-navbar nav nav-tabs nav-stacked" style="margin-top: 0;">
+            <li class="select-navbar-item">
+                <a href="#tab1" data-toggle="tab">General Information</a>
+            </li>
+            <li class="select-navbar-item">
+                <a href="#tab2" data-toggle="tab">Immigration Trend</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- culture body -->
+    <div class="tab-content" style="background-color: white; margin-top: 0; padding: 10px;">
+        <div class="tab-pane fade" id="tab1">
             <p>Australia is the largest country in Oceania, comprising the mainland Australia continent, Tasmania Island, and numerous small islands. Australia is considered as country with rich of diversity. Based on census 2016, Australians have various ancestry backgrounds, 36% of survey participants identified themselves as British descents, 33% as Australians, 11% as Irish, 9.3% as Scottish, 5.6% as Chinese, and many other ethnicities. Departing from this fact, we can understand that Australia is a multicultural country.</p>
             <p><a href="https://www.abc.net.au/news/2017-04-28/these-are-our-core-australian-values/8476902">ABC news</a> reports that Australian have unique characteristics that make them valuable. Here some interesting points from the list:</p>
             <ol type="1">
@@ -36,10 +45,22 @@
             </ol>
             <p>Hopefully, this information can help you to understand the Australian culture and make the adaptation process faster so you can work with Australians as a team in your work place.</p>
         </div>
+
+        <div class="tab-pane fade" id="tab2">
+            <script>
+                var data_temp = {{ trends|safe }};
+                var data = new Array();
+                for (var i in data_temp) {
+                    data.push(data_temp[i]);
+                }
+                console.log(data);
+            </script>
+
+        </div>
     </div>
 
 {% endblock %}
 
 {% block au-status %}
-    class="active"
+    active
 {% endblock %}

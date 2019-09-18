@@ -4,41 +4,36 @@
 {% block title %}{% endblock %}
 
 {% block content %}
-<div class="container" style="background-color: white;">
-    <div class="section-counter paralax-mf bg-image" style="background-image: url({% block image1 %}{% endblock %});">
-
+    <div style="background-color: #24b67e; padding: 3%;"></div>
+    <div class="container" style="background-color: white;">
         <div class="society-container">
-            <ul class="culture-navbar">
-                <li class="culture-navbar-item">
-                    <a style="background-color: #2b5745;" href="{% url 'home' %}"><span class="fa fa-menu-left"></span>&nbsp;Home</a>
-                </li>
-                <li class="culture-navbar-item">
-                    <a {% block au-status %}{% endblock %} href="{% url 'au_display' %}">Australia</a>
-                </li>
-                <li class="culture-navbar-item">
-                    <a {% block cn-status %}{% endblock %} href="{% url 'cn_display' %}">China</a>
-                </li>
-                <li class="culture-navbar-item">
-                    <a {% block in-status %}{% endblock %} href="{% url 'india_display' %}">India</a>
-                </li>
-                <li class="culture-navbar-item">
-                    <a {% block nz-status %}{% endblock %} href="{% url 'nz_display' %}">New Zealand</a>
-                </li>
-                <li class="culture-navbar-item {% block uk-status %}{% endblock %}">
-                    <a href="{% url 'uk_display' %}">United Kingdom</a>
-                </li>
-                <li class="culture-navbar-item {% block vn-status %}{% endblock %}">
-                    <a href="{% url 'vn_display' %}">Vietnam</a>
-                </li>
-            </ul>
-            {% block information %}{% endblock %}
+            <div class="section-counter paralax-mf bg-image" style="background-image: url({% block image1 %}{% endblock %});">
+                <ul class="culture-navbar">
+                    <li class="culture-navbar-item">
+                        <a style="background-color: #2b5745; color: #fff;" href="{% url 'home' %}"><<&nbsp;Home</a>
+                    </li>
+                    <li class="culture-navbar-item {% block au-status %}{% endblock %}">
+                        <a href="{% url 'au_display' %}">Australia</a>
+                    </li>
+                    <li class="culture-navbar-item {% block cn-status %}{% endblock %}">
+                        <a href="{% url 'cn_display' %}">China</a>
+                    </li>
+                    <li class="culture-navbar-item {% block in-status %}{% endblock %}">
+                        <a href="#">India</a>
+                    </li>
+                    <li class="culture-navbar-item {% block nz-status %}{% endblock %}">
+                        <a href="#">New Zealand</a>
+                    </li>
+                    <li class="culture-navbar-item {% block uk-status %}{% endblock %}">
+                        <a href="#">United Kingdom</a>
+                    </li>
+                    <li class="culture-navbar-item {% block vn-status %}{% endblock %}" style="border: none;">
+                        <a href="#">Vietnam</a>
+                    </li>
+                </ul>
+                {% block information %}{% endblock %}
+            </div>
         </div>
     </div>
-
-
-
-</div>
-
-
 
 {% endblock %}

@@ -9,13 +9,21 @@
     {% static 'images/content-2.jpg' %}
 {% endblock %}
 
-{% block image2 %}
-    {% static 'images/cultures/au-2.jpg' %}
-{% endblock %}
-
 {% block information %}
-    <div style="background-color: white; margin-top: 0;">
-        <div class="inv" id="tab2">
+    <div class="tab-wrap">
+        <ul class="select-navbar nav nav-tabs nav-stacked" style="margin-top: 0;">
+            <li class="select-navbar-item">
+                <a href="#tab1" data-toggle="tab">General Information</a>
+            </li>
+            <li class="select-navbar-item">
+                <a href="#tab2" data-toggle="tab">Immigration Trend</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- culture body -->
+    <div class="tab-content" style="background-color: white; margin-top: 0; padding: 10px;">
+        <div class="tab-pane fade" id="tab1">
             <p>Who doesn’t know a giant panda? That animal may be one of the things crossing in someone’s mind every time he/she hears about China. By having the largest population in the world, its people spread to every corner of the planet. As a great nation, China is rich of cultural and historical heritage; China’s Great Wall, the Forbidden City, Dragon Boats Festival, you name it!</p>
             <p><a href="http://factsanddetails.com/china/cat4/sub18/item116.html">factsanddetails.com</a> reports that Chinese have unique characteristics that make them valuable. Here some interesting points from the list:</p>
             <ol type="1">
@@ -36,9 +44,21 @@
             </ol>
             <p>If you happen to meet a Chinese from China and need to work with him/her as a team, hopefully this information can help you adapt faster.</p>
         </div>
+
+        <div class="tab-pane fade" id="tab2">
+            <script>
+                var data_temp = {{ trends|safe }};
+                var data = new Array();
+                for (var i in data_temp) {
+                    data.push(data_temp[i]);
+                }
+                console.log(data);
+            </script>
+
+        </div>
     </div>
 {% endblock %}
 
 {% block cn-status %}
-    class="active"
+    active
 {% endblock %}
