@@ -183,7 +183,7 @@
                                 var matrix = this.getScreenCTM()
                                     .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
                                 Tooltip.html("Until "+d.time +"<br/>" +"Total number from the United Kingdom is " + d["United Kingdom"])
-                                    .style("left", (window.pageXOffset + matrix.e) + "px")
+                                    .style("left", (window.pageXOffset + matrix.e -120) + "px")
                                     .style("top", (window.pageYOffset + matrix.f - 70) + "px");
                             })
                     </script>
