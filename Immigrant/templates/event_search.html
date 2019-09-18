@@ -7,14 +7,15 @@
 
 {% block content %}
 
-    <div style="background-color: #24b67e; padding: 3%;"></div>
+    <div style="background-color: #24b67e; height: 90px;"></div>
     <section id="event">
-        <div class="section-counter paralax-mf bg-image" style="background-image: url(/static/images/event.jpg)">
-            <div class="overlay-mf-event"></div>
-            <div class="intro-content display-table">
-                <div class="table-cell">
-                    <div class="container">
-                        <h2 style="font-weight: 600; color: white; position: relative;">Community Events</h2>
+        <div class="container" style="height: 300px;">
+            <div style="background-image: url(/static/images/event.jpg);">
+                <div class="intro-content display-table">
+                    <div class="table-cell" style="background-color: rgba(0, 0, 0, 0.2); height: 100%; width: 100%;">
+                        <div align="center" class="container" >
+                            <h2 style="font-weight: 600; color: white;">Community Events</h2>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,7 +60,7 @@
                                 </tr>-->
                                 <tr class="find-row">
                                     <td align="right"><p>Start&nbsp;Date&nbsp;</p></td>
-                                    <td><input type="text" name="startdate" value="{{ search_startdate }}" class="find-input"></td>
+                                    <td><input type="date" data-date-inline-picker="false" data-date-open-on-focus="true" name="startdate" value="{{ search_startdate }}" class="find-input"></td>
                                 </tr>
                             </table>
                             <button class="button button-a button-rouded" type="submit" style="width: 30%; margin-bottom: 10px;">Find</button>
@@ -92,4 +93,8 @@
         </div>
     </section>
 
+{% endblock %}
+
+{% block events %}
+    active
 {% endblock %}
