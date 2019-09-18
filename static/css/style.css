@@ -1013,9 +1013,34 @@ a:hover {
 
 .culture-navbar-item a:hover,
 .culture-navbar-item a:focus,
- .culture-navbar-item.active a {
+.culture-navbar-item.active a {
     color: #24b67e;
     background-color: rgba(255, 255, 255, 0.9);
+}
+
+.pic-form {
+    .pic-form {
+    padding: 15px 12px;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    height: 470px;
+    width: 50%;
+}
+}
+
+path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
 }
 /*======================================
 //--//-->   EVENT

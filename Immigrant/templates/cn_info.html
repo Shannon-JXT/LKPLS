@@ -47,7 +47,7 @@
 
         <div class="tab-pane fade" id="tab2">
             <script>
-                var data_temp = {{ trends|safe }};
+                var data_temp = {{ cn_trends|safe }};
                 var data = new Array();
                 for (var i in data_temp) {
                     data.push(data_temp[i]);
