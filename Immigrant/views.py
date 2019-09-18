@@ -4,18 +4,6 @@ from .models import Culture, Region, Event
 import json
 
 # Create your views here.
-def change_country_name(name):
-    if name == 'China':
-        return 'cn'
-    if name == 'New Zealand':
-        return 'nz'
-    if name == 'India':
-        return 'india'
-    if name == 'United Kingdom':
-        return 'en'
-    if name == 'Vietnam':
-        return 'vn'
-
 def au_display(request):
     data = Region.objects.all()
     year1996 = {'time': 1996}
@@ -24,8 +12,8 @@ def au_display(request):
     year2011 = {'time': 2011}
     year2016 = {'time': 2016}
     for item in data:
-        name = change_country_name(str(item.country_name))
-        if name == 'au':
+        name = str(item.country_name)
+        if name == 'Australia':
             if int(item.year) == 1996:
                 year1996[name] = item.migrant_num
             if int(item.year) == 2001:
@@ -48,8 +36,8 @@ def cn_display(request):
     year2011 = {'time': 2011}
     year2016 = {'time': 2016}
     for item in data:
-        name = change_country_name(str(item.country_name))
-        if name == 'cn':
+        name = str(item.country_name)
+        if name == 'China':
             if int(item.year) == 1996:
                 year1996[name] = item.migrant_num
             if int(item.year) == 2001:
@@ -65,22 +53,102 @@ def cn_display(request):
     return render_to_response("cn_info.html", {'cn_trends': json.dumps(dic)})
 
 def nz_display(request):
-    context = {}
-    return render_to_response("nz_info.html", context)
+    data = Region.objects.all()
+    year1996 = {'time': 1996}
+    year2001 = {'time': 2001}
+    year2006 = {'time': 2006}
+    year2011 = {'time': 2011}
+    year2016 = {'time': 2016}
+    for item in data:
+        name = str(item.country_name)
+        if name == 'New Zealand':
+            if int(item.year) == 1996:
+                year1996[name] = item.migrant_num
+            if int(item.year) == 2001:
+                year2001[name] = item.migrant_num
+            if int(item.year) == 2006:
+                year2006[name] = item.migrant_num
+            if int(item.year) == 2011:
+                year2011[name] = item.migrant_num
+            if int(item.year) == 2016:
+                year2016[name] = item.migrant_num
+
+    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
+    return render_to_response("nz_info.html", {'nz_trends': json.dumps(dic)})
 
 def uk_display(request):
-    context = {}
-    return render_to_response("uk_info.html", context)
+    data = Region.objects.all()
+    year1996 = {'time': 1996}
+    year2001 = {'time': 2001}
+    year2006 = {'time': 2006}
+    year2011 = {'time': 2011}
+    year2016 = {'time': 2016}
+    for item in data:
+        name = str(item.country_name)
+        if name == 'United Kingdom':
+            if int(item.year) == 1996:
+                year1996[name] = item.migrant_num
+            if int(item.year) == 2001:
+                year2001[name] = item.migrant_num
+            if int(item.year) == 2006:
+                year2006[name] = item.migrant_num
+            if int(item.year) == 2011:
+                year2011[name] = item.migrant_num
+            if int(item.year) == 2016:
+                year2016[name] = item.migrant_num
+
+    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
+    return render_to_response("uk_info.html", {'uk_trends': json.dumps(dic)})
 
 def india_display(request):
-    context = {}
-    return render_to_response("india_info.html", context)
+    data = Region.objects.all()
+    year1996 = {'time': 1996}
+    year2001 = {'time': 2001}
+    year2006 = {'time': 2006}
+    year2011 = {'time': 2011}
+    year2016 = {'time': 2016}
+    for item in data:
+        name = str(item.country_name)
+        if name == 'India':
+            if int(item.year) == 1996:
+                year1996[name] = item.migrant_num
+            if int(item.year) == 2001:
+                year2001[name] = item.migrant_num
+            if int(item.year) == 2006:
+                year2006[name] = item.migrant_num
+            if int(item.year) == 2011:
+                year2011[name] = item.migrant_num
+            if int(item.year) == 2016:
+                year2016[name] = item.migrant_num
+
+    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
+    return render_to_response("india_info.html", {'india_trends': json.dumps(dic)})
 
 def vn_display(request):
-    context = {}
-    return render_to_response("vn_info.html", context)
+    data = Region.objects.all()
+    year1996 = {'time': 1996}
+    year2001 = {'time': 2001}
+    year2006 = {'time': 2006}
+    year2011 = {'time': 2011}
+    year2016 = {'time': 2016}
+    for item in data:
+        name = str(item.country_name)
+        if name == 'Vietnam':
+            if int(item.year) == 1996:
+                year1996[name] = item.migrant_num
+            if int(item.year) == 2001:
+                year2001[name] = item.migrant_num
+            if int(item.year) == 2006:
+                year2006[name] = item.migrant_num
+            if int(item.year) == 2011:
+                year2011[name] = item.migrant_num
+            if int(item.year) == 2016:
+                year2016[name] = item.migrant_num
 
+    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
+    return render_to_response("vn_info.html", {'vn_trends': json.dumps(dic)})
 
+'''
 def region_trend(request):
     data = Region.objects.all()
     year1996 = {'time': 1996}
@@ -103,7 +171,7 @@ def region_trend(request):
 
     dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
     return render_to_response("region_trend.html", {'trends': json.dumps(dic)})
-
+'''
 def event_display(request):
     events = Event.objects.all()
     paginator = Paginator(events, 10)
