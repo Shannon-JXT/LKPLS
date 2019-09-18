@@ -179,10 +179,10 @@ a:hover {
 /*added by: YugoAnanda*/
 .box-banner {
   height: 200px;
-  margin-top: 6rem;
+  margin-top: 0rem;
   padding-top: 1.7rem;
   padding-bottom: 1.7rem;
-  /*position: relative;*/
+  position: relative;
   background-image: url("/static/images/banner_1.jpg");
 }
 
