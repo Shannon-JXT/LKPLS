@@ -2,65 +2,79 @@
 {% load staticfiles %}
 
 {% block title %}
-    About Us
+About Us
 {% endblock %}
 
 {% block content %}
-    <!--Edited by Yugo Ananda - 2019.09.21-->
-    <div style="background-color: #24b67e; height: 90px;"></div>
-    <section id="about" class="about-mf sect-pt4 route">
-        <div class="container">
-            <div class="box-shadow-full">
-                <div class="about-me pt-4 pt-md-0">
-                    <div class="title-box-2">
-                        <h5 class="title-left">Who we are</h5>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="about-img">
-                                <img class="img-fluid rounded b-shadow-a" src="/static/images/about-img1.jpg">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="about-content">
-                                <h2>Who we are</h2><hr>
-                                <p class="lead">“We believe that vibrant, functioning communities are in society’s interests, and immigrants should find it easy to connect with them so as to have benevolent relief in the new cultures.”</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="about-content">
-                                <h2>Our Vision</h2><hr>
-                                <p class="lead">To build strong and safe communities by abridging the gap between the immigrants and existing communities of Victoria.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="about-img">
-                                <img class="img-fluid rounded b-shadow-a" src="/static/images/about-img2.jpg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="about-content">
-                                <h2>Our Goal</h2><hr>
-                                <p class="lead">We understand how an immigrant strive to settle in Victoria. We empower immigrants to connect to the communities and learn their culture in order to be imbibed in this diverse society. We try to strengthen the society of Australia by creating the sense of belongingness among different cultures.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="about-img">
-                                <img class="img-fluid rounded b-shadow-a" src="/static/images/about-img2.jpg">
-                            </div>
-                        </div>
-                    </div>
+<!--Edited by Yugo Ananda - 2019.09.21-->
+<div style="background-color: #24b67e; height: 90px;"></div>
+<section class="container">
+    <div class="box-banner">
+        <br/><br/>
+        <div class="box-wh-op">
+            Our Stories
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box-shadow-2">
+            <div class="no-margin">
+                <table>
+                    <tr>
+                        <td style="vertical-align=center" class="home_text"><a href="{% url 'home' %}">Home</a></td>
+                        <td style="vertical-align=center"><img src="/static/images/icon/double_arrow.png"></td>
+                        <td style="vertical-align=center" class="child_nav_text">Our Stories</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab-wrap">
+                <ul class="select-navbar nav nav-tabs nav-stacked">
+                    <li class="select-navbar-item">
+                        <a class="active show" href="#tab1" data-toggle="tab">Jie "Joseph" Wang</a>
+                    </li>
+                    <li class="select-navbar-item">
+                        <a class="" href="#tab2" data-toggle="tab">Rishabh Baghat</a>
+                    </li>
+                    <li class="select-navbar-item">
+                        <a class="" href="#tab3" data-toggle="tab">Xiaotong "Shannon" Jin</a>
+                    </li>
+                    <li class="select-navbar-item">
+                        <a class="" href="#tab4" data-toggle="tab">Yugo Ananda</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content" style="background-color: white; margin-top: 0; padding: 10px;">
+                <div class="tab-pane fade active" id="tab1">
+                    <br/>
+                    Jie "Joseph" Wang - Coming Soon
+                </div>
+                <div class="tab-pane fade" id="tab2">
+                    <br/>
+                    Rishabh Baghat - Coming Soon
+                </div>
+                <div class="tab-pane fade" id="tab3">
+                    <br/>
+                   Xiaotong "Shannon" Jin - Coming Soon
+                </div>
+                <div class="tab-pane fade" id="tab4">
+                    <br/>
+
+                    <p align="justify">
+                        <img style="padding-right:15px; float:left;" src="/static/images/team/YA.jpg"/>
+                        I am an Indonesian who arrived in Australia on February 1st, 2018. I came far away -well, not so far, tho- to pursue the master degree at Monash University. I targeted the USA and the UK as my destination before. But somehow, something unpredictable came and I happened to be choosing Melbourne to accomplish my dream to get my higher education. So now, here I am, living in one of the most liveable cities in the world.
+                    </p>
+                    <p align="justify">I'd never been to this continent before. But it is not my first time I lived abroad. Previously, I lived in the USA and Malaysia so I had experienced multicultural environments. And my experience in the USA helped me to adapt faster in this country. I can't say Australia and the USA have the same culture but as countries which have Western culture as the main custom, both countries have many aspects in common.</p>
+                    <p align="justify">I find Melbourne has strong Indonesian communities. Not as many as Indian or Chinese, but the number is still helpful to assist me in adjusting myself in Melbourne. They guided me to understand Australian values and what makes them unique. This something I didn't get while I was in the USA.</p>
+                    <p align="justify">When I came to Monash University, I expected to see a multicultural educational environment with Australian as the majority ethnic group since this country is their homeland. But I was a bit surprised and asked myself, "Is it Monash University or the University of Shanghai?" In quantity, the number of students coming from China is ranked in the first place and followed by India. I found that not many Australians go to university. The number is getting even smaller in master and doctoral level.</p>
+                    <p align="justify">I love Australian casual style. It lets me wear what I feel comfortable without concerning too much about a formal dress, especially when I go to the campus. However, I don't like the Melbourne's weather that changes dramatically. The temperature is at its peak on Summer, it reaches around 45 degrees celcius. If I wear a long sleeves cloth or shirt, it feels so hot. But my skin will get sunburnt if I only wear a tanktop. I hate that sort of dilemma. Well, at least Melbourne has clean air.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block about %}
-    active
+active
 {% endblock %}
