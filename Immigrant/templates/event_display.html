@@ -102,7 +102,7 @@
                             <!--
                             <input type="date" data-date-inline-picker="false" data-date-open-on-focus="true" name="startdate" value="" class="find-input">
                             -->
-                            <button class="button button-a button-rouded" type="submit" style="width: 30%; margin-top: 30px; margin-bottom: 10px;">Find</button>
+                            <button class="button button-a button-rouded" type="submit" style="width: 90px; margin-top: 30px; margin-bottom: 10px;">Find</button>
                         </form>
                     </div>
                 </div>
@@ -120,18 +120,26 @@
                         </div>
                     {% endfor %}
 
-                    <div class="row">
-                        {% if page_of_events.has_previous %}
-                            <a class="button button-a button-rouded" href="{% url 'event_display' %}?page={{ page_of_events.previous_page_number }}">
-                                back
-                            </a>
-                        {% endif %}
-                        {% if page_of_events.has_next %}
-                            <a class="button button-a button-rouded" href="{% url 'event_display' %}?page={{ page_of_events.next_page_number }}">
-                                next
-                            </a>
-
-                        {% endif %}
+                    <div class="row" style="margin-bottom: 15px;">
+                        <table style="width: 100%;">
+                            <tr align="center">
+                                <td style="width: 20%;">
+                                    {% if page_of_events.has_previous %}
+                                        <a class="button button-a button-rouded" style="width: 80px;" href="{% url 'event_display' %}?page={{ page_of_events.previous_page_number }}">
+                                            back
+                                        </a>
+                                    {% endif %}
+                                </td>
+                                <td style="width: 60%"><p>Page {{ page_of_events.number }} of {{ page_of_events.paginator.num_pages }}</p></td>
+                                <td style="width: 20%;">
+                                    {% if page_of_events.has_next %}
+                                        <a class="button button-a button-rouded" style="width: 80px;" href="{% url 'event_display' %}?page={{ page_of_events.next_page_number }}">
+                                            next
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>

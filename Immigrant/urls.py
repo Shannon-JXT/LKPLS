@@ -8,7 +8,7 @@ urlpatterns = [
     path('culture/uk', views.uk_display, name='uk_display'),
     path('culture/india', views.india_display, name='india_display'),
     path('culture/vietnam', views.vn_display, name='vn_display'),
-    path('events/', views.event_display, name='event_display'),
+    path('events', views.event_display, name='event_display'),
     path('events/search/', views.search, name='search'),
     path('map/', views.map_display, name='map_display'),
 ]
