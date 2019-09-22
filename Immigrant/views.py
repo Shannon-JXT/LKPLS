@@ -174,7 +174,7 @@ def region_trend(request):
 '''
 def event_display(request):
     events = Event.objects.all()
-    paginator = Paginator(events, 10)
+    paginator = Paginator(events, 5)
     page_num = request.GET.get('page', 1)
     page_of_events = paginator.get_page(page_num)
 
@@ -184,15 +184,18 @@ def event_display(request):
 
 def search(request):
     keyword = request.GET.get('keyword', '')
-    startdate = request.GET.get('startdate', '')
-    if startdate == '' and keyword == '':
+    year = request.GET.get('year', '')
+    month = request.GET.get('box-month', '')
+    day = request.GET.get('box-day', '')
+    startdate = year + '-' + month + '-' + day
+    if year == '' and keyword == '':
         search_events = Event.objects.all()
-    elif startdate == '' and keyword != '':
+    elif year == '' and keyword != '':
         search_events = Event.objects.filter(title__icontains=keyword)
     else:
         search_events = Event.objects.filter(title__icontains=keyword, start_date__contains=startdate)
 
-    paginator = Paginator(search_events, 10)
+    paginator = Paginator(search_events, 5)
     page_num = request.GET.get('page', 1)
     page_of_events = paginator.get_page(page_num)
 
