@@ -176,24 +176,20 @@ a:hover {
 
 /*------/ Box /------*/
 
-/*added by: YugoAnanda*/
+/*added by: YugoAnanda
+  changed by: Shannon*/
 .box-banner {
-  height: 200px;
-  margin-top: 0rem;
-  padding-top: 1.7rem;
-  padding-bottom: 1.7rem;
-  position: relative;
-  background-image: url("/static/images/banner_1.jpg");
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    width: 100%;
 }
 
-/*added by: YugoAnanda*/
-.box-wh-op {
-  color: rgba(5,98,4,1);
-  position: relative;
-  background-color: rgba(255,255,255,0.8);
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
+/*added by: YugoAnanda
+  changed by: Shannon*/
+.box-banner-text {
+    font-weight: 640;
+    color: white;
+    font-size: 3rem;
 }
 
 .box-pl2 {
