@@ -1283,7 +1283,8 @@ path {
 
 footer {
   text-align: center;
-  padding-bottom: 4rem;
+  height: 90px;
+  padding-top: 35px;
   background-color: #fff;
 }
 
