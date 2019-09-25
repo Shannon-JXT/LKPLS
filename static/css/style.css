@@ -95,7 +95,7 @@ a:hover {
 
 .paralax-mf {
     position: relative;
-    padding: 8rem 0;
+    padding: 6rem 0;
 }
 
 .display-table {
@@ -942,26 +942,26 @@ a:hover {
 }
 
 .card-society .card-category {
-  display: inline-block;
-  color: #fff;
-  padding: 0 15px 5px;
-  overflow: hidden;
-  background-color: #24b67e;
-  border-radius: 4px;
+    display: inline-block;
+    color: #fff;
+    padding: 0 15px 5px;
+    overflow: hidden;
+    background-color: #24b67e;
+    border-radius: 4px;
 }
 
 .card-society .card-category .category {
-  color: #fff;
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: .7rem;
-  letter-spacing: .1px;
-  margin-bottom: 0;
+    color: #fff;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: .1px;
+    margin-bottom: 0;
 }
 
 .card-society .card-title {
-  font-size: 1.3rem;
-  margin-top: .6rem;
+    font-size: 1.3rem;
+    margin-top: .6rem;
 }
 /*
 .card-society .card-description {
@@ -1019,13 +1019,13 @@ a:hover {
 }
 
 .culture-navbar-item a {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #ffffff;
-  background-color: rgba(36, 182, 126, 0.9);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #ffffff;
+    background-color: rgba(36, 182, 126, 0.9);
 }
 
 .culture-navbar-item a:hover,
@@ -1033,6 +1033,12 @@ a:hover {
 .culture-navbar-item.active a {
     color: #24b67e;
     background-color: rgba(255, 255, 255, 0.9);
+}
+
+.culture-content {
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
 }
 
 /*=====================================
@@ -1266,34 +1272,15 @@ path {
 }
 
 /*======================================
-//--//-->   CONTACT
-======================================
-
-.footer-paralax {
-  padding: 4rem 0 0 0;
-}
-
-.contact-mf {
-  margin-top: 4rem;
-}
-*/
-/*======================================
 //--//-->   FOOTER
 ======================================*/
 
 footer {
-  text-align: center;
-  height: 90px;
-  padding-top: 35px;
-  background-color: #fff;
-}
-
-footer .copyright {
-  margin-bottom: .3rem;
-}
-
-footer .credits {
-  margin-bottom: 0;
+    text-align: center;
+    margin-top: 20px;
+    height: 80px;
+    padding-top: 25px;
+    background-color: #fff;
 }
 
 /*======================================

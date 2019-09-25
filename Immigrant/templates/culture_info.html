@@ -7,32 +7,36 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <div style="background-color: #24b67e; height: 90px;"></div>
-    <div class="container" style="background-color: white;">
+    <div class="container culture-content">
         <div class="society-container">
-            <div class="section-counter paralax-mf bg-image" style="background-image: url({% block image1 %}{% endblock %});">
-                <ul class="culture-navbar">
-                    <li class="culture-navbar-item">
-                        <a style="background-color: #2b5745; color: #fff;" href="{% url 'home' %}"><<&nbsp;Home</a>
-                    </li>
-                    <li class="culture-navbar-item {% block au-status %}{% endblock %}">
-                        <a href="{% url 'au_display' %}">Australia</a>
-                    </li>
-                    <li class="culture-navbar-item {% block cn-status %}{% endblock %}">
-                        <a href="{% url 'cn_display' %}">China</a>
-                    </li>
-                    <li class="culture-navbar-item {% block in-status %}{% endblock %}">
-                        <a href="{% url 'india_display' %}">India</a>
-                    </li>
-                    <li class="culture-navbar-item {% block nz-status %}{% endblock %}">
-                        <a href="{% url 'nz_display' %}">New Zealand</a>
-                    </li>
-                    <li class="culture-navbar-item {% block uk-status %}{% endblock %}">
-                        <a href="{% url 'uk_display' %}">United Kingdom</a>
-                    </li>
-                    <li class="culture-navbar-item {% block vn-status %}{% endblock %}" style="border: none;">
-                        <a href="{% url 'vn_display' %}">Vietnam</a>
-                    </li>
-                </ul>
+           <!-- <div class="section-counter paralax-mf bg-image"> -->
+            <div style="background-image: url({% block image1 %}{% endblock %}); margin:0;padding:0;">
+                <div style="height:15%;"></div>
+                <div style="margin: 0; padding: 0;">
+                    <ul class="culture-navbar">
+                        <li class="culture-navbar-item">
+                            <a style="background-color: #2b5745; color: #fff;" href="{% url 'home' %}"><<&nbsp;Home</a>
+                        </li>
+                        <li class="culture-navbar-item {% block au-status %}{% endblock %}">
+                            <a href="{% url 'au_display' %}">Australia</a>
+                        </li>
+                        <li class="culture-navbar-item {% block cn-status %}{% endblock %}">
+                            <a href="{% url 'cn_display' %}">China</a>
+                        </li>
+                        <li class="culture-navbar-item {% block in-status %}{% endblock %}">
+                            <a href="{% url 'india_display' %}">India</a>
+                        </li>
+                        <li class="culture-navbar-item {% block nz-status %}{% endblock %}">
+                            <a href="{% url 'nz_display' %}">New Zealand</a>
+                        </li>
+                        <li class="culture-navbar-item {% block uk-status %}{% endblock %}">
+                            <a href="{% url 'uk_display' %}">United Kingdom</a>
+                        </li>
+                        <li class="culture-navbar-item {% block vn-status %}{% endblock %}" style="border: none;">
+                            <a href="{% url 'vn_display' %}">Vietnam</a>
+                        </li>
+                    </ul>
+                </div>
                 {% block information %}{% endblock %}
             </div>
         </div>
