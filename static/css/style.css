@@ -109,6 +109,11 @@ a:hover {
   vertical-align: middle;
 }
 
+.no-margin {
+    margin: 0;
+    padding: 0;
+}
+
 /*--/ Sections /--*/
 
 .sect-4 {
@@ -197,27 +202,23 @@ a:hover {
 }
 
 /*Added By: Yugo Ananda*/
+/*Changed by: Shannon*/
 .box-shadow-2{
-  padding-top: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  position: relative;
-  background-color: #fff;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  z-index: 2;
-  border-radius: 20px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    position: relative;
+    background-color: #fff;
+    z-index: 2;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .box-shadow-full {
-  padding: 3rem 1.25rem;
-  position: relative;
-  background-color: #fff;
-  margin-bottom: 3rem;
-  z-index: 2;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 3rem 1.25rem;
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 3rem;
+    z-index: 2;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 /*------/ Socials /------*/
