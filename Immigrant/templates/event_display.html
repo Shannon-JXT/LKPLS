@@ -6,11 +6,6 @@
 {% endblock %}
 
 {% block content %}
-<style>
-    .fa-external-link-alt {
-        color: grey!important;
-    }
-</style>
     <div style="background-color: #24b67e; height: 90px;"></div>
     <section id="event">
         <div class="container" style="height: 250px;">
@@ -112,6 +107,7 @@
                             <table>
                                 <tr>
                                     <td><h3><a href="{{ event.link }}" target="_blank">{{ event.title }}&nbsp;<img src="{% static 'images/new-window.png' %}"></a></h3></td>
+                                    <!-- <span class="ico-circle"><i class="ion-forward"></i></span>  -->
                                     <td></td>
                                 </tr>
                             </table>

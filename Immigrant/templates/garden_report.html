@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Community Gardens
+{% endblock %}
+
+{% block content %}
+    <div style="background-color: #24b67e; height: 90px;"></div>
+    <section id="garden-report">
+        <div class="container" style="height: 250px;">
+            <div style="background-image: url(/static/images/garden-banner.jpg);">
+                <div class="intro-content display-table">
+                    <div class="table-cell box-banner">
+                        <div align="center" class="container" >
+                            <h2 class="box-banner-text">Our Report About Community Gardens</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box-shadow-2">
+                <div class="no-margin">
+                    <div class="report-video">
+                        <video style="width: 100%;" poster="/static/images/video-poster.jpg" preload="auto" controls="controls">
+                            <!--<source src=".mp4" type="video/mp4"> add source to src attribute-->
+                        </video>
+                    </div>
+                    <div class="report-content">
+                        <p>
+                            Community gardens are great places for growing traditional food, learning through cultural exchange, and also relaxing and making new friends.
+                            They are considered as great assets that are operating on the public land of Melbourne encouraging the wide range of community to take part in its activities and management.
+                            People of all ages, gender, and culture having different language backgrounds can be part of it.
+                        </p>
+                        <p>
+                            The community garden concept is believed to be a good initiative as it helps to bring diverse inhabitants together and also results in reducing the crime rates by enhancing the visibility among the neighborhood.
+                            These multi-cultural gardens have always been considered as a crucial contributor to settling people in a new country by providing the feeling of "being at home".
+                        </p>
+                        <p>Aim of Community Gardens:</p>
+                        <ul>
+                            <li>They are granted as an inventive way for people from different backgrounds to grow their traditional food and can have cultural exchange among the gardeners.</li>
+                            <li>To unite people from all walks of life by fostering an enthusiastic connected community.</li>
+                            <li>Help to promote the advantages of gardening and also Melbourne city's agriculture. Check out more Information on Victorian Community Gardens. How it contributes to Community and Social Life!</li>
+                            <li>Community gardens or multi-cultural Gardens can help immigrant families in disadvantaged situations. It provides access to natural products, an opportunity to connect with nature and also a meeting place for the neighborhood.</li>
+                            <li>It provides comprehensive meeting points where inhabitants of different ages and cultures can meet up and share their experiences.</li>
+                            <li>It helps to reduce cultural barriers by fostering cross-cultural interaction as it promotes a significant understanding of different cultural groups by the participation of a broader range of people having different cultures.</li>
+                            <li>Assist in fostering a sense of community and belongingness.</li>
+                            <li>It helps to raise the physical as well as mental health of communities with different habitats.</li>
+                            <li>Provides a platform for people to learn and exchange information of different cultural gardening style and cooking. To learn more, visit Community Gardens benefits.</li>
+                        </ul>
+                        <p>To learn more, visit <a href="http://community-gardens.ca/content/benefits-community-gardens">Community Gardens benefits</a>.</p>
+                    </div>
+
+                    <div id="carousel" class="report-carousel">
+                        <div id="testimonial-mf" class="owl-carousel owl-theme">
+                            <div class="testimonial-box">
+                                <div class="content-test">
+                                    <img src="/static/images/carousel/nz-2.jpg" alt="">
+                                    <p class="description lead">
+                                        description
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="testimonial-box">
+                                <div class="content-test" >
+                                    <img src="/static/images/carousel/uk-3.jpg" alt="">
+                                    <p class="description lead">
+                                        description
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="testimonial-box">
+                                <div class="content-test">
+                                    <img src="/static/images/carousel/uk-3.jpg" alt="">
+                                    <p class="description lead">
+                                        description
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

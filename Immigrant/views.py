@@ -211,6 +211,14 @@ def map_display(request):
     context = {}
     return render_to_response('mel_map.html', context)
 
+def garden_report(request):
+    context = {}
+    return render_to_response('garden_report.html', context)
+
+def garden_find(request):
+    context = {}
+    return render_to_response('garden_find.html', context)
+
 '''
 def searchTest(request):
     search_word = request.GET.get('keyword','')

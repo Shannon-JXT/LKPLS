@@ -46,7 +46,7 @@ a:hover {
 
 .box-shadow,
 .paralax-mf,
-.service-box,
+.garden-box,
 .work-box,
 .card-society {
   box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
@@ -277,6 +277,7 @@ a:hover {
 .ico-circle {
   height: 100px;
   width: 100px;
+  padding-top: 15px;
   font-size: 2rem;
   border-radius: 50%;
   line-height: 1.55;
@@ -755,9 +756,62 @@ a:hover {
   height: .7rem;
   background-color: #24b67e;
 }
+/*======================================
+//--//-->   Community Garden
+======================================*/
+.garden-mf .subtitle-a a {
+    color: #2b5745;
+}
+
+.garden-mf .subtitle-a a:hover {
+    color: #24b67e;
+}
+
+.garden-box {
+    background-color: #fff;
+    padding: 2.5rem 1.3rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+}
+
+.garden-box:hover .ico-circle {
+    transition: all 500ms ease;
+    color: #fff;
+    background-color: #24b67e;
+    box-shadow: 0 0 0 10px #bbf5df;
+}
+
+.garden-box .garden-ico {
+    margin-bottom: 1rem;
+    color: #1e1e1e;
+}
+
+.garden-box .ico-circle {
+    transition: all 500ms ease;
+    font-size: 4rem;
+}
+
+.garden-box .garden-content {
+    margin-top: 30px;
+}
+
+.garden-box .s-title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .4rem 0;
+}
+
+.garden-box .s-description {
+    color: #4e4e4e;
+}
+
+.testimonial-box .description {
+    color: #2b5745;
+}
 
 /*======================================
-//--//-->   SERVICES
+//--//-->   Service
 ======================================*/
 
 .service-box {

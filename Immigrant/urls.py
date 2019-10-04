@@ -11,4 +11,6 @@ urlpatterns = [
     path('events', views.event_display, name='event_display'),
     path('events/search/', views.search, name='search'),
     path('map/', views.map_display, name='map_display'),
+    path('community_garden/report', views.garden_report, name='garden_report'),
+    path('community_garden/find', views.garden_find, name='garden_find'),
 ]
