@@ -13,7 +13,7 @@ Demography
             <div class="intro-content display-table">
                 <div class="table-cell box-banner">
                     <div align="center" class="container" >
-                        <h2 class="box-banner-text">Demographic Information</h2>
+                        <h2 class="box-banner-text"><strong>Demographics of Melbourne</strong></h2>
                     </div>
                 </div>
             </div>
@@ -34,12 +34,26 @@ Demography
             </div>
             <hr>
 
-            <center>
+            <div class="tab-content" style="background-color: white; margin-top: 0; padding: 10px;">
+            <h2 style="text-shadow:1px 1px 0 #444">Let’s take a closer look at ethnicities of Greater Melbourne</h2>
+             <br>
+             <p>Each and every region of Melbourne is a blend of different cultures and is therefore, shaped by people from all around the globe.<br>
+                The top five countries of origin  for immigrants in Melbourne are:
+                 <span><a href ="{% url 'india_display' %}" target="_blank" style="font-size:17px;color:green;"><strong>India</strong></a></span><span>,</span>
+                 <span><a href ="{% url 'cn_display' %}" target="_blank" style="font-size:17px;color:green;"><strong>China</strong></a></span><span>,</span>
+                 <span><a href ="{% url 'nz_display' %}" target="_blank" style="font-size:17px;color:green;"><strong>New Zealand</strong></a></span><span>,</span>
+                 <span><a href ="{% url 'uk_display' %}" target="_blank" style="font-size:17px;color:green;"><strong>United Kingdom</strong></a></span><span>,</span>
+                 <span><a href ="{% url 'vn_display' %}" target="_blank" style="font-size:17px;color:green;"><strong>Vietnam</strong></a></span><span>.</span><br>
+                 Look at some <span><a href ="https://liveinmelbourne.vic.gov.au/discover/migrant-stories" target="_blank" style="font-size:17px;color:green;"><strong>Migrant stories</strong></a></span><span> who migrated to Melbourne in past few years.</span>
+                 <br><br>The map shows top five birthplaces of immigrants for different regions of Melbourne as per the 2016 census data. </p>
+                </div>
+
+          <center>
                 <div class="info-area" style="height: 600px;">
                             <div class='tableauPlaceholder' id='viz1569152036546' style='position: relative'>
             <noscript>
                 <a href='#'>
-                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Map1_15691518919790&#47;Sheet1&#47;1_rss.png' style='border: none' />
+                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Map1_15691518919790&#47;Sheet1&#47;1_rss.png' style="-webkit-user-select; none; margin: auto;" />
                 </a>
             </noscript>
             <object class='tableauViz'  style='display:none;'>
@@ -71,9 +85,7 @@ Demography
 
 
             </center>
-
-
-        </div>
+    </div>
     </div>
 </section>
 
@@ -82,3 +94,4 @@ Demography
 {% block maps %}
 active
 {% endblock %}
+

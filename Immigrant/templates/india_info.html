@@ -72,14 +72,14 @@
 
             <div class="row">
                 <br>
-                <div class="col-lg-5 trend-text-box">
-                    <br>
+                <div class="col-lg-6 trend-text-box">
+                    <br><br><br>
                     <p>Greater Melbourne has a vibrant Indian expat community.There has been a steep increase in the percentage of population of Indian migrants to Melbourne over the past two decades.
                     Indian immigrant is at second rank in terms of dominating migration as compared to other countries of origin.</p>
-                    <p align="center"><i>If you are planning for moving to Australia, then Melbourne can be the superbplace for you.</i></p>
+                    <br>To Learn more, visit <a href ="https://liveinmelbourne.vic.gov.au/discover/multicultural-communities/indian" target="_blank" style="font-size:17px;color:green;"><i>Melbourne’s Indian Community</i></a> page.</p>
                 </div>
 
-                <div id="my_dataviz" style="float: right;width: 50%;height: 400px;background-color: white;">
+                <div id="my_dataviz" style="float: right;width: 40%;height: 400px;background-color: white;">
                     <script>
                         var data_temp = {{ india_trends|safe }};
                         var data = new Array();
@@ -87,8 +87,8 @@
                             data.push(data_temp[i]);
                         }
 
-                        var margin = {top: 20, right: 10, bottom: 30, left: 45},
-                            width = 500 - margin.left - margin.right,
+                        var margin = {top: 30, right: 10, bottom: 30, left: 45},
+                            width = 480 - margin.left - margin.right,
                             height = 400 - margin.top - margin.bottom;
 
                         var svg = d3.select("#my_dataviz")
