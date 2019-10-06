@@ -811,45 +811,6 @@ a:hover {
 }
 
 /*======================================
-//--//-->   Service
-======================================*/
-
-.service-box {
-  background-color: #fff;
-  padding: 2.5rem 1.3rem;
-  border-radius: 1rem;
-  margin-bottom: 3rem;
-}
-
-.service-box:hover .ico-circle {
-  transition: all 500ms ease;
-  color: #fff;
-  background-color: #24b67e;
-  box-shadow: 0 0 0 10px #bbf5df;
-}
-
-.service-box .service-ico {
-  margin-bottom: 1rem;
-  color: #1e1e1e;
-}
-
-.service-box .ico-circle {
-  transition: all 500ms ease;
-  font-size: 4rem;
-}
-
-.service-box .s-title {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  text-align: center;
-  padding: .4rem 0;
-}
-
-.service-box .s-description {
-  color: #4e4e4e;
-}
-
-/*======================================
 //--//-->   COUNTER
 ======================================*/
 
@@ -1059,7 +1020,7 @@ a:hover {
 
 .culture-navbar {
     list-style-type: none;
-    overflow: hidden;
+    overflow: visible;
     padding: 0;
     margin-top: 20%;
     margin-bottom: 0;
@@ -1067,7 +1028,7 @@ a:hover {
 }
 
 .culture-navbar-item {
-    margin-bottom: -1px;
+    margin-bottom: 0px;
     float: left;
     width: 140px;
     border-right: 1px solid #daf0e7;
@@ -1088,6 +1049,54 @@ a:hover {
 .culture-navbar-item.active a {
     color: #24b67e;
     background-color: rgba(255, 255, 255, 0.9);
+}
+
+.culture-navbar-item-xs {
+    margin-bottom: 0px;
+    float: left;
+    width: 140px;
+}
+
+.culture-navbar-item-xs .btn-secondary {
+    color: #fff;
+    background-color: rgba(36, 182, 126, 0.9);
+    border: none;
+    width: 160px;
+    border-radius: 0;
+    height:44px;
+}
+
+.culture-navbar-item-xs .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.culture-navbar-item-xs  .show>.btn-secondary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.culture-navbar-item-xs .btn-secondary:not(:disabled):not(.disabled).active,
+.culture-navbar-item-xs .btn-secondary:not(:disabled):not(.disabled):active,
+.culture-navbar-item-xs .show>.btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: rgba(36, 182, 126, 0.9);
+    border: none;
+}
+
+.culture-navbar-item-xs .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(36, 182, 126, 0.9);
+    border: none;
+    color: #fff;
+    transition: all 500ms ease;
 }
 
 .culture-content {
@@ -1156,13 +1165,14 @@ path {
     background-color: #ffffff;
     margin: 15px 10px;
     padding: 10px 15px;
+    padding-top: 25px;
     border-radius: 4px;
     box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
 }
 
 .find-div {
     margin-top: 20px;
-    margin-left: 5px;
+    margin-left: 15px;
     margin-right: 5px;
 }
 
@@ -1276,13 +1286,14 @@ path {
 
 /*------/ Sidebar /------*/
 
-.widget-sidebar .sidebar-title {
+.sidebar-title {
   font-size: 1.6rem;
   font-weight: 600;
   border-left: 5px solid #24b67e;
   padding-left: 15px;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin-left: 15px;
+  margin-bottom: 2rem;
 }
 
 .widget-sidebar .list-sidebar li {

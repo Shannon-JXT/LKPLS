@@ -14,7 +14,7 @@
                 <div class="intro-content display-table">
                     <div class="table-cell" style="background-color: rgba(0, 0, 0, 0.3); height: 100%; width: 100%;">
                         <div align="center" class="container" >
-                            <h2 style="font-weight: 640; color: white; font-size: 3rem;">Community Events</h2>
+                            <h2 class="box-banner-text">Community Events</h2>
                         </div>
                     </div>
                 </div>
@@ -41,69 +41,74 @@
                 </div>-->
             <div class="row">
                 <div class="col-md-4">
-                    <div class="find-area" align="center">
-                        <h2>Refine Results</h2>
+                    <div class="find-area">
+                        <h2 class="sidebar-title">Refine Results</h2>
                         <form action="{% url 'search' %}">
-                            <div class="row find-div">
-                                <div class="col-md-4">
-                                    <p>Keyword&nbsp;</p>
+                            <div  align="center">
+                                <div class="row find-div">
+                                    <div class="col-md-4">
+                                        <p>Keyword&nbsp;</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" name="keyword" placeholder="Enter Keywords" value="" class="find-input">
+                                    </div>
                                 </div>
-                                <div class="col-md-8">
-                                    <input type="text" name="keyword" placeholder="Enter Keywords" value="" class="find-input">
+                                <div class="row find-div">
+                                    <div class="col-md-4">
+                                        <p>Start&nbsp;Date&nbsp;</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <input id="year" type="number" max="9999" name="year" placeholder="Year" value="" class="find-input" onblur="checkYear()" oninput="changeDate()">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <select id="month" class="find-input" style="margin: 10px 0;" onchange="changeDate()">
+                                                        <option value="0" name="">Month</option>
+                                                        <option value="01" name="01">January</option>
+                                                        <option value="02">February</option>
+                                                        <option value="03">March</option>
+                                                        <option value="04">April</option>
+                                                        <option value="05">May</option>
+                                                        <option value="06">June</option>
+                                                        <option value="07">July</option>
+                                                        <option value="08">August</option>
+                                                        <option value="09">September</option>
+                                                        <option value="10">October</option>
+                                                        <option value="11">November</option>
+                                                        <option value="12">December</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <select id="day" class="find-input" onchange="changeDay()">
+                                                        <option value="0">Day</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row find-div">
-                                <div class="col-md-4">
-                                    <p>Start&nbsp;Date&nbsp;</p>
-                                </div>
-                                <div class="col-md-8">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <input id="year" type="text" name="year" placeholder="Year" value="" class="find-input" oninput="changeDate()">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <select id="month" class="find-input" style="margin: 10px 0;" onchange="changeDate()">
-                                                    <option value="0" name="">Month</option>
-                                                    <option value="01" name="01">January</option>
-                                                    <option value="02">February</option>
-                                                    <option value="03">March</option>
-                                                    <option value="04">April</option>
-                                                    <option value="05">May</option>
-                                                    <option value="06">June</option>
-                                                    <option value="07">July</option>
-                                                    <option value="08">August</option>
-                                                    <option value="09">September</option>
-                                                    <option value="10">October</option>
-                                                    <option value="11">November</option>
-                                                    <option value="12">December</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <select id="day" class="find-input" onchange="changeDay()">
-                                                    <option value="0">Day</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <input name="box-month" id="box-month" style="display: none;">
-                            <input name="box-day" id="box-day" style="display: none;">
+                                <input name="box-month" id="box-month" style="display: none;">
+                                <input name="box-day" id="box-day" style="display: none;">
 
-                            <button class="button button-a button-rouded" type="submit" style="width: 30%; margin-top: 30px; margin-bottom: 10px;">Find</button>
+                                <button class="button button-a button-rouded" type="submit" style="width: 30%; margin-top: 30px; margin-bottom: 10px;">Find</button>
+                            </div>
                         </form>
                     </div>
                 </div>
                 <div class="col-md-8">
+                    <div class="event-unit" style="padding-top: 25px;">
+                        <h2 class="sidebar-title" style="margin-bottom: 15px;">Event Results</h2>
+                    </div>
                     <!--<p>{{ search_events_count }} results</p>-->
                     {% for event in page_of_events %}
                         <div class="event-unit">
-                            <h3><a href="{{ event.link }}" target="_blank">{{ event.title }}&nbsp;<img src="{% static 'images/new-window.png' %}"></a></h3>
+                            <h3><a href="{{ event.link }}" target="_blank">{{ event.title }}&nbsp;<span style="color: #b3b5b4;"><i class="ion-forward"></i></span></a></h3>
                             <p>{{ event.start_date }}</p>
                             <p class="event-desc">{{ event.description }}</p>
                         </div>
@@ -169,6 +174,11 @@
             }
         }
 
+        function checkYear() {
+            var year = document.getElementById("year").value;
+            console.log(year);
+
+        }
     </script>
 
 {% endblock %}
