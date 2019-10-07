@@ -176,8 +176,9 @@
 
         function checkYear() {
             var year = document.getElementById("year").value;
-            console.log(year);
-
+            if (Number(year) < 2000 || Number(year) > 2040) {
+                alert("Invalid year!");
+            }
         }
     </script>
 
