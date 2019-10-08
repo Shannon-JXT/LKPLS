@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import Culture, Region, Event
 import json
