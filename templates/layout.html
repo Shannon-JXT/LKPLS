@@ -25,7 +25,7 @@
     <link rel="apple-touch-icon" href="/static/images/icon/icon-57.png">
 </head>
 <body>
-    {% if user.is_authenticated %}
+
         <!--/ Nav Star /-->
         <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
             <div class="container">
@@ -84,29 +84,6 @@
 
         <!-- Template Main Javascript File -->
         <script src="/static/js/main.js"></script>
-    {% else %}
-        <div class="login">
-            <div style="height: 30%;"></div>
-            <div class="container" align="center">
-                <div class="box-shadow-full" style="width: 400px; height: 300px;">
-                    <div class="title-box text-center">
-                        <h3 class="title-a" style="font-size: 2.5rem;">
-                            Linkin Plus
-                        </h3>
-                        <br>
-                        <div align="center">
-                            <form action="{% url 'login' %}" method="post">
-                                {% csrf_token %}
-                                <input id="username" name="username" type="text" style="display: none;" value="Monash">
-                                <input id="password" name="password" type="password" class="find-input" style="width: 80%;">
-                                <br><br><br>
-                                <button class="button button-a button-rouded" style="width: 90px; height: 40px;" type="submit">Login</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% endif %}
+
 </body>
 </html>
