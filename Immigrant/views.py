@@ -26,7 +26,7 @@ def au_display(request):
                 year2016[name] = item.migrant_num
 
     dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
-    return render_to_response("au_info.html", {'au_trends': json.dumps(dic)})
+    return render(request, "au_info.html", {'au_trends': json.dumps(dic)})
 
 def cn_display(request):
     data = Region.objects.all()
@@ -50,7 +50,7 @@ def cn_display(request):
                 year2016[name] = item.migrant_num
 
     dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
-    return render_to_response("cn_info.html", {'cn_trends': json.dumps(dic)})
+    return render(request, "cn_info.html", {'cn_trends': json.dumps(dic)})
 
 def nz_display(request):
     data = Region.objects.all()
@@ -74,7 +74,7 @@ def nz_display(request):
                 year2016[name] = item.migrant_num
 
     dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
-    return render_to_response("nz_info.html", {'nz_trends': json.dumps(dic)})
+    return render(request, "nz_info.html", {'nz_trends': json.dumps(dic)})
 
 def uk_display(request):
     data = Region.objects.all()
@@ -98,7 +98,7 @@ def uk_display(request):
                 year2016[name] = item.migrant_num
 
     dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
-    return render_to_response("uk_info.html", {'uk_trends': json.dumps(dic)})
+    return render(request, "uk_info.html", {'uk_trends': json.dumps(dic)})
 
 def india_display(request):
     data = Region.objects.all()
@@ -122,7 +122,7 @@ def india_display(request):
                 year2016[name] = item.migrant_num
 
     dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
-    return render_to_response("india_info.html", {'india_trends': json.dumps(dic)})
+    return render(request, "india_info.html", {'india_trends': json.dumps(dic)})
 
 def vn_display(request):
     data = Region.objects.all()
@@ -146,7 +146,7 @@ def vn_display(request):
                 year2016[name] = item.migrant_num
 
     dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
-    return render_to_response("vn_info.html", {'vn_trends': json.dumps(dic)})
+    return render(request, "vn_info.html", {'vn_trends': json.dumps(dic)})
 
 def event_display(request):
     events = Event.objects.all()
@@ -185,15 +185,15 @@ def search(request):
 
 def map_display(request):
     context = {}
-    return render_to_response('mel_map.html', context)
+    return render(request, 'mel_map.html', context)
 
 def garden_report(request):
     context = {}
-    return render_to_response('garden_report.html', context)
+    return render(request, 'garden_report.html', context)
 
 def garden_find(request):
     context = {}
-    return render_to_response('garden_find.html', context)
+    return render(request, 'garden_find.html', context)
 
 '''
 def searchTest(request):

@@ -1,9 +1,23 @@
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth import authenticate, login
+
+def userLogin(request):
+    username = request.POST.get('username', '')
+    print("=============", username)
+    password = request.POST.get('password', '')
+    print("----------------", password)
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        print("aaaaaaaa")
+        return redirect('/')
+    else:
+        return render(request, 'error.html', {})
 
 def home(request):
     context = {}
-    return render_to_response('home.html', context)
+    return render(request, 'home.html', context)
 
 def about(request):
     context = {}
-    return render_to_response('about.html', context)
+    return render(request, 'about.html', context)
