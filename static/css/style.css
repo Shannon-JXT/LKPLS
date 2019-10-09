@@ -1093,7 +1093,8 @@ input.search-query {
 
 .select-navbar-item a:hover,
 .select-navbar-item a:focus,
-.select-navbar-item a:active {
+.select-navbar-item a:active,
+.select-navbar-item a.show {
     padding-bottom: 5px;
     border-bottom: 5px solid #24b67e;
 }
