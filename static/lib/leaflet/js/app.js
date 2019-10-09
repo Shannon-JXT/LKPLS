@@ -62,9 +62,13 @@ var addCsvMarkers = function() {
     filterString = document.getElementById('filter-string').value;
 
     if (filterString) {
-        $("#clear").fadeIn();
+        $("#clear").css({
+		    visibility: 'visible',
+		});
     } else {
-        $("#clear").fadeOut();
+        $("#clear").css({
+		    visibility: 'hidden',
+		});
     }
 
     map.removeLayer(markers);
