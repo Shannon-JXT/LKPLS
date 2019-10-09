@@ -4,8 +4,13 @@
 ======================================*/
 
 body {
-  background-color: #daf0e7;
-  color: #4e4e4e;
+    background-color: #fff;
+    color: #4e4e4e;
+}
+
+.main-container {
+    width: 100%;
+    background-color: #daf0e7;
 }
 
 h1,
@@ -14,18 +19,18 @@ h3,
 h4,
 h5,
 h6 {
-  color: #1e1e1e;
+    color: #1e1e1e;
 }
 
 a {
-  color: #1e1e1e;
-  transition: all 0.5s ease-in-out;
+    color: #1e1e1e;
+    transition: all 0.5s ease-in-out;
 }
 
 a:hover {
-  color: #24b67e;
-  text-decoration: none;
-  transition: all 0.5s ease-in-out;
+    color: #24b67e;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
 }
 
 .p-r {
@@ -820,18 +825,21 @@ a:hover {
     height: 100%;
 }
 
-#map {
-    height: 100%;
-}
-
 #filter-container {
     position: absolute;
-    right: 12px;
-    top: 12px;
+    right: 70px;
+    top: 130px;
     z-index: 999;
+    width: 233px;
+}
+
+.input-append {
+    padding: 0 0;
+    margin: 0 0;
 }
 
 .leaflet-control-attribution {
+    margin-left: 10px;
     font: 9px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif !important;
 }
 
@@ -851,12 +859,11 @@ form {
 #clear {
     display: inline-block;
     position: relative;
-    right: -24px;
+    right: -18px;
     z-index: 999999;
-    top: 3px;
-    font-size:14pt;
+    font-size: 14pt;
     text-decoration: none;
-    color: #aaa;
+    color: #C0C0C0;
 }
 
 input.search-query {
@@ -864,9 +871,23 @@ input.search-query {
 }
 
 .search-box {
+    margin: 0 0 !important;
+    height: 100%;
+    border: 1px solid #C0C0C0;
+    border-radius: 4px 0 0 4px;
     font-size: 10pt !important;
-    padding-top: 3px !important;
-    padding-bottom: 3px !important;
+    padding-top: 5px !important;
+    padding-bottom: 4px !important;
+}
+
+.search-button {
+    margin: 0 0;
+    float: right;
+    background-color: #C0C0C0;
+    border-radius: 0 4px 4px 0;
+    font-size: 12pt !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
 }
 
 /*======================================
@@ -1072,7 +1093,8 @@ input.search-query {
 
 .select-navbar-item a:hover,
 .select-navbar-item a:focus,
-.select-navbar-item a:active {
+.select-navbar-item a:active,
+.select-navbar-item a.show {
     padding-bottom: 5px;
     border-bottom: 5px solid #24b67e;
 }
