@@ -11,6 +11,7 @@ def au_display(request):
     year2006 = {'time': 2006}
     year2011 = {'time': 2011}
     year2016 = {'time': 2016}
+    year2021 = {'time': 2021}
     for item in data:
         name = str(item.country_name)
         if name == 'Australia':
@@ -24,8 +25,10 @@ def au_display(request):
                 year2011[name] = item.migrant_num
             if int(item.year) == 2016:
                 year2016[name] = item.migrant_num
+            if int(item.year) == 2021:
+                year2021[name] = item.migrant_num
 
-    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
+    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016, 2021: year2021}
     return render(request, "au_info.html", {'au_trends': json.dumps(dic)})
 
 def cn_display(request):
@@ -35,6 +38,7 @@ def cn_display(request):
     year2006 = {'time': 2006}
     year2011 = {'time': 2011}
     year2016 = {'time': 2016}
+    year2021 = {'time': 2021}
     for item in data:
         name = str(item.country_name)
         if name == 'China':
@@ -48,8 +52,10 @@ def cn_display(request):
                 year2011[name] = item.migrant_num
             if int(item.year) == 2016:
                 year2016[name] = item.migrant_num
+            if int(item.year) == 2021:
+                year2021[name] = item.migrant_num
 
-    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
+    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016, 2021: year2021}
     return render(request, "cn_info.html", {'cn_trends': json.dumps(dic)})
 
 def nz_display(request):
@@ -59,6 +65,7 @@ def nz_display(request):
     year2006 = {'time': 2006}
     year2011 = {'time': 2011}
     year2016 = {'time': 2016}
+    year2021 = {'time': 2021}
     for item in data:
         name = str(item.country_name)
         if name == 'New Zealand':
@@ -72,8 +79,9 @@ def nz_display(request):
                 year2011[name] = item.migrant_num
             if int(item.year) == 2016:
                 year2016[name] = item.migrant_num
-
-    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
+            if int(item.year) == 2021:
+                year2021[name] = item.migrant_num
+    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016, 2021: year2021}
     return render(request, "nz_info.html", {'nz_trends': json.dumps(dic)})
 
 def uk_display(request):
@@ -83,6 +91,7 @@ def uk_display(request):
     year2006 = {'time': 2006}
     year2011 = {'time': 2011}
     year2016 = {'time': 2016}
+    year2021 = {'time': 2021}
     for item in data:
         name = str(item.country_name)
         if name == 'United Kingdom':
@@ -96,8 +105,9 @@ def uk_display(request):
                 year2011[name] = item.migrant_num
             if int(item.year) == 2016:
                 year2016[name] = item.migrant_num
-
-    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
+            if int(item.year) == 2021:
+                year2021[name] = item.migrant_num
+    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016, 2021: year2021}
     return render(request, "uk_info.html", {'uk_trends': json.dumps(dic)})
 
 def india_display(request):
@@ -107,6 +117,7 @@ def india_display(request):
     year2006 = {'time': 2006}
     year2011 = {'time': 2011}
     year2016 = {'time': 2016}
+    year2021 = {'time': 2021}
     for item in data:
         name = str(item.country_name)
         if name == 'India':
@@ -120,8 +131,9 @@ def india_display(request):
                 year2011[name] = item.migrant_num
             if int(item.year) == 2016:
                 year2016[name] = item.migrant_num
-
-    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
+            if int(item.year) == 2021:
+                year2021[name] = item.migrant_num
+    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016, 2021: year2021}
     return render(request, "india_info.html", {'india_trends': json.dumps(dic)})
 
 def vn_display(request):
@@ -131,6 +143,7 @@ def vn_display(request):
     year2006 = {'time': 2006}
     year2011 = {'time': 2011}
     year2016 = {'time': 2016}
+    year2021 = {'time': 2021}
     for item in data:
         name = str(item.country_name)
         if name == 'Vietnam':
@@ -144,8 +157,9 @@ def vn_display(request):
                 year2011[name] = item.migrant_num
             if int(item.year) == 2016:
                 year2016[name] = item.migrant_num
-
-    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
+            if int(item.year) == 2021:
+                year2021[name] = item.migrant_num
+    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016, 2021: year2021}
     return render(request, "vn_info.html", {'vn_trends': json.dumps(dic)})
 
 def event_display(request):
