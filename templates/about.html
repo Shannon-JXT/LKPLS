@@ -6,6 +6,15 @@ About Us
 {% endblock %}
 
 {% block content %}
+    <style>
+        .inv {
+            display: none;
+        }
+
+        .vis {
+            display: block;
+        }
+    </style>
 <!--Edited by Yugo Ananda - 2019.09.21-->
 <!--Edited by Shannon - 2019.09.23-->
 <div style="background-color: #24b67e; height: 90px;" xmlns="http://www.w3.org/1999/html"></div>
@@ -35,34 +44,35 @@ About Us
             </div>
             <div class="row">
                 <div class="col-xs-12 d-lg-none">
-                    <select id="about" class="find-input" style="margin: 10px 0;" onchange="changeContent()">
-                        <option value="0">Jie "Joseph" Wang</option>
-                        <option value="01">Rishabh Bhagat</option>
-                        <option value="02">Xiaotong "Shannon" Jin</option>
-                        <option value="03">Yugo Ananda</option>
+                    <select id="selectperson" class="find-input">
+                        <option value="1">Jie "Joseph" Wang</option>
+                        <option value="2">Rishabh Bhagat</option>
+                        <option value="3">Xiaotong "Shannon" Jin</option>
+                        <option value="4">Yugo Ananda</option>
                     </select>
                 </div>
-                <div class="d-none d-xl-block col-xl-12">
+
+                <div class="d-none d-lg-block col-lg-12">
                     <div class="tab-wrap">
                         <ul class="select-navbar nav nav-tabs nav-stacked">
                             <li class="select-navbar-item">
-                                <a class="active show" href="#tab1" data-toggle="tab">Jie "Joseph" Wang</a>
+                                <a id="joseph" class="active show" href="javascript:void(0)" onclick="changeJoseph">Jie "Joseph" Wang</a>
                             </li>
                             <li class="select-navbar-item">
-                                <a class="" href="#tab2" data-toggle="tab">Rishabh Bhagat</a>
+                                <a id="rishabh" class="" href="javascript:void(0)" onclick="changeRishabh()">Rishabh Bhagat</a>
                             </li>
                             <li class="select-navbar-item">
-                                <a class="" href="#tab3" data-toggle="tab">Xiaotong "Shannon" Jin</a>
+                                <a id="shannon" class="" href="javascript:void(0)" onclick="changeShannon()">Xiaotong "Shannon" Jin</a>
                             </li>
                             <li class="select-navbar-item">
-                                <a class="" href="#tab4" data-toggle="tab">Yugo Ananda</a>
+                                <a id="yugo" class="" href="javascript:void(0)" onclick="changeYugo()">Yugo Ananda</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="tab-content" style="background-color: white; margin-top: 0; padding: 10px;">
-                <div class="tab-pane fade active" id="tab1">
+            <div style="background-color: white; margin-top: 0; padding: 10px;">
+                <div class="vis" id="1">
                     <br/>
 
                     <p align="justify">
@@ -83,25 +93,58 @@ About Us
                     </p>
 
                 </div>
-                <div class="tab-pane fade" id="tab2">
+                <div class="inv" id="2">
                     <br/>
 
-                    <p align="justify">
-                        <img style="padding-right:15px; float:left;" src="/static/images/team/Rishabh_Image.jpeg"/>
-                        I am an Indian and came to Melbourne in February, 2018 for pursing my masters. The first difference that I noticed after just arriving in Melbourne was India is a secular country having different religions with same nationality but Melbourne is having different religion/culture belonging to different nationalities. And in order to connect with the host country, I need to engage with this multi-cultural society. As per my experience this totally depends on us, how much adaptable we are by understating the heterogeneous culture and ethnicity of this place. By engaging with this Australian culture, we can understand how this society is a colorful blend of ethnicity and culture.
-                    </p>
-                    <p align="justify"><Strong><i>My Cross-cultural Transition Experience in Melbourne:</i></Strong></p>
-                    <p align="justify">In the initial stage of my settlement in Melbourne, I had a very strange experience and also faced challenges because of loneliness because I was unaware of the cultural norms in this multi-cultural sphere of Australia. I believe, this generally happens because of the cultural distance between our home culture and the Australian culture. I didn’t have any friends or relatives in Melbourne but was able to connect with some Indian students and they became good friends of mine.</p>
-                    <p align="justify">But I will say “That’s not enough”. </p>
-                    <p align="justify">Melbourne is not just about connecting with your people. Melbourne incorporates people from different nationalities that means different cultures and as a new comer, we need to understand other cultures as well in order to bridge friendship with them and get socially absorbed in the divergent society of Melbourne. As per my experience, the better way to connect is by understanding their important traits which are interesting to learn like: the way they greet each other and also it is very important to understand the do’s and don’ts of their cultural reception. These things help to understand what one should or should not do or say in a particular situation. This is what I have understood till now because everyone can’t learn and understand whole culture by just reading the blogs or some informational page. These things can be learnt by experiencing their culture. One way of doing this is by participating in their events or festivals. One key feature of Australia, more specifically Melbourne, is their attitude towards multiculturalism and every culture is respected and allows them to celebrate their functions or events.
-                                        So in order to connect to this multi-cultural society, it’s better to go and participate in their events and festivals and have networking in a fun way.
-                    </p>
-                    <hr>
-                    <p align="justify"><i><center>" Living in Melbourne gave me a real understanding of cultural diversity and it has really influenced me as an individual by understanding other’s cultures. To live a comfortable life in a new country like Australia, it’s good to be engaged with its diverse culture as every social being needs to interact with others to keep him/her survive, or at least to make his/her life easier. "</center></i></p>
-                    <hr>
-
+                        <p align="justify">
+                            <img style="padding-right:15px; float:left;" src="/static/images/team/Rishabh_Image.jpeg"/>
+                            I am an Indian and came to Melbourne in February, 2018 for pursing my masters.
+                            The first difference that I noticed after just arriving in Melbourne was India is a secular
+                            country having different religions with same nationality but Melbourne is having different
+                            religion/culture belonging to different nationalities. And in order to connect with the host country,
+                            I need to engage with this multi-cultural society. As per my experience this totally depends on us,
+                            how much adaptable we are by understating the heterogeneous culture and ethnicity of this place.
+                            By engaging with this Australian culture, we can understand how this society is a colorful blend of
+                            ethnicity and culture.
+                        </p>
+                        <p align="justify"><Strong><i>My Cross-cultural Transition Experience in Melbourne:</i></Strong></p>
+                        <p align="justify">
+                            In the initial stage of my settlement in Melbourne, I had a very strange experience and also faced
+                            challenges because of loneliness because I was unaware of the cultural norms in this multi-cultural
+                            sphere of Australia. I believe, this generally happens because of the cultural distance between our
+                            home culture and the Australian culture. I didn’t have any friends or relatives in Melbourne but was
+                            able to connect with some Indian students and they became good friends of mine.
+                        </p>
+                        <p align="justify">But I will say “That’s not enough”. </p>
+                        <p align="justify">
+                            Melbourne is not just about connecting with your people. Melbourne incorporates people from different
+                            nationalities that means different cultures and as a new comer, we need to understand other cultures
+                            as well in order to bridge friendship with them and get socially absorbed in the divergent society of
+                            Melbourne. As per my experience, the better way to connect is by understanding their important traits
+                            which are interesting to learn like: the way they greet each other and also it is very important to
+                            understand the do’s and don’ts of their cultural reception. These things help to understand what one
+                            should or should not do or say in a particular situation. This is what I have understood till now
+                            because everyone can’t learn and understand whole culture by just reading the blogs or some informational
+                            page. These things can be learnt by experiencing their culture. One way of doing this is by participating
+                            in their events or festivals. One key feature of Australia, more specifically Melbourne, is their attitude
+                            towards multiculturalism and every culture is respected and allows them to celebrate their functions or events.
+                            So in order to connect to this multi-cultural society, it’s better to go and participate in their events and
+                            festivals and have networking in a fun way.
+                        </p>
+                        <hr>
+                        <div align="center">
+                            <p style="padding: 0 10%;">
+                                <i>
+                                    " Living in Melbourne gave me a real understanding of cultural diversity and it has really influenced
+                                    me as an individual by understanding other’s cultures. To live a comfortable life in a new country
+                                    like Australia, it’s good to be engaged with its diverse culture as every social being needs to interact
+                                    with others to keep him/her survive, or at least to make his/her life easier. "
+                                </i>
+                            </p>
+                        </div>
+                        <hr>
                 </div>
-                <div class="tab-pane fade" id="tab3">
+                <div class="inv" id="3">
                     <br/>
                     <p>
                         I’m Shannon. I come from China. I don’t have any experience about studying abroad.
@@ -136,17 +179,40 @@ About Us
                         before I go back to China.
                     </p>
                 </div>
-                <div class="tab-pane fade" id="tab4">
-                    <br/>
 
+                <div class="inv" id="4">
+                    <br/>
                     <p align="justify">
                         <img style="padding-right:15px; float:left;" src="/static/images/team/YA.jpg"/>
-                        I am an Indonesian who arrived in Australia on February 1st, 2018. I came far away -well, not so far, tho- to pursue the master degree at Monash University. I targeted the USA and the UK as my destination before. But somehow, something unpredictable came and I happened to be choosing Melbourne to accomplish my dream to get my higher education. So now, here I am, living in one of the most liveable cities in the world.
+                        I am an Indonesian who arrived in Australia on February 1st, 2018. I came far away -well, not so far,
+                        tho- to pursue the master degree at Monash University. I targeted the USA and the UK as my destination before. But somehow, something unpredictable came and I happened to be choosing Melbourne to accomplish my dream to get my higher education. So now, here I am, living in one of the most liveable cities in the world.
                     </p>
-                    <p align="justify">I'd never been to this continent before. But it is not my first time I lived abroad. Previously, I lived in the USA and Malaysia so I had experienced multicultural environments. And my experience in the USA helped me to adapt faster in this country. I can't say Australia and the USA have the same culture but as countries which have Western culture as the main custom, both countries have many aspects in common.</p>
-                    <p align="justify">I find Melbourne has strong Indonesian communities. Not as many as Indian or Chinese, but the number is still helpful to assist me in adjusting myself in Melbourne. They guided me to understand Australian values and what makes them unique. This something I didn't get while I was in the USA.</p>
-                    <p align="justify">When I came to Monash University, I expected to see a multicultural educational environment with Australian as the majority ethnic group since this country is their homeland. But I was a bit surprised and asked myself, "Is it Monash University or the University of Shanghai?" In quantity, the number of students coming from China is ranked in the first place and followed by India. I found that not many Australians go to university. The number is getting even smaller in master and doctoral level.</p>
-                    <p align="justify">I love Australian casual style. It lets me wear what I feel comfortable without concerning too much about a formal dress, especially when I go to the campus. However, I don't like the Melbourne's weather that changes dramatically. The temperature is at its peak on Summer, it reaches around 45 degrees celcius. If I wear a long sleeves cloth or shirt, it feels so hot. But my skin will get sunburnt if I only wear a tanktop. I hate that sort of dilemma. Well, at least Melbourne has clean air.</p>
+                    <p align="justify">
+                        I'd never been to this continent before. But it is not my first time I lived abroad. Previously,
+                        I lived in the USA and Malaysia so I had experienced multicultural environments. And my experience
+                        in the USA helped me to adapt faster in this country. I can't say Australia and the USA have the same
+                        culture but as countries which have Western culture as the main custom, both countries have many
+                        aspects in common.
+                    </p>
+                    <p align="justify">
+                        I find Melbourne has strong Indonesian communities. Not as many as Indian or Chinese, but the number
+                        is still helpful to assist me in adjusting myself in Melbourne. They guided me to understand Australian
+                        values and what makes them unique. This something I didn't get while I was in the USA.
+                    </p>
+                    <p align="justify">
+                        When I came to Monash University, I expected to see a multicultural educational environment with Australian
+                        as the majority ethnic group since this country is their homeland. But I was a bit surprised and asked myself,
+                        "Is it Monash University or the University of Shanghai?" In quantity, the number of students coming from
+                        China is ranked in the first place and followed by India. I found that not many Australians go to university.
+                        The number is getting even smaller in master and doctoral level.
+                    </p>
+                    <p align="justify">
+                        I love Australian casual style. It lets me wear what I feel comfortable without concerning too much about a
+                        formal dress, especially when I go to the campus. However, I don't like the Melbourne's weather that changes
+                        dramatically. The temperature is at its peak on Summer, it reaches around 45 degrees celcius. If I wear a
+                        long sleeves cloth or shirt, it feels so hot. But my skin will get sunburnt if I only wear a tanktop. I hate
+                        that sort of dilemma. Well, at least Melbourne has clean air.
+                    </p>
                 </div>
             </div>
 
@@ -154,24 +220,180 @@ About Us
     </div>
 </section>
 
-<script type="text/javascript">
-    function changeContent() {
-        var about = document.getElementById("about").value;
-        about.options.length = 0;
-        if (about == 'Jie "Joseph" Wang') {
-            about.options.add(new Option("Rishabh Bhagat", "0"));
-            about.options.add(new Option('Xiaotong "Shannon" Jin', "01"));
-            about.options.add(new Option("Yugo Ananda", "02"));
-        } else if (about == "Rishabh Bhagat") {
-            about.options.add(new Option("Jie \"Joseph\" Wang", "0"));
-            about.options.add(new Option("Xiaotong \"Shannon\" Jin", "01"));
-            about.options.add(new Option("Yugo Ananda", "02"));
+    <script>
+        var person = document.getElementById('selectperson');
+        person.addEventListener('change', function() {
+            var vis = document.querySelector('.vis'),
+                target = document.getElementById(this.value);
+            if (vis !== null) {
+                vis.className = 'inv';
+            }
+            if (target !== null) {
+                target.className = 'vis';
+            }
+            console.log(document.getElementById("1").classList.contains('vis'));
+            if (document.getElementById("1").classList.contains('vis')) {
+                document.getElementById("joseph").classList.add("active","show");
+                document.getElementById("rishabh").classList.remove("active", "show");
+                document.getElementById("shannon").classList.remove("active", "show");
+                document.getElementById("yugo").classList.remove("active", "show");
+            } else if (document.getElementById("2").classList.contains('vis')) {
+                document.getElementById("rishabh").classList.add("active","show");
+                document.getElementById("joseph").classList.remove("active", "show");
+                document.getElementById("shannon").classList.remove("active", "show");
+                document.getElementById("yugo").classList.remove("active", "show");
+            } else if (document.getElementById("3").classList.contains('vis')) {
+                document.getElementById("shannon").classList.add("active","show");
+                document.getElementById("joseph").classList.remove("active", "show");
+                document.getElementById("rishabh").classList.remove("active", "show");
+                document.getElementById("yugo").classList.remove("active", "show");
+            } else {
+                document.getElementById("yugo").classList.add("active","show");
+                document.getElementById("joseph").classList.remove("active", "show");
+                document.getElementById("rishabh").classList.remove("active", "show");
+                document.getElementById("shannon").classList.remove("active", "show");
+            }
+        })
+
+        function changeJoseph() {
+            if (!document.getElementById("joseph").classList.contains("active")) {
+                document.getElementById("joseph").classList.add("active","show");
+            }
+            if (document.getElementById("rishabh").classList.contains("active")) {
+                document.getElementById("rishabh").classList.remove("active","show");
+            } else if (document.getElementById("shannon").classList.contains("active")) {
+                document.getElementById("shannon").classList.remove("active","show");
+            } else if (document.getElementById("yugo").classList.contains("active")) {
+                document.getElementById("yugo").classList.remove("active","show");
+            }
+            if (document.getElementById("1").classList.contains('inv')) {
+                document.getElementById("1").classList.remove('inv');
+                document.getElementById("1").classList.add("vis");
+            }
+            if (document.getElementById("2").classList.contains('vis')) {
+                document.getElementById("2").classList.remove("vis");
+                document.getElementById("2").classList.add("inv");
+            } else if (document.getElementById("3").classList.contains("vis")) {
+                document.getElementById("3").classList.remove("vis");
+                document.getElementById("3").classList.add("inv");
+            } else if (document.getElementById("4").classList.contains("vis")) {
+                document.getElementById("4").classList.remove("vis");
+                document.getElementById("4").classList.add("inv");
+            }
+            var alloptions = document.getElementById("selectperson").options;
+            for (i=0; i<alloptions.length; i++) {
+                if (alloptions[i].value == "1") {
+                    alloptions[i].selected = true;
+                }
+            }
+
         }
 
-    }
-</script>
+        function changeRishabh() {
+            // change select bar
+            if (!document.getElementById("rishabh").classList.contains("active")) {
+                document.getElementById("rishabh").classList.add("active","show");
+            }
+            if (document.getElementById("joseph").classList.contains("active")) {
+                document.getElementById("joseph").classList.remove("active","show");
+            } else if (document.getElementById("shannon").classList.contains("active")) {
+                document.getElementById("shannon").classList.remove("active","show");
+            } else if (document.getElementById("yugo").classList.contains("active")) {
+                document.getElementById("yugo").classList.remove("active","show");
+            }
+            // change story content
+            if (document.getElementById("2").classList.contains('inv')) {
+                document.getElementById("2").classList.remove('inv');
+                document.getElementById("2").classList.add("vis");
+            }
+            if (document.getElementById("1").classList.contains('vis')) {
+                document.getElementById("1").classList.remove("vis");
+                document.getElementById("1").classList.add("inv");
+            } else if (document.getElementById("3").classList.contains("vis")) {
+                document.getElementById("3").classList.remove("vis");
+                document.getElementById("3").classList.add("inv");
+            } else if (document.getElementById("4").classList.contains("vis")) {
+                document.getElementById("4").classList.remove("vis");
+                document.getElementById("4").classList.add("inv");
+            }
+            // change selected value in select menu
+            var alloptions = document.getElementById("selectperson").options;
+            for (i=0; i<alloptions.length; i++) {
+                if (alloptions[i].value == "2") {
+                    alloptions[i].selected = true;
+                }
+            }
+        }
+
+        function changeShannon() {
+            if (!document.getElementById("shannon").classList.contains("active")) {
+                document.getElementById("shannon").classList.add("active","show");
+            }
+            if (document.getElementById("rishabh").classList.contains("active")) {
+                document.getElementById("rishabh").classList.remove("active","show");
+            } else if (document.getElementById("joseph").classList.contains("active")) {
+                document.getElementById("joseph").classList.remove("active","show");
+            } else if (document.getElementById("yugo").classList.contains("active")) {
+                document.getElementById("yugo").classList.remove("active","show");
+            }
+            if (document.getElementById("3").classList.contains('inv')) {
+                document.getElementById("3").classList.remove('inv');
+                document.getElementById("3").classList.add("vis");
+            }
+            if (document.getElementById("2").classList.contains('vis')) {
+                document.getElementById("2").classList.remove("vis");
+                document.getElementById("2").classList.add("inv");
+            } else if (document.getElementById("1").classList.contains("vis")) {
+                document.getElementById("1").classList.remove("vis");
+                document.getElementById("1").classList.add("inv");
+            } else if (document.getElementById("4").classList.contains("vis")) {
+                document.getElementById("4").classList.remove("vis");
+                document.getElementById("4").classList.add("inv");
+            }
+            var alloptions = document.getElementById("selectperson").options;
+            for (i=0; i<alloptions.length; i++) {
+                if (alloptions[i].value == "3") {
+                    alloptions[i].selected = true;
+                }
+            }
+        }
+
+        function changeYugo() {
+            if (!document.getElementById("yugo").classList.contains("active")) {
+                document.getElementById("yugo").classList.add("active","show");
+            }
+            if (document.getElementById("rishabh").classList.contains("active")) {
+                document.getElementById("rishabh").classList.remove("active","show");
+            } else if (document.getElementById("shannon").classList.contains("active")) {
+                document.getElementById("shannon").classList.remove("active","show");
+            } else if (document.getElementById("joseph").classList.contains("active")) {
+                document.getElementById("joseph").classList.remove("active","show");
+            }
+            if (document.getElementById("4").classList.contains('inv')) {
+                document.getElementById("4").classList.remove('inv');
+                document.getElementById("4").classList.add("vis");
+            }
+            if (document.getElementById("2").classList.contains('vis')) {
+                document.getElementById("2").classList.remove("vis");
+                document.getElementById("2").classList.add("inv");
+            } else if (document.getElementById("3").classList.contains("vis")) {
+                document.getElementById("3").classList.remove("vis");
+                document.getElementById("3").classList.add("inv");
+            } else if (document.getElementById("1").classList.contains("vis")) {
+                document.getElementById("1").classList.remove("vis");
+                document.getElementById("1").classList.add("inv");
+            }
+            var alloptions = document.getElementById("selectperson").options;
+            for (i=0; i<alloptions.length; i++) {
+                if (alloptions[i].value == "4") {
+                    alloptions[i].selected = true;
+                }
+            }
+        }
+
+    </script>
 {% endblock %}
 
 {% block about %}
-active
+    active
 {% endblock %}
