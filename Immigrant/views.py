@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import Culture, Region, Event
 import json
+import re
 
 # Create your views here.
 def au_display(request):
@@ -153,10 +154,16 @@ def search(request):
     year = request.GET.get('year', '')
     month = request.GET.get('box-month', '')
     day = request.GET.get('box-day', '')
-    startdate = year + '-' + month + '-' + day
-    if year == '' and keyword == '':
+    if month != '':
+        startdate = year + '-' + month + '-' + day
+    else:
+        if year != '':
+            startdate = year
+        else:
+            startdate = ''
+    if startdate == '' and keyword == '':
         search_events = Event.objects.all()
-    elif year == '' and keyword != '':
+    elif startdate == '' and keyword != '':
         search_events = Event.objects.filter(title__icontains=keyword)
     else:
         search_events = Event.objects.filter(title__icontains=keyword, start_date__contains=startdate)
