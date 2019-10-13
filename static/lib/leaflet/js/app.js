@@ -13,7 +13,7 @@ var points = L.geoCsv (null, {
     firstLineTitles: true,
     fieldSeparator: fieldSeparator,
     onEachFeature: function (feature, layer) {
-        var popup = '<div class="popup-content"><table class="table table-striped table-bordered table-condensed">';
+        var popup = '<div class="popup-content"><table class="table table-striped table-bordered table-condensed" style="font-size: 12px;">';
         for (var clave in feature.properties) {
             var title = points.getPropertyTitle(clave).strip();
             var attr = feature.properties[clave];
