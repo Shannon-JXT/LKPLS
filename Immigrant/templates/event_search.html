@@ -116,14 +116,26 @@
                         <p>Sorry, there is no such event...</p>
                     {% endfor %}
 
-                    <div class="row">
-                        {% if page_of_events.has_previous %}
-                        <a class="button button-a button-rouded" href="{% url 'search' %}?keyword={{ search_keyword }}&page={{ page_of_events.previous_page_number }}">
-                            back</a>
-                        {% endif %}
-                        {% if page_of_events.has_next %}
-                        <a class="button button-a button-rouded" href="{% url 'search' %}?keyword={{ search_keyword }}&page={{ page_of_events.next_page_number }}">next</a>
-                        {% endif %}
+                    <div class="row" style="margin-bottom: 15px;">
+                        <table style="width: 100%;">
+                            <tr align="center">
+                                <td style="width: 20%;">
+                                    {% if page_of_events.has_previous %}
+                                        <a class="button button-a button-rouded" style="width: 80px;" href="{% url 'event_display' %}?page={{ page_of_events.previous_page_number }}">
+                                            back
+                                        </a>
+                                    {% endif %}
+                                </td>
+                                <td style="width: 60%"><p>Page {{ page_of_events.number }} of {{ page_of_events.paginator.num_pages }}</p></td>
+                                <td style="width: 20%;">
+                                    {% if page_of_events.has_next %}
+                                        <a class="button button-a button-rouded" style="width: 80px;" href="{% url 'event_display' %}?page={{ page_of_events.next_page_number }}">
+                                            next
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -176,8 +188,10 @@
 
         function checkYear() {
             var year = document.getElementById("year").value;
-            if (Number(year) < 2000 || Number(year) > 2040) {
-                alert("Invalid year!");
+            if (year != "") {
+                if (Number(year) < 2000 || Number(year) > 2040) {
+                    alert("Invalid year!");
+                }
             }
         }
     </script>

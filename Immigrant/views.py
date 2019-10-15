@@ -2,31 +2,12 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import Culture, Region, Event
 import json
+import re
 
 # Create your views here.
 def au_display(request):
-    data = Region.objects.all()
-    year1996 = {'time': 1996}
-    year2001 = {'time': 2001}
-    year2006 = {'time': 2006}
-    year2011 = {'time': 2011}
-    year2016 = {'time': 2016}
-    for item in data:
-        name = str(item.country_name)
-        if name == 'Australia':
-            if int(item.year) == 1996:
-                year1996[name] = item.migrant_num
-            if int(item.year) == 2001:
-                year2001[name] = item.migrant_num
-            if int(item.year) == 2006:
-                year2006[name] = item.migrant_num
-            if int(item.year) == 2011:
-                year2011[name] = item.migrant_num
-            if int(item.year) == 2016:
-                year2016[name] = item.migrant_num
-
-    dic = {1996: year1996, 2001: year2001, 2006: year2006, 2011: year2011, 2016: year2016}
-    return render(request, "au_info.html", {'au_trends': json.dumps(dic)})
+    context = {}
+    return render(request, "au_info.html", context)
 
 def cn_display(request):
     data = Region.objects.all()
@@ -173,10 +154,16 @@ def search(request):
     year = request.GET.get('year', '')
     month = request.GET.get('box-month', '')
     day = request.GET.get('box-day', '')
-    startdate = year + '-' + month + '-' + day
-    if year == '' and keyword == '':
+    if month != '':
+        startdate = year + '-' + month + '-' + day
+    else:
+        if year != '':
+            startdate = year
+        else:
+            startdate = ''
+    if startdate == '' and keyword == '':
         search_events = Event.objects.all()
-    elif year == '' and keyword != '':
+    elif startdate == '' and keyword != '':
         search_events = Event.objects.filter(title__icontains=keyword)
     else:
         search_events = Event.objects.filter(title__icontains=keyword, start_date__contains=startdate)
