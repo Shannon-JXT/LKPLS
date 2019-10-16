@@ -22,8 +22,11 @@
         <div class="container">
             <div class="box-shadow-2">
                 <div class="no-margin">
-
+                    <div align="right">
+                        <a class="button button-a button-rouded" style="padding-left: 15px; padding-right: 15px;" href="{% url 'garden_find' %}">Find a Community Garden</a>
+                    </div>
                     <div class="report-content">
+                        <br>
                         <p>
                             There are more than 100 community gardens in Melbourne. Engagers team has visited one of them -
                             <a href="https://vegout.org.au/" target="_blank" style="font-size: 17px;color: #24b67e;">Veg Out Community Gardens</a>. Located in
@@ -35,7 +38,8 @@
                         <!--<video style="width: 100%;" poster="/static/images/video-poster.jpg" preload="auto" controls="controls">
                             source src=".mp4" type="video/mp4"> add source to src attribute
                         </video>-->
-                    </div>
+                        </div>
+                        <br>
                         <p>
                             So basically, Community gardens are great places for growing traditional food, learning through cultural exchange, and also relaxing and making new friends.
                             They are considered as great assets that are operating on the public land of Melbourne encouraging the wide range of community to take part in its activities and management.
@@ -92,4 +96,8 @@
             </div>
         </div>
     </section>
+{% endblock %}
+
+{% block gardens %}
+    active
 {% endblock %}

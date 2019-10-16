@@ -26,6 +26,22 @@
 </head>
 <body>
 
+    <style>
+        .nav-dropdown {
+            background-color: rgb(255, 255, 255);
+            border: none;
+            margin-left: 20px!important;
+            border-radius: 0 0 4px 4px!important;
+        }
+
+        .nav-dropdown-item {
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #24b67e!important;
+            margin-left: 10px;
+        }
+    </style>
+
     <div class="main-container">
         <!--/ Nav Star /-->
         <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
@@ -48,6 +64,17 @@
                         <li class="nav-item">
                             <a class="nav-link js-scroll {% block events %}{% endblock %}" href="{% url 'event_display' %}">Events</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll {% block gardens %}{% endblock %}" href="{% url 'garden_report' %}">Community Gardens</a>
+                        </li>
+                        <!--
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link js-scroll dropdown-toggle" data-toggle="dropdown">Community Gardens </a>
+                            <ul class="dropdown-menu nav-dropdown">
+                                <li><a class="js-scroll nav-dropdown-item" href="{% url 'garden_report' %}">Our Review</a></li>
+                                <li style="padding: 10px 0;"><a class="js-scroll nav-dropdown-item" href="{% url 'garden_find' %}">Find a Garden</a></li>
+                            </ul>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link js-scroll {% block maps %}{% endblock %}" href="{% url 'map_display' %}">Demographics</a>
                         </li>

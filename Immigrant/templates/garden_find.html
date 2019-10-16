@@ -29,6 +29,9 @@
         <div class="container">
             <div class="box-shadow-2">
                 <div class="no-margin">
+                    <div align="left">
+                        <a class="button button-a button-rouded" style="padding-left: 15px; padding-right: 15px;" href="{% url 'garden_report' %}">Back</a>
+                    </div>
                     <div align="center">
                         <div class="row">
                             <div class="col-xs-12 d-md-none" style="padding: 0 15px; margin: 0 20px;">
@@ -49,6 +52,18 @@
                             <form class="form-search noSelect" onSubmit="addCsvMarkers(); return false;">
                                 <a href=" " id="clear" class="leaflet-popup-close-button" style="float: left;">&#215;</a>
                                 <div class="input-append">
+                                    <!--
+                                    <div class="row" style="border: 1px solid #C0C0C0; border-radius: 4px; background-color: #C0C0C0;">
+                                        <div class="col-xs-6">
+                                            <input type="text" id="filter-string" class="input-medium search-query search-box" style="border: none;" autocomplete="off">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <button type="submit" class="btn search-button"><i class="ion-ios-search-strong"></i></button>
+                                        </div>
+
+                                    </div>-->
+
+
                                     <div style="background-color: #C0C0C0; margin-left: 13px; border-radius: 4px;">
                                         <input type="text" id="filter-string" class="input-medium search-query search-box" autocomplete="off">
                                         <button type="submit" class="btn search-button"><i class="ion-ios-search-strong"></i></button>
@@ -72,4 +87,8 @@
     <script src="/static/lib/leaflet/js/config.js"></script>
     <script src="/static/lib/leaflet/js/app.js"></script>
 
+{% endblock %}
+
+{% block gardens %}
+    active
 {% endblock %}
